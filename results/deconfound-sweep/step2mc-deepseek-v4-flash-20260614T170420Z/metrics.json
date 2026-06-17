@@ -1,0 +1,689 @@
+{
+  "model": "deepseek-v4-flash",
+  "arms": [
+    "examples",
+    "no_examples"
+  ],
+  "rules": {
+    "all_words_longer_than_3_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 1,
+        "accuracy": 0.08333333333333333,
+        "wilson_ci_95": [
+          0.014865094404917095,
+          0.35387991114111694
+        ],
+        "n_parse_failures": 1,
+        "modal_predicate_key": "cross:contains_digit",
+        "modal_count": 3,
+        "modal_is_true": false,
+        "true_predicate_key": "true:all_words_longer_than_3",
+        "choice_distribution": {
+          "no_articles": 1,
+          "cross:contains_digit": 3,
+          "all_plural_noun_or_verb": 2,
+          "all_words_len_gt_4": 1,
+          "wc_lt_8": 1,
+          "true:all_words_longer_than_3": 1,
+          "word_the": 2
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 3,
+        "accuracy": 0.25,
+        "wilson_ci_95": [
+          0.08894166839405476,
+          0.5323053349335656
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "all_words_len_gt_4",
+        "modal_count": 3,
+        "modal_is_true": false,
+        "true_predicate_key": "true:all_words_longer_than_3",
+        "choice_distribution": {
+          "cross:contains_digit": 1,
+          "all_words_len_gt_4": 3,
+          "true:all_words_longer_than_3": 3,
+          "word_the": 2,
+          "wc_lt_8": 1,
+          "avg_word_len_ge_5": 2
+        }
+      }
+    },
+    "contains_first_name_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 7,
+        "accuracy": 0.5833333333333334,
+        "wilson_ci_95": [
+          0.31951131254954973,
+          0.8067396863412435
+        ],
+        "n_parse_failures": 4,
+        "modal_predicate_key": "true:contains_first_name",
+        "modal_count": 7,
+        "modal_is_true": true,
+        "true_predicate_key": "true:contains_first_name",
+        "choice_distribution": {
+          "proper_noun": 1,
+          "true:contains_first_name": 7
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 1,
+        "accuracy": 0.08333333333333333,
+        "wilson_ci_95": [
+          0.014865094404917095,
+          0.35387991114111694
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "proper_noun",
+        "modal_count": 3,
+        "modal_is_true": false,
+        "true_predicate_key": "true:contains_first_name",
+        "choice_distribution": {
+          "proper_noun": 3,
+          "true:contains_first_name": 1,
+          "cross:contains_digit": 3,
+          "cap_after_first": 3,
+          "city": 1,
+          "month": 1
+        }
+      }
+    },
+    "even_word_count_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 3,
+        "accuracy": 0.25,
+        "wilson_ci_95": [
+          0.08894166839405476,
+          0.5323053349335656
+        ],
+        "n_parse_failures": 4,
+        "modal_predicate_key": "true:even_word_count",
+        "modal_count": 3,
+        "modal_is_true": true,
+        "true_predicate_key": "true:even_word_count",
+        "choice_distribution": {
+          "true:even_word_count": 3,
+          "cross:contains_digit": 1,
+          "cross:exactly_two_commas": 2,
+          "even_letters": 1,
+          "wc_eq_8": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 4,
+        "accuracy": 0.3333333333333333,
+        "wilson_ci_95": [
+          0.13812009109121315,
+          0.6093779111272004
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:even_word_count",
+        "modal_count": 4,
+        "modal_is_true": true,
+        "true_predicate_key": "true:even_word_count",
+        "choice_distribution": {
+          "true:even_word_count": 4,
+          "cross:exactly_two_commas": 2,
+          "cross:contains_digit": 2,
+          "even_letters": 1,
+          "wc_eq_8": 2,
+          "wc_lt_7": 1
+        }
+      }
+    },
+    "first_two_words_alphabetical_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 3,
+        "accuracy": 0.25,
+        "wilson_ci_95": [
+          0.08894166839405476,
+          0.5323053349335656
+        ],
+        "n_parse_failures": 1,
+        "modal_predicate_key": "true:first_two_words_alphabetical",
+        "modal_count": 3,
+        "modal_is_true": true,
+        "true_predicate_key": "true:first_two_words_alphabetical",
+        "choice_distribution": {
+          "true:first_two_words_alphabetical": 3,
+          "second_plural_noun": 1,
+          "cross:contains_digit": 1,
+          "first_two_same_initial": 2,
+          "first_initial_a_m": 1,
+          "starts_adj": 1,
+          "first_len_lt_second": 2
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 2,
+        "accuracy": 0.16666666666666666,
+        "wilson_ci_95": [
+          0.04696514218385378,
+          0.4480308622529734
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "first_two_same_initial",
+        "modal_count": 5,
+        "modal_is_true": false,
+        "true_predicate_key": "true:first_two_words_alphabetical",
+        "choice_distribution": {
+          "first_two_same_initial": 5,
+          "true:first_two_words_alphabetical": 2,
+          "second_plural_noun": 1,
+          "cross:contains_digit": 2,
+          "first_len_lt_second": 2
+        }
+      }
+    },
+    "first_word_longer_than_last_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 3,
+        "accuracy": 0.25,
+        "wilson_ci_95": [
+          0.08894166839405476,
+          0.5323053349335656
+        ],
+        "n_parse_failures": 1,
+        "modal_predicate_key": "cross:first_last_same_letter",
+        "modal_count": 3,
+        "modal_is_true": false,
+        "true_predicate_key": "true:first_word_longer_than_last",
+        "choice_distribution": {
+          "cross:first_last_same_letter": 3,
+          "cross:contains_digit": 2,
+          "true:first_word_longer_than_last": 3,
+          "last_len_le_4": 2,
+          "first_len_ge_7": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 5,
+        "accuracy": 0.4166666666666667,
+        "wilson_ci_95": [
+          0.19326031365875668,
+          0.6804886874504503
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:first_word_longer_than_last",
+        "modal_count": 5,
+        "modal_is_true": true,
+        "true_predicate_key": "true:first_word_longer_than_last",
+        "choice_distribution": {
+          "cross:first_last_same_letter": 4,
+          "true:first_word_longer_than_last": 5,
+          "cross:contains_digit": 1,
+          "last_len_le_4": 2
+        }
+      }
+    },
+    "food_topic_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 7,
+        "accuracy": 0.5833333333333334,
+        "wilson_ci_95": [
+          0.31951131254954973,
+          0.8067396863412435
+        ],
+        "n_parse_failures": 1,
+        "modal_predicate_key": "true:food_topic",
+        "modal_count": 7,
+        "modal_is_true": true,
+        "true_predicate_key": "true:food_topic",
+        "choice_distribution": {
+          "true:food_topic": 7,
+          "cross:contains_digit": 2,
+          "positive_lex": 1,
+          "buyable": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 5,
+        "accuracy": 0.4166666666666667,
+        "wilson_ci_95": [
+          0.19326031365875668,
+          0.6804886874504503
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:food_topic",
+        "modal_count": 5,
+        "modal_is_true": true,
+        "true_predicate_key": "true:food_topic",
+        "choice_distribution": {
+          "true:food_topic": 5,
+          "eat_drink": 5,
+          "cross:contains_digit": 2
+        }
+      }
+    },
+    "last_word_ends_with_vowel_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 3,
+        "accuracy": 0.25,
+        "wilson_ci_95": [
+          0.08894166839405476,
+          0.5323053349335656
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:last_word_ends_with_vowel",
+        "modal_count": 3,
+        "modal_is_true": true,
+        "true_predicate_key": "true:last_word_ends_with_vowel",
+        "choice_distribution": {
+          "true:last_word_ends_with_vowel": 3,
+          "cross:mentions_animal": 3,
+          "last_len_le_5": 1,
+          "last_ends_y": 3,
+          "cross:past_tense": 1,
+          "cross:starts_with_vowel": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 5,
+        "accuracy": 0.4166666666666667,
+        "wilson_ci_95": [
+          0.19326031365875668,
+          0.6804886874504503
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:last_word_ends_with_vowel",
+        "modal_count": 5,
+        "modal_is_true": true,
+        "true_predicate_key": "true:last_word_ends_with_vowel",
+        "choice_distribution": {
+          "true:last_word_ends_with_vowel": 5,
+          "last_ends_y": 4,
+          "cross:starts_with_vowel": 3
+        }
+      }
+    },
+    "mentions_animal_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 11,
+        "accuracy": 0.9166666666666666,
+        "wilson_ci_95": [
+          0.646120088858883,
+          0.9851349055950829
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:mentions_animal",
+        "modal_count": 11,
+        "modal_is_true": true,
+        "true_predicate_key": "true:mentions_animal",
+        "choice_distribution": {
+          "true:mentions_animal": 11,
+          "cross:past_tense": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 5,
+        "accuracy": 0.4166666666666667,
+        "wilson_ci_95": [
+          0.19326031365875668,
+          0.6804886874504503
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:mentions_animal",
+        "modal_count": 5,
+        "modal_is_true": true,
+        "true_predicate_key": "true:mentions_animal",
+        "choice_distribution": {
+          "true:mentions_animal": 5,
+          "cross:the_appears_twice": 2,
+          "farm_animal": 2,
+          "cross:contains_letter_z": 1,
+          "pet": 1,
+          "cross:past_tense": 1
+        }
+      }
+    },
+    "mentions_color_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 12,
+        "accuracy": 1.0,
+        "wilson_ci_95": [
+          0.7575059933447592,
+          1.0
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:mentions_color",
+        "modal_count": 12,
+        "modal_is_true": true,
+        "true_predicate_key": "true:mentions_color",
+        "choice_distribution": {
+          "true:mentions_color": 12
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 5,
+        "accuracy": 0.4166666666666667,
+        "wilson_ci_95": [
+          0.19326031365875668,
+          0.6804886874504503
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:mentions_color",
+        "modal_count": 5,
+        "modal_is_true": true,
+        "true_predicate_key": "true:mentions_color",
+        "choice_distribution": {
+          "true:mentions_color": 5,
+          "color_red": 5,
+          "cross:contains_digit": 1,
+          "visual_adj": 1
+        }
+      }
+    },
+    "passive_voice_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 7,
+        "accuracy": 0.5833333333333334,
+        "wilson_ci_95": [
+          0.31951131254954973,
+          0.8067396863412435
+        ],
+        "n_parse_failures": 2,
+        "modal_predicate_key": "true:passive_voice",
+        "modal_count": 7,
+        "modal_is_true": true,
+        "true_predicate_key": "true:passive_voice",
+        "choice_distribution": {
+          "true:passive_voice": 7,
+          "word_by": 2,
+          "cross:all_words_longer_than_3": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 2,
+        "accuracy": 0.16666666666666666,
+        "wilson_ci_95": [
+          0.04696514218385378,
+          0.4480308622529734
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "was_were",
+        "modal_count": 4,
+        "modal_is_true": false,
+        "true_predicate_key": "true:passive_voice",
+        "choice_distribution": {
+          "word_by": 2,
+          "true:passive_voice": 2,
+          "cross:contains_exclamation": 1,
+          "was_were": 4,
+          "cross:all_words_longer_than_3": 3
+        }
+      }
+    },
+    "positive_sentiment_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 11,
+        "accuracy": 0.9166666666666666,
+        "wilson_ci_95": [
+          0.646120088858883,
+          0.9851349055950829
+        ],
+        "n_parse_failures": 1,
+        "modal_predicate_key": "true:positive_sentiment",
+        "modal_count": 11,
+        "modal_is_true": true,
+        "true_predicate_key": "true:positive_sentiment",
+        "choice_distribution": {
+          "true:positive_sentiment": 11
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "cross:all_words_longer_than_3",
+        "modal_count": 4,
+        "modal_is_true": false,
+        "true_predicate_key": "true:positive_sentiment",
+        "choice_distribution": {
+          "cross:all_words_longer_than_3": 4,
+          "cross:contains_exclamation": 2,
+          "wc_gt_8": 4,
+          "word_not": 2
+        }
+      }
+    },
+    "second_word_capitalized_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 4,
+        "accuracy": 0.3333333333333333,
+        "wilson_ci_95": [
+          0.13812009109121315,
+          0.6093779111272004
+        ],
+        "n_parse_failures": 3,
+        "modal_predicate_key": "true:second_word_capitalized",
+        "modal_count": 4,
+        "modal_is_true": true,
+        "true_predicate_key": "true:second_word_capitalized",
+        "choice_distribution": {
+          "true:second_word_capitalized": 4,
+          "cross:mentions_animal": 1,
+          "cross:contains_digit": 1,
+          "second_is_name": 3
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 4,
+        "accuracy": 0.3333333333333333,
+        "wilson_ci_95": [
+          0.13812009109121315,
+          0.6093779111272004
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:second_word_capitalized",
+        "modal_count": 4,
+        "modal_is_true": true,
+        "true_predicate_key": "true:second_word_capitalized",
+        "choice_distribution": {
+          "true:second_word_capitalized": 4,
+          "second_is_name": 2,
+          "cross:past_tense": 1,
+          "cross:contains_digit": 1,
+          "proper_noun": 2,
+          "mentions_person": 1,
+          "cross:mentions_animal": 1
+        }
+      }
+    },
+    "starts_with_vowel_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 3,
+        "accuracy": 0.25,
+        "wilson_ci_95": [
+          0.08894166839405476,
+          0.5323053349335656
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "starts_plural",
+        "modal_count": 4,
+        "modal_is_true": false,
+        "true_predicate_key": "true:starts_with_vowel",
+        "choice_distribution": {
+          "starts_plural": 4,
+          "true:starts_with_vowel": 3,
+          "first_noun": 1,
+          "cross:past_tense": 1,
+          "cross:contains_letter_z": 1,
+          "first_a_the": 2
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 5,
+        "accuracy": 0.4166666666666667,
+        "wilson_ci_95": [
+          0.19326031365875668,
+          0.6804886874504503
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:starts_with_vowel",
+        "modal_count": 5,
+        "modal_is_true": true,
+        "true_predicate_key": "true:starts_with_vowel",
+        "choice_distribution": {
+          "true:starts_with_vowel": 5,
+          "first_a_the": 3,
+          "cross:contains_letter_z": 1,
+          "starts_plural": 1,
+          "first_noun": 1,
+          "first_len_lt_6": 1
+        }
+      }
+    },
+    "the_appears_twice_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 2,
+        "accuracy": 0.16666666666666666,
+        "wilson_ci_95": [
+          0.04696514218385378,
+          0.4480308622529734
+        ],
+        "n_parse_failures": 2,
+        "modal_predicate_key": "word_the",
+        "modal_count": 3,
+        "modal_is_true": false,
+        "true_predicate_key": "true:the_appears_twice",
+        "choice_distribution": {
+          "true:the_appears_twice": 2,
+          "nouns_geq_2": 1,
+          "cross:past_tense": 1,
+          "word_the": 3,
+          "cross:contains_digit": 1,
+          "begins_The": 2
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 3,
+        "accuracy": 0.25,
+        "wilson_ci_95": [
+          0.08894166839405476,
+          0.5323053349335656
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "begins_The",
+        "modal_count": 5,
+        "modal_is_true": false,
+        "true_predicate_key": "true:the_appears_twice",
+        "choice_distribution": {
+          "true:the_appears_twice": 3,
+          "begins_The": 5,
+          "word_the": 4
+        }
+      }
+    },
+    "word_count_geq_8_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 3,
+        "accuracy": 0.25,
+        "wilson_ci_95": [
+          0.08894166839405476,
+          0.5323053349335656
+        ],
+        "n_parse_failures": 2,
+        "modal_predicate_key": "true:word_count_geq_8",
+        "modal_count": 3,
+        "modal_is_true": true,
+        "true_predicate_key": "true:word_count_geq_8",
+        "choice_distribution": {
+          "true:word_count_geq_8": 3,
+          "cross:contains_digit": 1,
+          "wc_geq_6": 3,
+          "cross:even_word_count": 2,
+          "has_comma": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "wc_geq_6",
+        "modal_count": 3,
+        "modal_is_true": false,
+        "true_predicate_key": "true:word_count_geq_8",
+        "choice_distribution": {
+          "cross:even_word_count": 2,
+          "wc_geq_6": 3,
+          "multi_clause": 1,
+          "cross:mentions_animal": 3,
+          "cross:contains_digit": 1,
+          "has_comma": 2
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "examples": {
+      "n_queries": 180,
+      "n_correct": 80,
+      "query_accuracy": 0.4444444444444444,
+      "n_rules": 15,
+      "n_rules_modal_true": 11,
+      "modal_true_rate": 0.7333333333333333,
+      "n_parse_failures": 22,
+      "chance": 0.125
+    },
+    "no_examples": {
+      "n_queries": 180,
+      "n_correct": 49,
+      "query_accuracy": 0.2722222222222222,
+      "n_rules": 15,
+      "n_rules_modal_true": 8,
+      "modal_true_rate": 0.5333333333333333,
+      "n_parse_failures": 0,
+      "chance": 0.125
+    }
+  },
+  "wall_seconds": 30.67594496603124,
+  "client_stats": {
+    "api_calls": 360,
+    "cache_hits": 0,
+    "n_429": 0,
+    "retryable_errors": 0,
+    "failures": 0,
+    "rate_429": 0.0,
+    "error_rate": 0.0
+  }
+}
