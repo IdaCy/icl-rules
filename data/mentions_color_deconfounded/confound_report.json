@@ -1,0 +1,607 @@
+{
+  "n_items": 440,
+  "n_true": 220,
+  "n_false": 220,
+  "is_llm_rule": false,
+  "class_conditional": {
+    "true": {
+      "n": 220,
+      "word_count_mean": 8.463636363636363,
+      "word_count_sd": 0.613147953778809,
+      "char_count_mean": 46.777272727272724,
+      "char_count_sd": 5.50375341497896,
+      "stopword_rate": 0.38721804511278196,
+      "comma_rate": 0.0,
+      "capitalized_word_rate": 0.11815252416756176
+    },
+    "false": {
+      "n": 220,
+      "word_count_mean": 8.39090909090909,
+      "word_count_sd": 0.6193171392818582,
+      "char_count_mean": 45.49545454545454,
+      "char_count_sd": 5.568170686445273,
+      "stopword_rate": 0.39219934994582883,
+      "comma_rate": 0.0,
+      "capitalized_word_rate": 0.11917659804983749
+    }
+  },
+  "word_count_mean_abs_diff": 0.07272727272727231,
+  "length_match_tolerance": 0.2,
+  "length_match_exempt": false,
+  "length_match_ok": true,
+  "top_skewed_tokens": [
+    {
+      "token": "gentle",
+      "true_count": 0,
+      "false_count": 80,
+      "skew": 80
+    },
+    {
+      "token": "wide",
+      "true_count": 0,
+      "false_count": 59,
+      "skew": 59
+    },
+    {
+      "token": "thick",
+      "true_count": 0,
+      "false_count": 56,
+      "skew": 56
+    },
+    {
+      "token": "purple",
+      "true_count": 27,
+      "false_count": 0,
+      "skew": 27
+    },
+    {
+      "token": "yellow",
+      "true_count": 26,
+      "false_count": 0,
+      "skew": 26
+    },
+    {
+      "token": "orange",
+      "true_count": 25,
+      "false_count": 0,
+      "skew": 25
+    },
+    {
+      "token": "shallow",
+      "true_count": 0,
+      "false_count": 25,
+      "skew": 25
+    },
+    {
+      "token": "turquoise",
+      "true_count": 23,
+      "false_count": 0,
+      "skew": 23
+    },
+    {
+      "token": "brown",
+      "true_count": 22,
+      "false_count": 0,
+      "skew": 22
+    },
+    {
+      "token": "green",
+      "true_count": 21,
+      "false_count": 0,
+      "skew": 21
+    },
+    {
+      "token": "crimson",
+      "true_count": 19,
+      "false_count": 0,
+      "skew": 19
+    },
+    {
+      "token": "maroon",
+      "true_count": 18,
+      "false_count": 0,
+      "skew": 18
+    },
+    {
+      "token": "red",
+      "true_count": 17,
+      "false_count": 0,
+      "skew": 17
+    },
+    {
+      "token": "violet",
+      "true_count": 16,
+      "false_count": 0,
+      "skew": 16
+    },
+    {
+      "token": "a",
+      "true_count": 81,
+      "false_count": 96,
+      "skew": 15
+    },
+    {
+      "token": "an",
+      "true_count": 11,
+      "false_count": 0,
+      "skew": 11
+    },
+    {
+      "token": "cabinet",
+      "true_count": 23,
+      "false_count": 12,
+      "skew": 11
+    },
+    {
+      "token": "inside",
+      "true_count": 20,
+      "false_count": 9,
+      "skew": 11
+    },
+    {
+      "token": "kept",
+      "true_count": 20,
+      "false_count": 9,
+      "skew": 11
+    },
+    {
+      "token": "wooden",
+      "true_count": 20,
+      "false_count": 9,
+      "skew": 11
+    }
+  ],
+  "one_sided_high_freq_tokens": [
+    {
+      "token": "gentle",
+      "overall_freq": 0.18181818181818182,
+      "doc_count": 80,
+      "true_count": 0,
+      "false_count": 80,
+      "in_true": false,
+      "in_false": true
+    },
+    {
+      "token": "wide",
+      "overall_freq": 0.1340909090909091,
+      "doc_count": 59,
+      "true_count": 0,
+      "false_count": 59,
+      "in_true": false,
+      "in_false": true
+    },
+    {
+      "token": "thick",
+      "overall_freq": 0.12727272727272726,
+      "doc_count": 56,
+      "true_count": 0,
+      "false_count": 56,
+      "in_true": false,
+      "in_false": true
+    },
+    {
+      "token": "purple",
+      "overall_freq": 0.06136363636363636,
+      "doc_count": 27,
+      "true_count": 27,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "yellow",
+      "overall_freq": 0.05909090909090909,
+      "doc_count": 26,
+      "true_count": 26,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "orange",
+      "overall_freq": 0.056818181818181816,
+      "doc_count": 25,
+      "true_count": 25,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "shallow",
+      "overall_freq": 0.056818181818181816,
+      "doc_count": 25,
+      "true_count": 0,
+      "false_count": 25,
+      "in_true": false,
+      "in_false": true
+    },
+    {
+      "token": "turquoise",
+      "overall_freq": 0.05227272727272727,
+      "doc_count": 23,
+      "true_count": 23,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "brown",
+      "overall_freq": 0.05,
+      "doc_count": 22,
+      "true_count": 22,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "green",
+      "overall_freq": 0.04772727272727273,
+      "doc_count": 21,
+      "true_count": 21,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "crimson",
+      "overall_freq": 0.04318181818181818,
+      "doc_count": 19,
+      "true_count": 19,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "maroon",
+      "overall_freq": 0.04090909090909091,
+      "doc_count": 18,
+      "true_count": 18,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "red",
+      "overall_freq": 0.038636363636363635,
+      "doc_count": 17,
+      "true_count": 17,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "violet",
+      "overall_freq": 0.03636363636363636,
+      "doc_count": 16,
+      "true_count": 16,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    }
+  ],
+  "generic_probe_battery": [
+    {
+      "predicate": "word_count>=5",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=6",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=7",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=8",
+      "agreement": 0.5045454545454545,
+      "score": 0.5045454545454545,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=9",
+      "agreement": 0.5318181818181819,
+      "score": 0.5318181818181819,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=10",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "char_count>=35",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "char_count>=40",
+      "agreement": 0.5386363636363637,
+      "score": 0.5386363636363637,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "char_count>=45",
+      "agreement": 0.5568181818181818,
+      "score": 0.5568181818181818,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_the",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_a",
+      "agreement": 0.4659090909090909,
+      "score": 0.5340909090909092,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_and",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "count_the>=2",
+      "agreement": 0.4954545454545455,
+      "score": 0.5045454545454545,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_starts_vowel",
+      "agreement": 0.5022727272727273,
+      "score": 0.5022727272727273,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_starts_consonant",
+      "agreement": 0.49772727272727274,
+      "score": 0.5022727272727272,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_ends_vowel",
+      "agreement": 0.45,
+      "score": 0.55,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_ends_consonant",
+      "agreement": 0.55,
+      "score": 0.55,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_digit",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_comma",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=4",
+      "agreement": 0.4954545454545455,
+      "score": 0.5045454545454545,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=5",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=6",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=7",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=8",
+      "agreement": 0.5068181818181818,
+      "score": 0.5068181818181818,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_word_len<=3",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_word_len<=4",
+      "agreement": 0.4863636363636364,
+      "score": 0.5136363636363637,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_word_len<=5",
+      "agreement": 0.4636363636363636,
+      "score": 0.5363636363636364,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_word_len<=6",
+      "agreement": 0.4681818181818182,
+      "score": 0.5318181818181817,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_letter_bucket_a-f",
+      "agreement": 0.5022727272727273,
+      "score": 0.5022727272727273,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_letter_bucket_g-m",
+      "agreement": 0.49772727272727274,
+      "score": 0.5022727272727272,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_letter_bucket_n-s",
+      "agreement": 0.5113636363636364,
+      "score": 0.5113636363636364,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_letter_bucket_t-z",
+      "agreement": 0.48863636363636365,
+      "score": 0.5113636363636364,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "nonfirst_word_capitalized",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "all_lowercase",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_pos=noun",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=verb",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=adjective",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=adverb",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=pronoun",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=determiner",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    }
+  ],
+  "battery_violations": [],
+  "battery_ok": true,
+  "overall_pass": true
+}

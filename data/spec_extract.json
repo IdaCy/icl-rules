@@ -1,0 +1,1343 @@
+{
+  "_note": "Public projection of the private rule-specs.yaml; see scripts/extract_spec.py.",
+  "battery_pass_threshold_inclusive": 0.75,
+  "rules": {
+    "all_lowercase": {
+      "plan_number": 1,
+      "category": "surface",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it contains no uppercase letters anywhere.\n",
+      "equivalence_class": [
+        "the first letter of the sentence is lowercase",
+        "the sentence does not begin with a capital letter",
+        "the first word is not capitalized",
+        "the sentence is written entirely in lowercase"
+      ],
+      "banned_distractors": [
+        "first letter lowercase",
+        "does not start with a capital",
+        "contains no capital letters (same rule)",
+        "first word uncapitalized"
+      ],
+      "mc_distractor_seeds": [
+        "The input contains the word 'the' at least twice — independent feature, ~50% disagreement",
+        "The input has fewer than 8 words — length-matched classes, ~50% disagreement",
+        "The input is in the past tense — tense varies independently, ~50%",
+        "The input mentions an animal — vocabulary balanced, ~50%",
+        "The input contains no punctuation at all — both classes punctuation-free, labels everything True, 50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits in this data, labels everything False, 50%",
+        "The input is in the passive voice — cross-rule canonical (r9); voice varies independently of casing, ~50%",
+        "The first word is longer than the last word — cross-rule canonical (r19); word lengths uncontrolled w.r.t. casing, ~50% (builder-checked)"
+      ],
+      "step3_edge_ideas": [
+        "lowercase start + mid-sentence capital ('the dog saw Maria at noon') — splits 'no capitals' vs 'first letter lowercase' (the underdetermined-pair probe)",
+        "ALL-CAPS sentence — both readings say False; sanity anchor",
+        "capital only in the last word ('the dog ran to Berlin')",
+        "digit-initial sentence, fully lowercase ('7 dogs ran home quickly')",
+        "single capitalized 'I' inserted mid-sentence"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {
+        "all_lowercase": [
+          "the sentence is written entirely in lowercase"
+        ]
+      },
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "NOUN_CONCRETE",
+          "VERB_REGULAR",
+          "ADJ_PLAIN",
+          "ADVERB_PLACE"
+        ]
+      }
+    },
+    "contains_digit": {
+      "plan_number": 2,
+      "category": "surface",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it contains at least one digit character (0-9).\n",
+      "equivalence_class": [
+        "contains a number written in digits",
+        "contains a numeral (in figures)"
+      ],
+      "banned_distractors": [
+        "contains a numeral written in figures",
+        "contains a character 0-9"
+      ],
+      "mc_distractor_seeds": [
+        "The input mentions a number or quantity, in digits or words (checking predicate: contains a digit OR a NUMBER_WORDS-lexicon word; 'several/many/some' do NOT count) — disagrees on the 25% spelled-number False items",
+        "The input contains a number greater than 10 — disagrees on small digits and all spelled items, >= 25% (check per context)",
+        "The input contains exactly one digit character — disagrees on all two-digit True items (~25%)",
+        "The input mentions a measurement or amount of money — no units in data, labels ~all False, 50%",
+        "The input has more than 7 words — length-matched, ~50%",
+        "The input contains no uppercase letters — cross-rule canonical (r1); every item is sentence case, labels everything False, 50%",
+        "The input mentions an animal — cross-rule canonical (r13); fillers balanced across classes, ~50%",
+        "The input contains exactly two commas — cross-rule canonical (r26); no commas in this data, labels everything False, 50%",
+        "The input contains an exclamation mark — cross-rule canonical (r3); '!' absent from this data, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%",
+        "The input is in the passive voice — cross-rule canonical (r9); all frames are active declaratives, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%"
+      ],
+      "step3_edge_ideas": [
+        "spelled number only ('seven packages') — True under 'mentions a number', False under truth",
+        "digit embedded in a word ('the 3rd shelf')",
+        "year-like number ('in 1999 the bridge opened')",
+        "digit zero alone ('they scored 0 points')",
+        "roman numeral ('chapter IV was short')"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {
+        "contains_digit": [
+          "contains a number written in digits",
+          "contains a numeral (in figures)"
+        ]
+      },
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "NUMBER_WORDS",
+          "NOUN_CONCRETE",
+          "VERB_REGULAR"
+        ]
+      }
+    },
+    "contains_exclamation": {
+      "plan_number": 3,
+      "category": "surface",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it contains an exclamation mark (!).\n",
+      "equivalence_class": [
+        "the sentence ends with an exclamation mark",
+        "the sentence ends with punctuation"
+      ],
+      "banned_distractors": [
+        "ends with an exclamation mark",
+        "ends with punctuation",
+        "does not end with a letter"
+      ],
+      "mc_distractor_seeds": [
+        "The input contains a comma — labels the 50% salted items True regardless of class, 50% disagreement",
+        "The input contains any punctuation mark — disagrees on comma-bearing False items, 25%",
+        "The input is a command — all declarative, labels ~all False, ~50%",
+        "The input expresses strong emotion (predicate: contains an emotion/intensity word from a fixed list) — wording is emotion-neutral, ~50%",
+        "The input is shorter than 8 words — ~50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The word 'the' appears at least twice — cross-rule canonical (r21); determiner counts independent of the one-character '!' append, ~50%",
+        "The input has an even number of words — cross-rule canonical (r25); parity independent of the append, ~50%"
+      ],
+      "step3_edge_ideas": [
+        "period-terminated sentence ('The dog slept.') — splits 'contains !' vs 'ends with punctuation'",
+        "internal exclamation ('They won! and then they celebrated') — splits 'contains' vs 'ends with'",
+        "question mark terminal ('Did the dog sleep?')",
+        "exclamatory wording, no mark ('What a strange day that was')",
+        "double exclamation ('The team won the final!!')"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "NOUN_CONCRETE",
+          "VERB_REGULAR",
+          "ADJ_PLAIN",
+          "ADVERB_PLACE"
+        ]
+      }
+    },
+    "title_case": {
+      "plan_number": 4,
+      "category": "surface",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff every word begins with an uppercase letter.\n",
+      "equivalence_class": [
+        "every word is capitalized",
+        "all words start with capital letters",
+        "the input is in title case (with all words capitalized)"
+      ],
+      "banned_distractors": [
+        "at least 3 words are capitalized (data-equivalent here: counts as 2 in free-form; banned as multiple-choice distractor)",
+        "at least 4 words are capitalized",
+        "first and last word are capitalized",
+        "second word is capitalized (agreement ~95%: True items always, salt hits position 2 in 10% of False -> 0.5*1.0 + 0.5*0.9)",
+        "the sentence is a headline (vague + near-equivalent)"
+      ],
+      "mc_distractor_seeds": [
+        "The input contains a capitalized word after the first word — disagrees on salted False items, 25%",
+        "The input mentions a city, month, or brand name — disagrees: only ~50% of False items and ~50% of True items contain one, ~50%",
+        "The input contains a proper noun — same structure as above, ~37-50% (check)",
+        "The input is about a place — semantic, predicate = contains city/country token, >= 25%",
+        "The input has more than 7 words — ~50%",
+        "The input contains an exclamation mark — cross-rule canonical (r3); none in this data, labels everything False, 50%",
+        "The input is in the past tense — cross-rule canonical (r8); tense varies independently of casing, ~50%",
+        "The first word is longer than the last word — cross-rule canonical (r19); lengths uncontrolled w.r.t. casing, ~50% (builder-checked)",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits in this rule's data, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%",
+        "The input contains exactly two commas — cross-rule canonical (r26); no commas in this data, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%"
+      ],
+      "step3_edge_ideas": [
+        "editorial title case ('The Last Train To Madrid' vs 'The Last Train to Madrid') — splits 'every word' vs 'title case as in headlines'",
+        "all words but one capitalized ('The Red Car stopped Near Madrid')",
+        "ALL-CAPS sentence ('THE RED CAR STOPPED') — first letters are uppercase: True under canonical; tests model's notion",
+        "digit-initial word among capitalized words ('The 7 Red Cars Stopped')",
+        "single-word probe items"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "NOUN_CONCRETE",
+          "VERB_REGULAR",
+          "ADJ_PLAIN",
+          "NONNAME_PROPER"
+        ]
+      }
+    },
+    "contains_letter_z": {
+      "plan_number": 5,
+      "category": "surface",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it contains the letter z (uppercase or lowercase).\n",
+      "equivalence_class": [
+        "contains the letter z anywhere, including inside words",
+        "some word contains a z"
+      ],
+      "banned_distractors": [
+        "contains z or Z",
+        "some word has the letter z in it"
+      ],
+      "mc_distractor_seeds": [
+        "The input contains the letter x — x is rare in both banks, labels ~everything False -> disagrees on ~all True items, ~50% (builder-checked)",
+        "The input mentions an animal — <= 25% of z-words are animals, ~50%",
+        "The input contains an unusual or foreign-sounding word (predicate: contains a tier-2 frequency word) — tiers matched, ~50%",
+        "The input contains a double letter — only the zz/ee subset, >= 25% (check per context)",
+        "The input mentions food — capped topic share, >= 25%",
+        "The input is in the past tense — cross-rule canonical (r8); frame tenses vary symmetrically across classes, ~50%",
+        "The word 'the' appears at least twice — cross-rule canonical (r21); frames shared, determiner counts independent of the z slot, ~50%",
+        "The input mentions a color — cross-rule canonical (r14); color words rare and class-balanced, ~50% (builder-checked)",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits in this rule's data, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%",
+        "The input contains exactly two commas — cross-rule canonical (r26); no commas in this data, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%"
+      ],
+      "step3_edge_ideas": [
+        "sentence-initial capitalized Z-word ('Zebras grazed near the fence')",
+        "z in a proper noun ('They flew to Zurich on Monday')",
+        "s-spelling near-miss ('the man organised the files') vs z-spelling ('organized')",
+        "multiple z words in one sentence",
+        "phonetic /z/ without letter z ('the dogs rose early') — must be False"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "substitution",
+        "banks": [
+          "Z_WORDS",
+          "Z_FREE_MATCHED",
+          "NOUN_CONCRETE",
+          "VERB_REGULAR"
+        ]
+      }
+    },
+    "repeated_content_word": {
+      "plan_number": 6,
+      "category": "surface",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff some content word — a word not on the stopword list (articles, pronouns, prepositions, auxiliaries, and similar function words) — occurs at least twice, comparing words case-insensitively after stripping punctuation.\n",
+      "equivalence_class": [
+        "a non-function word is repeated",
+        "the same content word appears two or more times"
+      ],
+      "banned_distractors": [
+        "a noun is repeated (85% agreement at the 70% noun-repeat share: it never mislabels a False item and misses only the 30% non-noun repeats -> 0.5*0.7 + 0.5*1.0 — banned)"
+      ],
+      "mc_distractor_seeds": [
+        "Some word appears at least twice, counting words like 'the' and 'a' — labels the >= 60% stopword-repeat False items True, >= 30% disagreement",
+        "The input contains the word 'the' at least twice — both classes ~balanced on this by frame design, ~40-50% (check)",
+        "The input contains the word 'and' — coordination frames in both classes, labels ~all True, ~50%",
+        "The input mentions two or more people or things doing something (predicate: >= 2 distinct nouns) — all items have >= 2 nouns, ~50%",
+        "The input is longer than 9 words — length-matched, ~50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The input mentions an animal — cross-rule canonical (r13); fillers balanced across classes, ~50%",
+        "The first and last words begin with the same letter — cross-rule canonical (r27); initials uncontrolled w.r.t. repeats, ~50% (builder-checked)"
+      ],
+      "step3_edge_ideas": [
+        "stopword-only repeat ('the dog and the cat slept') -> False; splits content-word vs any-word reading",
+        "case-variant repeat ('Apple pie and apple cake') -> True",
+        "inflectional near-repeat ('the dog chased three dogs') -> False; splits exact-match vs lemma reading",
+        "repeat across clause boundary at max distance",
+        "repeated proper noun (if model generalizes content-word to names)"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "NOUN_CONCRETE",
+          "VERB_REGULAR",
+          "ADJ_PLAIN"
+        ]
+      }
+    },
+    "starts_with_vowel": {
+      "plan_number": 7,
+      "category": "surface",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff the first letter of its first word is a vowel letter (a, e, i, o, or u), regardless of case and regardless of pronunciation.\n",
+      "equivalence_class": [
+        "the sentence begins with a vowel",
+        "the first word starts with a, e, i, o, or u",
+        "the first letter is not a consonant"
+      ],
+      "banned_distractors": [
+        "first letter is a, e, i, o or u",
+        "does not start with a consonant",
+        "begins with a vowel sound (agreement > 75% on training words — banned; it is the step-3 splitter)"
+      ],
+      "mc_distractor_seeds": [
+        "The first word is a noun — 30% adverb starts in both classes, labels those False, ~30% (check)",
+        "The first word starts with 'a' or 'the' — articles never sentence-initial here, labels all False, 50%",
+        "The first word is shorter than 6 letters — length-matched, ~50%",
+        "The last word ends with a vowel — balanced by guard, ~50%",
+        "The sentence starts with a plural word — both classes 70% plural nouns, ~30% (check)",
+        "The input is in the past tense — cross-rule canonical (r8); continuations shared verbatim across classes, ~50%",
+        "The input contains the letter z — cross-rule canonical (r5); z is rare in both banks, labels ~everything False, ~50% (builder-checked)",
+        "The input contains a comma — no commas in this data, labels everything False, 50%"
+      ],
+      "step3_edge_ideas": [
+        "'Honest workers arrived early' — vowel SOUND, consonant letter: splits letter vs sound reading",
+        "'One driver waited outside' — o letter, /w/ sound: splits the other direction",
+        "'Useful umbrellas hung there' (u letter, /j/ sound)",
+        "digit start: '8 engines failed today'",
+        "'European trains run often' (e letter, /j/ sound)"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {
+        "first_starts_vowel": [
+          "the sentence begins with a vowel",
+          "the first word starts with a, e, i, o, or u",
+          "the first letter is not a consonant"
+        ],
+        "first_starts_consonant": [
+          "the first letter is not a consonant",
+          "the sentence begins with a vowel"
+        ]
+      },
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "VOWEL_INITIAL",
+          "CONSONANT_INITIAL"
+        ]
+      }
+    },
+    "past_tense": {
+      "plan_number": 8,
+      "category": "syntactic",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff its main verb is in the past tense, and False iff it is in the present tense.\n",
+      "equivalence_class": [
+        "the verb ends in -ed",
+        "the action already happened / is described as completed",
+        "the sentence is not in the present tense"
+      ],
+      "banned_distractors": [
+        "verb ends in -ed",
+        "describes a completed/finished action",
+        "is not happening now",
+        "the verb ends in s (complement surface form — anti-correlated, banned)"
+      ],
+      "mc_distractor_seeds": [
+        "The input contains a time expression like 'yesterday' — none present, labels all False, 50%",
+        "The subject is plural — balanced, ~50%",
+        "The input is longer than 7 words — ~50%",
+        "The input mentions a person (predicate: contains a person-role noun) — role nouns balanced across classes, ~50%",
+        "The input contains the word 'the' at least twice — frames balanced, ~40-50% (check)",
+        "The input mentions an animal — cross-rule canonical (r13); NOUN_CONCRETE fillers balanced across classes, ~50%",
+        "The input is in the passive voice — cross-rule canonical (r9); no passives in this rule's data, labels everything False, 50%",
+        "The first word of the input starts with a vowel letter — cross-rule canonical (r7); first words ('The ...') shared across classes, ~50%"
+      ],
+      "step3_edge_ideas": [
+        "irregular past ('The cook ran to the market') — splits 'past tense' vs 'ends in -ed'",
+        "adjectival -ed, present tense ('The tired cook cleans the kitchen') — splits '-ed anywhere' vs tense",
+        "past progressive ('The cook was cleaning the kitchen')",
+        "future ('The cook will clean the kitchen') — both readings False; anchor"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "VERB_REGULAR",
+          "NOUN_CONCRETE",
+          "ADVERB_PLACE"
+        ]
+      }
+    },
+    "passive_voice": {
+      "plan_number": 9,
+      "category": "syntactic",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff its main clause is in the passive voice — the subject undergoes the action rather than performing it, typically expressed with a form of \"be\" (was/were) plus a past participle — and False iff it is in the active voice. (Voice-defined: the be-form is the typical surface shape, not the definition, so get-passives count as passive — consistent with the probe ruling below.)\n",
+      "equivalence_class": [
+        "the subject is acted upon rather than acting",
+        "the sentence uses was/were + past participle"
+      ],
+      "banned_distractors": [
+        "the subject undergoes the action",
+        "uses be + past participle",
+        "the doer appears after the verb (80% agreement: agrees on by-passives and on all actives, misses only the 40% agentless passives -> 0.5*0.6 + 0.5*1.0 — banned)"
+      ],
+      "mc_distractor_seeds": [
+        "The input contains the word 'by' — ~30% disagreement by construction",
+        "The input contains 'was' or 'were' — ~25% disagreement (progressive actives)",
+        "The input is in the past tense — everything is past, labels all True, 50%",
+        "The first noun names a person — animacy-balanced, ~50%",
+        "The input is longer than 8 words — counts matched, ~50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The input contains an exclamation mark — cross-rule canonical (r3); none, labels everything False, 50%",
+        "Every word in the input is longer than 3 letters — cross-rule canonical (r30); 'the'/'was'/'by' are short, labels everything False, 50%"
+      ],
+      "step3_edge_ideas": [
+        "copular adjective ('The window was open all night') — passive-LOOKING, not passive",
+        "get-passive ('The van got cleaned at noon')",
+        "agentless passive with novel verb",
+        "active with 'was' progressive + 'by' locative ('The guard was walking by the gate') — maximally cue-conflicting",
+        "middle voice ('The door opened slowly') — neither was nor by"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "VERB_REGULAR",
+          "NOUN_CONCRETE",
+          "ADVERB_PLACE"
+        ]
+      }
+    },
+    "imperative": {
+      "plan_number": 10,
+      "category": "syntactic",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it is an imperative (a command addressed to the listener, with no expressed subject), and False iff it is a declarative statement with a subject.\n",
+      "equivalence_class": [
+        "the sentence is a command or instruction",
+        "the sentence has no subject"
+      ],
+      "banned_distractors": [
+        "starts with a verb (87.5% agreement: wrong only on the 25% adverb-start imperatives -> 0.5*0.75 + 0.5*1.0; NOT extensionally equivalent — graded 1 in free-form, banned as distractor)",
+        "has no subject",
+        "is a command/request/instruction",
+        "addresses the reader directly"
+      ],
+      "mc_distractor_seeds": [
+        "The input contains the word 'please' — never present, labels all False, 50%",
+        "The input is in the past tense — cross-rule canonical (r8); all verbs are present-tense forms, labels everything False, 50% (replaces the v1 no-pronoun seed, whose disagreement is only ~pronoun-imperative share / 2 <= 15%)",
+        "The second word is 'the' — 45% of True items (0.75 bare-verb starts x 0.60 determiner objects) and 0% of False; 27.5% disagreement, 72.5% agreement (check per context)",
+        "The input is shorter than 7 words — matched, ~50%",
+        "The input is about housework (predicate: chore-verb list) — verbs shared across classes, ~50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The input mentions an animal — cross-rule canonical (r13); objects drawn from NOUN_CONCRETE in both classes, ~50%",
+        "The first word is longer than the last word — cross-rule canonical (r19); lengths uncontrolled, ~50% (builder-checked)"
+      ],
+      "step3_edge_ideas": [
+        "negative imperative ('Do not open the window today')",
+        "quantifier-subject imperative ('Everyone close the windows now') — no names needed",
+        "explicit second-person declarative ('You close the window every day')",
+        "'Let us begin the meeting now'",
+        "infinitive headline style ('To close the window, pull the handle') — neither class cleanly"
+      ],
+      "battery_exemptions": [
+        "first_word_pos=verb",
+        "first_word_pos=pronoun"
+      ],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "VERB_REGULAR",
+          "NOUN_CONCRETE",
+          "ADVERB_SENT_INITIAL",
+          "ADVERB_PLACE"
+        ]
+      }
+    },
+    "question_word_order": {
+      "plan_number": 11,
+      "category": "syntactic",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it has yes/no-question word order, with the auxiliary or copular verb before the subject (terminal punctuation is absent in all inputs), and False iff it has declarative word order.\n",
+      "equivalence_class": [
+        "the sentence is a question",
+        "the sentence starts with an auxiliary or copular verb (is/are/was/were/can/will/should/must/could)",
+        "the verb comes before the subject"
+      ],
+      "banned_distractors": [
+        "is a question",
+        "asks something",
+        "starts with a verb/auxiliary",
+        "subject comes after the verb"
+      ],
+      "mc_distractor_seeds": [
+        "The input starts with the word 'can' — aux variety, disagrees on will/should/is items, >= 25% (check)",
+        "The input ends with a question mark — none present, labels all False, 50%",
+        "The input contains a modal verb like 'can' or 'should' — predicate is True on the whole modal family (both classes) and False on the whole copular family; with the 50/50 family split that is 50% agreement / 50% disagreement",
+        "The input is about ability or permission (predicate: contains can/could) — can/could sit in both classes; ~50% disagreement under the 50/50 family split (check)",
+        "The input is shorter than 8 words — matched pairs, 50%",
+        "The input is in the past tense — cross-rule canonical (r8); copular family mixes is/are/was/were symmetrically across classes, ~50%",
+        "The input contains an exclamation mark — cross-rule canonical (r3); none, labels everything False, 50%",
+        "The input mentions an animal — cross-rule canonical (r13); identical word multisets per pair, ~50%"
+      ],
+      "step3_edge_ideas": [
+        "declarative + '?' ('The soup is hot?') — splits 'question' vs 'inverted word order'",
+        "inverted + '.' ('Is the soup hot.')",
+        "wh-question ('Where is the dog')",
+        "embedded question ('She asked if the soup is hot') — declarative order: False",
+        "do-support question ('Does the dog chase the ball')"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {
+        "first_word_pos=verb": [
+          "the sentence starts with an auxiliary or copular verb (is/are/was/were/can/will/should/must/could)"
+        ],
+        "first_word_pos=determiner": [
+          "the sentence starts with an auxiliary or copular verb (is/are/was/were/can/will/should/must/could)"
+        ]
+      },
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "VERB_REGULAR",
+          "NOUN_CONCRETE",
+          "ADJ_PLAIN",
+          "ADVERB_PLACE"
+        ]
+      }
+    },
+    "contains_comparative": {
+      "plan_number": 12,
+      "category": "syntactic",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it contains a word in comparative form — an -er comparative like \"taller\" or an analytic comparative like \"more careful\" — whether that word is used as an adjective or as an adverb. (Form-based, so the comparative-adverb probe ruling below agrees with the canonical text.)\n",
+      "equivalence_class": [
+        "an adjective in comparative degree appears"
+      ],
+      "banned_distractors": [
+        "contains an -er or 'more' adjective form (that IS the rule)",
+        "an adjective is in a higher degree"
+      ],
+      "mc_distractor_seeds": [
+        "The input contains the word 'than' — 25% disagreement by construction",
+        "The input contains a word ending in -er — ~30% disagreement by construction",
+        "The input contains the word 'more' — ~35% disagreement",
+        "The input contains exactly two commas — cross-rule canonical (r26); no commas in this data, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50% (replaces the v2 'compares two things' seed, which duplicated the contains-'than' checking predicate — duplicates within one option set are forbidden, step2_mc_policy)",
+        "The input contains an adjective — both classes do, labels all True, 50%",
+        "The input is about wanting or preferring something — frames balanced, ~50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The last word of the input ends with a vowel letter — cross-rule canonical (r20); final words uncontrolled w.r.t. comparatives, ~50% (builder-checked)",
+        "The input contains an exclamation mark — cross-rule canonical (r3); '!' absent from this data, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%",
+        "The input is in the passive voice — cross-rule canonical (r9); all frames are copular or active transitive, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%"
+      ],
+      "step3_edge_ideas": [
+        "superlative ('The tallest tree fell over') — comparative-adjacent, must be False",
+        "suppletive comparative ('The soup tastes better today')",
+        "'more' as quantifier ('They bought more chairs for the hall')",
+        "comparative adverb ('The new van runs faster')",
+        "lexical comparison without form ('The tower exceeds the church in height')"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "ADJ_COMPARABLE",
+          "ADJ_PLAIN",
+          "ER_NONCOMPARATIVE",
+          "NOUN_CONCRETE",
+          "ADVERB_PLACE"
+        ]
+      }
+    },
+    "mentions_animal": {
+      "plan_number": 13,
+      "category": "semantic",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it mentions an animal — a real, living, non-human animal kind (mammals, birds, fish, insects, etc.).\n",
+      "equivalence_class": [
+        "an animal word appears",
+        "names a creature (non-human)"
+      ],
+      "banned_distractors": [
+        "mentions a creature",
+        "an animal species is named"
+      ],
+      "mc_distractor_seeds": [
+        "The input mentions a pet — wild animals disagree, >= 25% of True items are non-pets (check)",
+        "The input mentions a living thing — plants are ~25% of the False bank, so expected disagreement is only ~12.5% (plant-item share / 2); SPARE CANDIDATE ONLY: usable only if the per-context check passes, and replaced globally otherwise (step2_mc_policy)",
+        "The input mentions something that can move on its own — vehicles+animals: disagrees on vehicle False items, check >= 25%",
+        "The input mentions a farm animal — subset of True, ~25-35% disagreement (check)",
+        "The input is about the outdoors — frames shared, ~50%",
+        "The input contains the letter z — cross-rule canonical (r5); z is rare in both banks, labels ~everything False, ~50% (builder-checked)",
+        "The input contains exactly two commas — cross-rule canonical (r26); no commas, labels everything False, 50%",
+        "The word 'the' appears at least twice — cross-rule canonical (r21); frames shared verbatim, determiner counts identical across classes, ~50%",
+        "The input is in the past tense — cross-rule canonical (r8); frames shared verbatim across classes, ~50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); FRAME_NEUTRAL frames contain no digits, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%",
+        "The input contains an exclamation mark — cross-rule canonical (r3); '!' absent from this data, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%"
+      ],
+      "step3_edge_ideas": [
+        "'dragon' / 'unicorn' (mythical) — splits 'real animal' vs 'animal-like word'",
+        "'dinosaur' (extinct)",
+        "'robot dog' / 'teddy bear' (artifact)",
+        "human role noun ('farmer', 'child')",
+        "animal product ('wool blanket', 'leather chair')",
+        "animal as modifier ('the horse cart stood outside')"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "substitution",
+        "banks": [
+          "ANIMALS",
+          "OBJECTS_PLANTS_VEHICLES",
+          "FRAME_NEUTRAL"
+        ]
+      }
+    },
+    "mentions_color": {
+      "plan_number": 14,
+      "category": "semantic",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it mentions a specific color term (such as red, blue, green, beige).\n",
+      "equivalence_class": [
+        "a color word appears",
+        "something is described by its color"
+      ],
+      "banned_distractors": [
+        "a color is named",
+        "contains a color adjective"
+      ],
+      "mc_distractor_seeds": [
+        "The input mentions the color red — single-color subset, ~42% disagreement on True items (check)",
+        "The input describes how something looks (predicate: contains any visual adjective incl. non-color) — False adjectives qualify too, labels ~all True, 50%",
+        "The input mentions clothing — nouns varied, ~50%",
+        "The input contains an adjective directly before a noun — both classes do, labels all True, 50%",
+        "The input mentions something bright or shiny — no such words, all False, 50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The input mentions an animal — cross-rule canonical (r13); nouns identical across classes, ~50% (builder-checked)",
+        "The input is in the past tense — cross-rule canonical (r8); frames shared, tense symmetric, ~50%"
+      ],
+      "step3_edge_ideas": [
+        "'golden' / 'silver' (material-color boundary)",
+        "'orange' as fruit ('She peeled an orange at lunch')",
+        "'colorful' / 'dark' (non-specific)",
+        "color as noun ('The walls were painted in blue')",
+        "color in compound ('the blackboard hung crooked') — embedded, ruling: not a mention"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "substitution",
+        "banks": [
+          "COLORS",
+          "ADJ_NONCOLOR_MATCHED",
+          "NOUN_CONCRETE"
+        ]
+      }
+    },
+    "positive_sentiment": {
+      "plan_number": 15,
+      "category": "semantic",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it expresses a positive sentiment or opinion, and False iff it expresses a negative one.\n",
+      "equivalence_class": [
+        "the speaker is pleased / the statement is favorable",
+        "complement: True iff not negative (binary data: equivalent)"
+      ],
+      "banned_distractors": [
+        "expresses approval/likes something",
+        "is a good review",
+        "the writer is happy",
+        "is not negative (complement)"
+      ],
+      "mc_distractor_seeds": [
+        "The input is about food or restaurants — topics balanced, ~50%",
+        "The input contains the word 'not' — negator audit caps skew, ~45-55% (check)",
+        "The input is longer than 8 words — length audit, ~50%",
+        "The input describes a past event — mixed tenses both classes, ~50%",
+        "The input mentions other people — ~50%",
+        "The input contains an exclamation mark — cross-rule canonical (r3); banned by style in this rule's data, labels everything False, 50%",
+        "Every word in the input is longer than 3 letters — cross-rule canonical (r30); short function words everywhere, labels everything False, 50%",
+        "The word 'the' appears at least twice — cross-rule canonical (r21); stopword-rate audit keeps classes matched, ~50% (builder-checked)"
+      ],
+      "step3_edge_ideas": [
+        "mixed sentiment ('The food was great but the service was slow')",
+        "neutral factual ('The restaurant is on the corner of Main Street')",
+        "negated positive ('The movie was not bad at all') — litotes",
+        "positive topic, negative stance ('The party was loud and exhausting')",
+        "sarcasm-shaped ('What a perfectly wasted afternoon' — no '!' style)"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "llm_validated",
+        "banks": []
+      }
+    },
+    "food_topic": {
+      "plan_number": 16,
+      "category": "semantic",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff its topic is food or cooking (meals, dishes, ingredients, cooking, eating, restaurants as places to eat), and False iff it is about an unrelated topic.\n",
+      "equivalence_class": [
+        "the sentence is about food/cuisine/eating"
+      ],
+      "banned_distractors": [
+        "is about food or cooking",
+        "mentions something edible",
+        "is about meals"
+      ],
+      "mc_distractor_seeds": [
+        "The input mentions eating or drinking — 27.5% expected disagreement (0.5*0.55) enforced by the 55% no-verb quota; checked per context",
+        "The input mentions a meal time (breakfast/lunch/dinner) — subset of True, >= 25% (check)",
+        "The input is about a restaurant — subset, >= 25% (check)",
+        "The input is about a hobby or pastime — cuts across both, ~50%",
+        "The input mentions something you can buy — shopping in False topics too, check >= 25%",
+        "The input expresses a positive sentiment — cross-rule canonical (r15); both classes sentiment-neutral by construction, labels ~everything False, ~50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); digits rare under the shared style constraints, labels ~everything False, ~50% (builder-checked)",
+        "The word 'the' appears at least twice — cross-rule canonical (r21); stopword-rate audit keeps classes matched, ~50% (builder-checked)"
+      ],
+      "step3_edge_ideas": [
+        "restaurant as location only ('The bus stopped near the new restaurant')",
+        "drink-only ('He brewed strong coffee before the meeting')",
+        "food idiom ('The exam was a piece of cake')",
+        "farming ('The farmer harvested wheat in October')",
+        "kitchen non-food ('She repaired the kitchen cabinet hinge')",
+        "animal eating ('The horse ate hay in the stable') — eating verb, is it food TOPIC?"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "llm_validated",
+        "banks": []
+      }
+    },
+    "contains_first_name": {
+      "plan_number": 17,
+      "category": "semantic",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it contains a person's first name (like Anna or David), and False otherwise — including sentences that contain other capitalized proper nouns such as city, month, or brand names.\n",
+      "equivalence_class": [
+        "mentions a person by name",
+        "a given name appears"
+      ],
+      "banned_distractors": [
+        "mentions a person",
+        "contains someone's name",
+        "a human is referred to by name"
+      ],
+      "mc_distractor_seeds": [
+        "The input contains a capitalized word other than the first word — true for the 70% of frames with a non-initial slot, false for the 30% sentence-initial-slot frames; either way independent of the labels, ~50% disagreement",
+        "The input mentions a city — 50% of False items, 25% disagreement",
+        "The input mentions a month — 20% of False, only 10% disagreement; SPARE CANDIDATE ONLY: usable only if the per-context check passes, replaced globally otherwise (step2_mc_policy)",
+        "The input mentions a woman's name — 50% of True items, 25% disagreement",
+        "The input contains a proper noun — all items, labels all True, 50%",
+        "The input is about a letter or message — frames varied, ~50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The input is in the past tense — cross-rule canonical (r8); frames shared across classes, ~50%",
+        "The second word of the input is capitalized — cross-rule canonical (r22); the proper-noun slot sits at position 2 in a minority of frames, equally in both classes, ~50% (builder-checked)",
+        "The input contains an exclamation mark — cross-rule canonical (r3); '!' absent from this data, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%",
+        "The input contains exactly two commas — cross-rule canonical (r26); no commas in this data, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%"
+      ],
+      "step3_edge_ideas": [
+        "bare surname ('The report from Smith arrived late')",
+        "full name ('Anna Berger was mentioned twice')",
+        "lowercase name-word ('The rose garden was in bloom')",
+        "name-homograph month ('They met June at the station' vs 'They met in June at the station')",
+        "unfamiliar foreign first name ('The letter from Yusuf arrived')",
+        "title + surname ('Doctor Miller was mentioned twice')"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "substitution",
+        "banks": [
+          "FIRST_NAMES",
+          "NONNAME_PROPER",
+          "FRAME_PROPER"
+        ]
+      }
+    },
+    "physically_impossible": {
+      "plan_number": 18,
+      "category": "semantic",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it describes something physically impossible in the real world, and False iff it describes something ordinary and plausible.\n",
+      "equivalence_class": [
+        "the described event could not actually happen",
+        "violates how the physical world works"
+      ],
+      "banned_distractors": [
+        "describes something that could never happen",
+        "is absurd/nonsensical",
+        "is unrealistic",
+        "describes something unusual (agreement > 75% — banned)"
+      ],
+      "mc_distractor_seeds": [
+        "The input mentions an object doing a human action — types b/c/d disagree, >= 25% by type mix",
+        "The input is about magic or fantasy — vocabulary banned, labels all False, 50%",
+        "The input is grammatically incorrect — all grammatical, labels all False, 50%",
+        "The input mentions something dangerous — orthogonal, ~50%",
+        "The input is about household objects — objects in both classes by reuse guard, ~50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The input mentions an animal — cross-rule canonical (r13); animals appear in both classes via the cross-class reuse guard, ~50% (builder-checked)",
+        "The input is in the past tense — cross-rule canonical (r8); tense varies symmetrically across shared frames, ~50%"
+      ],
+      "step3_edge_ideas": [
+        "improbable-but-possible ('The cat opened the refrigerator door')",
+        "fiction-framed impossible ('In the cartoon, the rock ate breakfast')",
+        "metaphorical impossible ('The bad news crushed the whole village')",
+        "technically-possible scale case ('The weightlifter carried the piano upstairs')",
+        "subtle physics ('The candle burned underwater in the open pond')",
+        "category error vs physics ('The idea slept furiously' style — excluded class, where does the model put it?)"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "llm_validated",
+        "banks": [
+          "NOUN_CONCRETE",
+          "VERB_REGULAR"
+        ]
+      }
+    },
+    "first_word_longer_than_last": {
+      "plan_number": 19,
+      "category": "positional",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff its first word has strictly more letters than its last word.\n",
+      "equivalence_class": [
+        "the last word is shorter than the first",
+        "complement phrasing: False iff the last word is at least as long as the first"
+      ],
+      "banned_distractors": [
+        "last word shorter than first",
+        "the first word is the longest word in the sentence (NOT equivalent — middles can be longer — but it never mislabels a False item (first < last there), so agreement = 50% + half the share of True items whose first word beats every middle; expected > 75%: banned)"
+      ],
+      "mc_distractor_seeds": [
+        "The first word has 7 or more letters — marginals matched, ~37% disagreement (check)",
+        "The last word has 4 or fewer letters — same construction, >= 25% (check)",
+        "The first word has more syllables than the last — >= 25% via discordant words (check programmatically with a syllable counter)",
+        "The input starts with a plural word — POS mixed, ~50%",
+        "The input is longer than 8 words — counts matched, ~50%",
+        "The first and last words begin with the same letter — cross-rule canonical (r27); initial letters independent of the length comparison, ~50% (builder-checked)",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); all bank words purely alphabetic, labels everything False, 50%",
+        "The last word of the input ends with a vowel letter — cross-rule canonical (r20); final letters mixed in both classes, ~50% (builder-checked)"
+      ],
+      "step3_edge_ideas": [
+        "exact tie: constructed len(first) == len(last) items ('Drivers waited near the airport', 7/7) -> ruling False (strictly longer)",
+        "syllable-vs-letter conflict items ('Strengths matter in every idea')",
+        "punctuation-attached last word ('... the sofa!') — stripping check",
+        "digit last word ('The crew counted 10') — alphabetic-length ruling makes len=0",
+        "one-word margin near long words (10 vs 9)"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "INITIAL_BY_LENGTH",
+          "FINAL_BY_LENGTH",
+          "NOUN_CONCRETE"
+        ]
+      }
+    },
+    "last_word_ends_with_vowel": {
+      "plan_number": 20,
+      "category": "positional",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff the last letter of its last word is a vowel letter (a, e, i, o, or u); y does not count as a vowel.\n",
+      "equivalence_class": [
+        "the final word ends in a, e, i, o, or u",
+        "the sentence ends with a vowel letter"
+      ],
+      "banned_distractors": [
+        "ends with a/e/i/o/u",
+        "the final letter is a vowel",
+        "does not end with a consonant"
+      ],
+      "mc_distractor_seeds": [
+        "The last word ends with the letter e — 25% disagreement by the non-e quota (threshold-exact; checked per context)",
+        "The last word ends with a vowel sound — silent-e and discordant items, >= 25% (builder-checked)",
+        "The last word is a noun — both classes draw nouns only (rule-20 POS matching), labels everything True, 50%",
+        "The last word ends with the letter y — no y-enders, labels all False, 50%",
+        "The last word is short (5 or fewer letters) — length-matched, ~50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The input is in the past tense — cross-rule canonical (r8); frames shared verbatim, ~50%",
+        "The first word of the input starts with a vowel letter — cross-rule canonical (r7); initial letters uncontrolled w.r.t. final letters, ~50% (builder-checked)",
+        "The input mentions an animal — cross-rule canonical (r13); final-word banks are everyday objects/places, class-balanced, ~50% (builder-checked)"
+      ],
+      "step3_edge_ideas": [
+        "y-ender ('They walked through the city') — the canonical y-stand probe",
+        "silent-e vs sound ('... the table' vs '... the sofa')",
+        "vowel-sound consonant-letter ender ('... the law'? /ɔ/ — letter w: False)",
+        "digit last word ('They counted to 10')",
+        "single-letter last word — hard to style naturally without capitals ('grade A', 'vitamin C'); omitted unless a clean lowercase frame is found",
+        "punctuation after final vowel ('... the sofa!') with rule-3-style append"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {
+        "last_ends_vowel": [
+          "the final word ends in a, e, i, o, or u",
+          "the sentence ends with a vowel letter"
+        ],
+        "last_ends_consonant": [
+          "the final word ends in a, e, i, o, or u",
+          "the sentence ends with a vowel letter"
+        ]
+      },
+      "generation": {
+        "mode": "substitution",
+        "banks": [
+          "TERMINAL_VOWEL",
+          "TERMINAL_CONSONANT"
+        ]
+      }
+    },
+    "the_appears_twice": {
+      "plan_number": 21,
+      "category": "positional",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff the word \"the\" appears at least twice (case-insensitive, so a sentence-initial \"The\" counts).\n",
+      "equivalence_class": [
+        "there are two or more occurrences of 'the'",
+        "'the' occurs multiple times"
+      ],
+      "banned_distractors": [
+        "'the' occurs exactly twice (90% agreement — banned)",
+        "contains 'the' two or more times"
+      ],
+      "mc_distractor_seeds": [
+        "The input contains the word 'the' — labels 1-the False items True, 30% disagreement",
+        "The input begins with 'The' — balanced 50/50 both classes, 50% disagreement",
+        "The input contains at least two articles (counting 'a' and 'the') — False items often have the+a, >= 25% (check per context)",
+        "The input mentions at least two things (predicate: >= 2 nouns) — all items, labels all True, 50%",
+        "The input is longer than 8 words — matched, ~50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The input is in the past tense — cross-rule canonical (r8); frames shared, tense symmetric, ~50%",
+        "The input mentions an animal — cross-rule canonical (r13); noun fillers identical machinery in both classes, ~50%"
+      ],
+      "step3_edge_ideas": [
+        "exactly three 'the' — splits 'at least' vs 'exactly'",
+        "'The ... the ... the' with initial capital counted — case ruling probe",
+        "'theater' + one 'the' — substring trap, must be False",
+        "zero 'the' but two 'a' — article-count vs the-count",
+        "'the the' adjacent-duplicate typo probe (deliberate disfluency, optional)"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {
+        "count_the>=2": [
+          "there are two or more occurrences of 'the'",
+          "'the' occurs multiple times"
+        ]
+      },
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "NOUN_CONCRETE",
+          "VERB_REGULAR",
+          "ADVERB_PLACE"
+        ]
+      }
+    },
+    "second_word_capitalized": {
+      "plan_number": 22,
+      "category": "positional",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff its second word begins with a capital letter.\n",
+      "equivalence_class": [
+        "the second word is a proper noun",
+        "a capitalized word appears in second position"
+      ],
+      "banned_distractors": [
+        "the first two words are capitalized (data-equivalent here: counts as 2 in free-form; banned as multiple-choice distractor — first word is always capitalized)",
+        "the word after the first is a proper noun",
+        "second word starts with a capital"
+      ],
+      "mc_distractor_seeds": [
+        "The input contains a capitalized word after the first word — disagrees on False items with late-position proper nouns, 25%",
+        "The input mentions a person — name share 50% in both slot uses, ~37% (check)",
+        "The second word is a person's name — disagrees on True items with cities/months, 25%",
+        "The input starts with an adverb — adverb openers appear at matched rates in both classes (opener constraint), ~50%",
+        "The input contains a proper noun — labels all True items and the 50% of False items that carry a re-seated proper noun True -> disagrees on those False items, 25%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The input is in the past tense — cross-rule canonical (r8); verbs shared across classes, ~50%",
+        "The input mentions an animal — cross-rule canonical (r13); no animal nouns in the frame banks, labels everything False, 50%",
+        "The input contains an exclamation mark — cross-rule canonical (r3); '!' absent from this data, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%",
+        "The input contains exactly two commas — cross-rule canonical (r26); no commas in this data, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%"
+      ],
+      "step3_edge_ideas": [
+        "capitalized non-proper second word ('They Walked home after dinner') — splits letter-case vs proper-noun reading",
+        "lowercase name second ('Then maria forgot the keys') — both readings False; anchor",
+        "all-caps second word ('They WALKED home after dinner')",
+        "proper noun first AND second ('Anna Maria forgot the keys')",
+        "digit second word ('Gate 7 opened after the delay') — '7' has no letters -> not capitalized -> False"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "FIRST_NAMES",
+          "NONNAME_PROPER",
+          "ADVERB_SENT_INITIAL",
+          "NOUN_CONCRETE",
+          "VERB_REGULAR"
+        ]
+      }
+    },
+    "word_count_geq_8": {
+      "plan_number": 23,
+      "category": "numeric",
+      "length_match_exempt": true,
+      "canonical_articulation": "The input is labeled True iff it contains at least 8 words.\n",
+      "equivalence_class": [
+        "has 8 or more words",
+        "complement: shorter than 8 words is False"
+      ],
+      "banned_distractors": [
+        "at least 7 words (20% disagreement)",
+        "at least 9 words (20%)",
+        "8 or more words",
+        "fewer than 8 words is False (complement)"
+      ],
+      "mc_distractor_seeds": [
+        "The input is longer than 40 characters — discordance quota guarantees >= 25% disagreement",
+        "The input has at least 6 words — labels the 6- and 7-word False items (70% of the False class) True -> 0.5*0.7 = 35% disagreement",
+        "The input contains a comma — no commas, all False, 50%",
+        "The input has more than one clause (predicate: contains 'and'/'while'/'because') — adjunct-built lengths, mostly single-clause both classes, ~50% (check)",
+        "The input mentions more than two things (predicate: >= 3 nouns) — noun counts overlap heavily, check >= 25%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits in this rule's data, labels everything False, 50%",
+        "The input has an even number of words — cross-rule canonical (r25); even = 60% of True ({8,10}) vs 40% of False ({6,4}) -> disagreement 0.5*0.4 + 0.5*0.4 = 40%",
+        "The input mentions an animal — cross-rule canonical (r13); shared vocabulary across classes, ~50%"
+      ],
+      "step3_edge_ideas": [
+        "exactly 8 vs exactly 7 minimal pairs (same base, one adjunct word)",
+        "char-discordant probes (9 short words vs 5 long words) — splits word-count vs char-length learners",
+        "12-14 word items (beyond training range)",
+        "digit token as a word ('The crew counted 7 boxes on the dock' = 8 words)",
+        "off-by-one articulation check items at 7/8/9 exactly"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {
+        "word_count>=8": [
+          "has 8 or more words",
+          "complement: shorter than 8 words is False"
+        ]
+      },
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "NOUN_CONCRETE",
+          "VERB_REGULAR",
+          "ADJ_PLAIN",
+          "ADVERB_PLACE",
+          "SHORT_WORDS_BY_POS"
+        ]
+      }
+    },
+    "contains_number_gt_50": {
+      "plan_number": 24,
+      "category": "numeric",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it contains a number, written in digits, whose value is greater than 50.\n",
+      "equivalence_class": [
+        "a number over 50 appears",
+        "contains a number of at least 51"
+      ],
+      "banned_distractors": [
+        "number of at least 51",
+        "number over fifty",
+        "number greater than 50 (any phrasing)",
+        "number greater than 40/45/55/60 (threshold neighbors, < 25% disagreement — banned)",
+        "mentions a large quantity of objects (predicate: number > 50 AND plural noun — near-truth, agreement > 75%: banned; was a v1 seed)"
+      ],
+      "mc_distractor_seeds": [
+        "The input contains a number greater than 25 — labels False items 26-50 True: ~30% disagreement",
+        "The input contains a round number (multiple of 10) — ~10% of each class, ~45-50% disagreement",
+        "The input contains a two-digit number — all items, labels all True, 50%",
+        "The input contains a number greater than 75 — labels True items 51-75 False: ~26% disagreement (check)",
+        "The input mentions money or prices — no currency words in the data, labels everything False, 50%",
+        "The input has at least 8 words — cross-rule canonical (r23); frames shared and lengths matched, ~50%",
+        "The input is in the past tense — cross-rule canonical (r8); frames shared across classes, ~50%",
+        "The input mentions an animal — cross-rule canonical (r13); unit nouns shared across classes, ~50%"
+      ],
+      "step3_edge_ideas": [
+        "exact boundary: 50 (False) vs 51 (True), same frame",
+        "spelled-out 'sixty' — the digits-vs-value splitter, ground truth False",
+        "three-digit number ('120 chairs') — above training range, True",
+        "two numbers, one each side ('5 drivers moved 80 boxes')",
+        "number with decimal ('They measured 50.5 meters of rope')",
+        "'100' exactly (range generalization)"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "NOUN_CONCRETE",
+          "VERB_REGULAR"
+        ]
+      }
+    },
+    "even_word_count": {
+      "plan_number": 25,
+      "category": "numeric",
+      "length_match_exempt": true,
+      "canonical_articulation": "The input is labeled True iff it contains an even number of words.\n",
+      "equivalence_class": [
+        "the word count is divisible by two",
+        "complement: odd word count is False"
+      ],
+      "banned_distractors": [
+        "odd number of words is True (complement)",
+        "divisible by 2"
+      ],
+      "mc_distractor_seeds": [
+        "The input has at least 8 words — interleaved ranges, ~50% disagreement",
+        "The input has exactly 8 words — agrees on the 30% of True items with 8 words and on all False items; disagrees on the remaining 70% of True -> 0.5*0.7 = 35% disagreement",
+        "The input has fewer than 7 words — ~50%",
+        "The input contains an even digit — no digits, all False, 50%",
+        "The input has an even number of letters — ~independent of word parity, ~50% (programmatic check)",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The input contains exactly two commas — cross-rule canonical (r26); no commas, labels everything False, 50%",
+        "The input is in the past tense — cross-rule canonical (r8); shared core+adjunct machinery, ~50%"
+      ],
+      "step3_edge_ideas": [
+        "minimal pairs differing by one word (6 vs 7) from the same base",
+        "12-word items (even, beyond training)",
+        "counts at the extremes (4 vs 5)",
+        "if any articulation appears at all: disagreement probes against the stated parity"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "NOUN_CONCRETE",
+          "VERB_REGULAR",
+          "ADJ_PLAIN",
+          "ADVERB_PLACE"
+        ]
+      }
+    },
+    "exactly_two_commas": {
+      "plan_number": 26,
+      "category": "numeric",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it contains exactly two commas.\n",
+      "equivalence_class": [
+        "the number of commas is exactly two"
+      ],
+      "banned_distractors": [
+        "two commas (exactly)",
+        "comma count equals 2"
+      ],
+      "mc_distractor_seeds": [
+        "The input contains a comma — every item does, labels all True, 50%",
+        "The input contains at least two commas — disagrees on 3-comma False items, 25% (threshold-exact; builder verifies per context)",
+        "The input contains a list of three or more items — lists in both classes, ~50% (appositive family breaks it)",
+        "The input contains exactly three commas — labels the 3-comma False items True (disagrees) and the 1-comma False items False (agrees); it also disagrees on all True items (labels them False); agreement = only the 1-comma False items = 25% of data, disagreement 75%",
+        "The input is longer than 9 words — matched, ~50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The input mentions food — list items include foods in both classes, ~50% (builder-checked)",
+        "The input has an even number of words — cross-rule canonical (r25); parity uncontrolled w.r.t. comma count, ~50% (builder-checked)"
+      ],
+      "step3_edge_ideas": [
+        "0-comma probe (never trained) — both 'exactly 2' and 'at least 2' say False; anchor",
+        "4-comma probe — splits 'exactly' vs 'at least'",
+        "comma inside a number ('They shipped 1,200 crates, finally') — character-count ruling",
+        "2 commas via different structures than trained (parenthetical 'however')",
+        "semicolon + 2 commas"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "NOUN_CONCRETE",
+          "VERB_REGULAR",
+          "ADJ_PLAIN"
+        ]
+      }
+    },
+    "first_last_same_letter": {
+      "plan_number": 27,
+      "category": "hard_articulation",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff its first word and its last word begin with the same letter (ignoring case).\n",
+      "equivalence_class": [
+        "the initial letters of the first and last words match",
+        "the sentence starts and ends with words sharing their first letter"
+      ],
+      "banned_distractors": [
+        "first and last words share their initial letter (any phrasing)",
+        "the sentence starts and ends with words sharing their first letter (sloppy phrasing of the rule — banned as distractor, counts as 2 in free-form grading)"
+      ],
+      "mc_distractor_seeds": [
+        "The first and last words have the same length — joint length not controlled, ~50% (programmatic check)",
+        "The first and last words END with the same letter — independent of initials, ~50% (check)",
+        "The first word starts with 's' — letter spread, ~55% agreement at best -> >= 45% disagreement",
+        "The sentence is alliterative (>= 3 words share an initial letter) — rejected from data, labels all False, 50%",
+        "The first and last words are the same word — never true in data, labels all False, 50%",
+        "The first and last words rhyme (predicate: same final 2 letters) — ~independent, check >= 25%",
+        "The sentence's first character and last character are the same letter (ignoring case) — a DIFFERENT predicate from the rule (first letter of first word vs LAST letter of LAST word); last letters are uncontrolled w.r.t. the initial-letter match, ~50% (builder-checked); moved here from the v1 banned list",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%"
+      ],
+      "step3_edge_ideas": [
+        "last word ENDS with the first word's initial but starts with a different letter ('Drivers hauled the heavy load': word initials d/l -> rule False; sentence boundary characters D...d -> boundary predicate True) — splits word-initial vs sentence-boundary-character readings",
+        "alliteration probe ('Bakers baked barley bread') — >= 3 shared initials, excluded from training; rule reading True, tests the alliteration distractor",
+        "same first AND last word ('Dogs chase other large dogs')",
+        "match on letter but different sounds ('Cats ... celery' /k/ vs /s/) — letter vs sound reading",
+        "first word digit ('7 trucks arrived before sunrise') — no letters, ruling False"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "NOUN_PLURAL_BY_LETTER",
+          "NOUN_FINAL_BY_LETTER",
+          "ADVERB_PLACE",
+          "NOUN_CONCRETE"
+        ]
+      }
+    },
+    "double_letter_word": {
+      "plan_number": 28,
+      "category": "hard_articulation",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff it contains at least one word with the same letter twice in a row (a double letter, as in \"coffee\" or \"wall\").\n",
+      "equivalence_class": [
+        "some word has two identical adjacent letters",
+        "contains a doubled letter"
+      ],
+      "banned_distractors": [
+        "contains a doubled/repeated adjacent letter",
+        "a word has two of the same letter in a row"
+      ],
+      "mc_distractor_seeds": [
+        "Some word contains the same letter twice, even if not adjacent — disagrees on >= 25% of False (the salt)",
+        "The input contains a word with double 'l' — subset (~15% of True), ~42% disagreement",
+        "The input contains a long word (>= 7 letters) — length-matched substitution, ~50% (check)",
+        "The input mentions food or drink — topic cap, >= 25% (check)",
+        "The input contains a word with three syllables or more — matched banks, ~50% (programmatic syllable check)",
+        "The input contains the letter z — cross-rule canonical (r5); z is rare in both classes (dizzy-type words are not required), labels ~everything False, ~50% (builder-checked)",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The input is in the past tense — cross-rule canonical (r8); base sentences shared, ~50%"
+      ],
+      "step3_edge_ideas": [
+        "nonadjacent-repeat-only probes ('window', 'banana') — the adjacent-vs-anywhere splitter",
+        "double letter in a function word ('They had been outside') — trained-vocab-gap probe",
+        "double letter spanning morphemes ('bookkeeper' has oo+kk+ee; 'unnamed' nn)",
+        "two double-letter words in one sentence",
+        "rare double types ('aa' in 'bazaar', 'zz' in 'puzzle' — overlaps rule 5 vocab, fine in probes)"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "substitution",
+        "banks": [
+          "DOUBLE_WORDS",
+          "NONADJ_REPEAT_WORDS",
+          "NOUN_CONCRETE",
+          "VERB_REGULAR",
+          "ADJ_PLAIN"
+        ]
+      }
+    },
+    "first_two_words_alphabetical": {
+      "plan_number": 29,
+      "category": "hard_articulation",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff its first word comes before its second word in alphabetical order (comparing the words letter by letter, ignoring case).\n",
+      "equivalence_class": [
+        "the first two words are in dictionary order",
+        "word one alphabetically precedes word two"
+      ],
+      "banned_distractors": [
+        "first two words in dictionary/alphabetical order (any phrasing)",
+        "word 2's initial comes later in the alphabet than word 1's (initial-only variant — NOT extensionally equivalent: it disagrees exactly on same-initial True items decided at letter 2, <= 5% of data, so agreement ~95% (review quoted 90%); banned as distractor, graded 1 in free-form, split in step 3)"
+      ],
+      "mc_distractor_seeds": [
+        "The first word's initial letter is in the first half of the alphabet (a-m) — windowed pairs keep this near chance, ~40-50% disagreement (check)",
+        "The first word is shorter than the second word — length uncontrolled relative to alphabet, ~50% (check)",
+        "The first two words start with the same letter — <= 10% of items, labels ~all False, ~50%",
+        "The first two words start with adjacent letters of the alphabet — windowing makes many CLOSE but not adjacent; disagreement >= 25% (check)",
+        "The input starts with an adjective — ALL items do, labels all True, 50%",
+        "The second word is a plural noun — all items, 50%",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%",
+        "The first and last words begin with the same letter — cross-rule canonical (r27); last words uncontrolled w.r.t. the first-two-word order, ~50% (builder-checked)"
+      ],
+      "step3_edge_ideas": [
+        "same-initial pairs decided at position 2 ('Brave bakers...' vs 'Broad bakers...') — splits initial-letter vs full-lexicographic readings",
+        "identical first two words — unnatural in English; omitted unless a clean case-variant probe is found",
+        "near-tie pairs sharing 3+ initial letters (constructed pairs like 'Carpets carpenters...')",
+        "pairs spanning the windowing gap (b vs w) — far pairs, generalization",
+        "noun-verb opening ('Boxes carried...') — does the rule transfer off the Adj-Noun template",
+        "case trap ('apple Boxes ...') — violates sentence-case style, probed anyway for case-insensitivity"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "ADJ_BY_LETTER",
+          "NOUN_PLURAL_BY_LETTER",
+          "VERB_REGULAR",
+          "ADVERB_PLACE"
+        ]
+      }
+    },
+    "all_words_longer_than_3": {
+      "plan_number": 30,
+      "category": "hard_articulation",
+      "length_match_exempt": false,
+      "canonical_articulation": "The input is labeled True iff every word in it has more than 3 letters (no word of 1, 2, or 3 letters appears).\n",
+      "equivalence_class": [
+        "no word has 3 or fewer letters",
+        "there are no short words (3 letters or fewer)",
+        "complement: False iff some word has at most 3 letters"
+      ],
+      "banned_distractors": [
+        "no word has 3 letters or fewer",
+        "contains no short words (<= 3 letters)",
+        "every word has at least 4 letters",
+        "some word has at most 3 letters (complement)"
+      ],
+      "mc_distractor_seeds": [
+        "Every word has more than 4 letters — disagrees on the >= 60% of True items containing a 4-letter word: 0.5*0.6 = 30% disagreement (the FINAL 60% quota; 50% would land exactly on the 25% floor)",
+        "The input contains the word 'the' — predicate is False on every True item (article-free) -> disagrees on all True (50%); on False items it agrees except the ~5% carrying 'the' via the article salt -> ~52% total disagreement",
+        "The input contains no articles (a/an/the) — articles in only 10% of False: labels the other 90% of False True -> 45% disagreement",
+        "The average word length is at least 5 letters — discordance quota, >= 25%",
+        "The input has fewer than 8 words — counts matched, ~50%",
+        "Every word is a plural noun or a verb — True items contain adjectives/preps too, labels most items False, >= 25% (check)",
+        "The input contains a digit (0-9) — cross-rule canonical (r2); numerals are spelled out, labels everything False, 50%",
+        "The input mentions an animal — cross-rule canonical (r13); animal nouns (wolves, rabbits) appear in both classes via shared bases, ~50% (builder-checked)"
+      ],
+      "step3_edge_ideas": [
+        "exact-boundary probes: one 3-letter word vs one 4-letter word in the same frame ('two' vs 'nine')",
+        "all words exactly 4 letters — True, but low avg-length: splits threshold vs 'long words' readings",
+        "no-articles-vs-length splitter: the DEFAULT False construction already splits the readings (article-free with one short non-article word: length reading says False, 'contains no articles' reading says True); an 'an'-among-9-letter-words probe is False under BOTH readings and serves as an anchor",
+        "digit token probe ('Hungry wolves chased 10 frightened rabbits')",
+        "hyphenated word ('well-known') — one word, alphabetic length 9 -> True-compatible; tokenizer ruling probe",
+        "threshold-shift probes for off-by-one articulations ('longer than 2/4 letters')"
+      ],
+      "battery_exemptions": [],
+      "equiv_keys": {},
+      "generation": {
+        "mode": "template_slot",
+        "banks": [
+          "LONG_ONLY_VOCAB",
+          "SHORT_WORDS_BY_POS"
+        ]
+      }
+    }
+  }
+}

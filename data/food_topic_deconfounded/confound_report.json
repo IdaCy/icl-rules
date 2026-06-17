@@ -1,0 +1,1011 @@
+{
+  "n_items": 380,
+  "n_true": 190,
+  "n_false": 190,
+  "is_llm_rule": true,
+  "class_conditional": {
+    "true": {
+      "n": 190,
+      "word_count_mean": 6.742105263157895,
+      "word_count_sd": 0.43747576110139696,
+      "char_count_mean": 37.37894736842105,
+      "char_count_sd": 3.461605795211298,
+      "stopword_rate": 0.3864168618266979,
+      "comma_rate": 0.0,
+      "capitalized_word_rate": 0.1483216237314598
+    },
+    "false": {
+      "n": 190,
+      "word_count_mean": 6.752631578947368,
+      "word_count_sd": 0.4314826593486227,
+      "char_count_mean": 37.636842105263156,
+      "char_count_sd": 3.4411917345618246,
+      "stopword_rate": 0.3842556508183944,
+      "comma_rate": 0.0,
+      "capitalized_word_rate": 0.1480904130943102
+    }
+  },
+  "word_count_mean_abs_diff": 0.010526315789473273,
+  "length_match_tolerance": 1.0,
+  "length_match_exempt": false,
+  "length_match_ok": true,
+  "top_skewed_tokens": [
+    {
+      "token": "bread",
+      "true_count": 20,
+      "false_count": 0,
+      "skew": 20
+    },
+    {
+      "token": "brush",
+      "true_count": 0,
+      "false_count": 20,
+      "skew": 20
+    },
+    {
+      "token": "burrito",
+      "true_count": 20,
+      "false_count": 0,
+      "skew": 20
+    },
+    {
+      "token": "camera",
+      "true_count": 0,
+      "false_count": 20,
+      "skew": 20
+    },
+    {
+      "token": "helmet",
+      "true_count": 0,
+      "false_count": 20,
+      "skew": 20
+    },
+    {
+      "token": "omelet",
+      "true_count": 20,
+      "false_count": 0,
+      "skew": 20
+    },
+    {
+      "token": "rice",
+      "true_count": 20,
+      "false_count": 0,
+      "skew": 20
+    },
+    {
+      "token": "soup",
+      "true_count": 20,
+      "false_count": 0,
+      "skew": 20
+    },
+    {
+      "token": "suitcase",
+      "true_count": 0,
+      "false_count": 20,
+      "skew": 20
+    },
+    {
+      "token": "trophy",
+      "true_count": 0,
+      "false_count": 20,
+      "skew": 20
+    },
+    {
+      "token": "violin",
+      "true_count": 0,
+      "false_count": 20,
+      "skew": 20
+    },
+    {
+      "token": "wallet",
+      "true_count": 0,
+      "false_count": 20,
+      "skew": 20
+    },
+    {
+      "token": "yogurt",
+      "true_count": 20,
+      "false_count": 0,
+      "skew": 20
+    },
+    {
+      "token": "muffin",
+      "true_count": 19,
+      "false_count": 0,
+      "skew": 19
+    },
+    {
+      "token": "ticket",
+      "true_count": 0,
+      "false_count": 19,
+      "skew": 19
+    },
+    {
+      "token": "lamp",
+      "true_count": 19,
+      "false_count": 37,
+      "skew": 18
+    },
+    {
+      "token": "pancake",
+      "true_count": 18,
+      "false_count": 0,
+      "skew": 18
+    },
+    {
+      "token": "spinach",
+      "true_count": 18,
+      "false_count": 0,
+      "skew": 18
+    },
+    {
+      "token": "salmon",
+      "true_count": 14,
+      "false_count": 0,
+      "skew": 14
+    },
+    {
+      "token": "lantern",
+      "true_count": 0,
+      "false_count": 10,
+      "skew": 10
+    }
+  ],
+  "one_sided_high_freq_tokens": [
+    {
+      "token": "bread",
+      "overall_freq": 0.05263157894736842,
+      "doc_count": 20,
+      "true_count": 20,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "brush",
+      "overall_freq": 0.05263157894736842,
+      "doc_count": 20,
+      "true_count": 0,
+      "false_count": 20,
+      "in_true": false,
+      "in_false": true
+    },
+    {
+      "token": "burrito",
+      "overall_freq": 0.05263157894736842,
+      "doc_count": 20,
+      "true_count": 20,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "camera",
+      "overall_freq": 0.05263157894736842,
+      "doc_count": 20,
+      "true_count": 0,
+      "false_count": 20,
+      "in_true": false,
+      "in_false": true
+    },
+    {
+      "token": "helmet",
+      "overall_freq": 0.05263157894736842,
+      "doc_count": 20,
+      "true_count": 0,
+      "false_count": 20,
+      "in_true": false,
+      "in_false": true
+    },
+    {
+      "token": "omelet",
+      "overall_freq": 0.05263157894736842,
+      "doc_count": 20,
+      "true_count": 20,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "rice",
+      "overall_freq": 0.05263157894736842,
+      "doc_count": 20,
+      "true_count": 20,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "soup",
+      "overall_freq": 0.05263157894736842,
+      "doc_count": 20,
+      "true_count": 20,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "suitcase",
+      "overall_freq": 0.05263157894736842,
+      "doc_count": 20,
+      "true_count": 0,
+      "false_count": 20,
+      "in_true": false,
+      "in_false": true
+    },
+    {
+      "token": "trophy",
+      "overall_freq": 0.05263157894736842,
+      "doc_count": 20,
+      "true_count": 0,
+      "false_count": 20,
+      "in_true": false,
+      "in_false": true
+    },
+    {
+      "token": "violin",
+      "overall_freq": 0.05263157894736842,
+      "doc_count": 20,
+      "true_count": 0,
+      "false_count": 20,
+      "in_true": false,
+      "in_false": true
+    },
+    {
+      "token": "wallet",
+      "overall_freq": 0.05263157894736842,
+      "doc_count": 20,
+      "true_count": 0,
+      "false_count": 20,
+      "in_true": false,
+      "in_false": true
+    },
+    {
+      "token": "yogurt",
+      "overall_freq": 0.05263157894736842,
+      "doc_count": 20,
+      "true_count": 20,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "muffin",
+      "overall_freq": 0.05,
+      "doc_count": 19,
+      "true_count": 19,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "ticket",
+      "overall_freq": 0.05,
+      "doc_count": 19,
+      "true_count": 0,
+      "false_count": 19,
+      "in_true": false,
+      "in_false": true
+    },
+    {
+      "token": "pancake",
+      "overall_freq": 0.04736842105263158,
+      "doc_count": 18,
+      "true_count": 18,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "spinach",
+      "overall_freq": 0.04736842105263158,
+      "doc_count": 18,
+      "true_count": 18,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    },
+    {
+      "token": "salmon",
+      "overall_freq": 0.03684210526315789,
+      "doc_count": 14,
+      "true_count": 14,
+      "false_count": 0,
+      "in_true": true,
+      "in_false": false
+    }
+  ],
+  "generic_probe_battery": [
+    {
+      "predicate": "word_count>=5",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=6",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=7",
+      "agreement": 0.49473684210526314,
+      "score": 0.5052631578947369,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=8",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=9",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=10",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "char_count>=35",
+      "agreement": 0.4868421052631579,
+      "score": 0.513157894736842,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "char_count>=40",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "char_count>=45",
+      "agreement": 0.49736842105263157,
+      "score": 0.5026315789473684,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_the",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_a",
+      "agreement": 0.5026315789473684,
+      "score": 0.5026315789473684,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_and",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "count_the>=2",
+      "agreement": 0.49736842105263157,
+      "score": 0.5026315789473684,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_starts_vowel",
+      "agreement": 0.5026315789473684,
+      "score": 0.5026315789473684,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_starts_consonant",
+      "agreement": 0.49736842105263157,
+      "score": 0.5026315789473684,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_ends_vowel",
+      "agreement": 0.5026315789473684,
+      "score": 0.5026315789473684,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_ends_consonant",
+      "agreement": 0.49736842105263157,
+      "score": 0.5026315789473684,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_digit",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_comma",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=4",
+      "agreement": 0.5078947368421053,
+      "score": 0.5078947368421053,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=5",
+      "agreement": 0.5026315789473684,
+      "score": 0.5026315789473684,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=6",
+      "agreement": 0.5026315789473684,
+      "score": 0.5026315789473684,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=7",
+      "agreement": 0.5026315789473684,
+      "score": 0.5026315789473684,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=8",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_word_len<=3",
+      "agreement": 0.49736842105263157,
+      "score": 0.5026315789473684,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_word_len<=4",
+      "agreement": 0.4921052631578947,
+      "score": 0.5078947368421053,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_word_len<=5",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_word_len<=6",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_letter_bucket_a-f",
+      "agreement": 0.5026315789473684,
+      "score": 0.5026315789473684,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_letter_bucket_g-m",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_letter_bucket_n-s",
+      "agreement": 0.5026315789473684,
+      "score": 0.5026315789473684,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_letter_bucket_t-z",
+      "agreement": 0.49473684210526314,
+      "score": 0.5052631578947369,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "nonfirst_word_capitalized",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "all_lowercase",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_pos=noun",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=verb",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=adjective",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=adverb",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=pronoun",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=determiner",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    }
+  ],
+  "battery_violations": [],
+  "battery_ok": true,
+  "overall_pass": true,
+  "audit_thresholds": {
+    "content_audit_applied": true,
+    "checks": {
+      "word_count_mean_abs_diff": {
+        "value": 0.010526315789473273,
+        "threshold": 1.0,
+        "passes": true,
+        "hard_gate": true
+      },
+      "stopword_rate_abs_diff": {
+        "value": 0.0021612110083034652,
+        "threshold": 0.03,
+        "passes": true,
+        "hard_gate": true
+      },
+      "comma_rate_abs_diff": {
+        "value": 0.0,
+        "threshold": 0.05,
+        "passes": true,
+        "hard_gate": true
+      },
+      "capitalized_word_rate_abs_diff": {
+        "value": 0.00023121063714959256,
+        "threshold": 0.05,
+        "passes": true,
+        "hard_gate": true
+      },
+      "negator_rate_abs_diff": {
+        "value": 0.0,
+        "threshold": 0.05,
+        "true_rate": 0.0,
+        "false_rate": 0.0,
+        "passes": true,
+        "hard_gate": true
+      },
+      "topic_balance": {
+        "value": {
+          "true_topic_shares": {
+            "tasting and flavour": 0.1736842105263158,
+            "cooking at home": 0.16842105263157894,
+            "restaurants": 0.16842105263157894,
+            "ingredients": 0.1631578947368421,
+            "baking": 0.16842105263157894,
+            "meals": 0.15789473684210525
+          },
+          "false_topic_shares": {
+            "music": 0.1631578947368421,
+            "gardening flowers": 0.16842105263157894,
+            "sports": 0.1631578947368421,
+            "weather": 0.15789473684210525,
+            "transport": 0.1736842105263158,
+            "work": 0.1736842105263158
+          },
+          "max_false_topic_share": 0.1736842105263158,
+          "max_true_topic_share": 0.1736842105263158,
+          "false_topics_over_25pct": {},
+          "true_topics_over_25pct": {},
+          "threshold": 0.25,
+          "passes": true
+        },
+        "threshold": 0.25,
+        "passes": true,
+        "hard_gate": true
+      }
+    },
+    "judge_skewed_tokens": [
+      {
+        "token": "bread",
+        "true_count": 20,
+        "false_count": 0,
+        "frequency": 0.05263157894736842,
+        "ratio": null
+      },
+      {
+        "token": "brush",
+        "true_count": 0,
+        "false_count": 20,
+        "frequency": 0.05263157894736842,
+        "ratio": null
+      },
+      {
+        "token": "burrito",
+        "true_count": 20,
+        "false_count": 0,
+        "frequency": 0.05263157894736842,
+        "ratio": null
+      },
+      {
+        "token": "camera",
+        "true_count": 0,
+        "false_count": 20,
+        "frequency": 0.05263157894736842,
+        "ratio": null
+      },
+      {
+        "token": "helmet",
+        "true_count": 0,
+        "false_count": 20,
+        "frequency": 0.05263157894736842,
+        "ratio": null
+      },
+      {
+        "token": "omelet",
+        "true_count": 20,
+        "false_count": 0,
+        "frequency": 0.05263157894736842,
+        "ratio": null
+      },
+      {
+        "token": "rice",
+        "true_count": 20,
+        "false_count": 0,
+        "frequency": 0.05263157894736842,
+        "ratio": null
+      },
+      {
+        "token": "soup",
+        "true_count": 20,
+        "false_count": 0,
+        "frequency": 0.05263157894736842,
+        "ratio": null
+      },
+      {
+        "token": "suitcase",
+        "true_count": 0,
+        "false_count": 20,
+        "frequency": 0.05263157894736842,
+        "ratio": null
+      },
+      {
+        "token": "trophy",
+        "true_count": 0,
+        "false_count": 20,
+        "frequency": 0.05263157894736842,
+        "ratio": null
+      },
+      {
+        "token": "violin",
+        "true_count": 0,
+        "false_count": 20,
+        "frequency": 0.05263157894736842,
+        "ratio": null
+      },
+      {
+        "token": "wallet",
+        "true_count": 0,
+        "false_count": 20,
+        "frequency": 0.05263157894736842,
+        "ratio": null
+      },
+      {
+        "token": "yogurt",
+        "true_count": 20,
+        "false_count": 0,
+        "frequency": 0.05263157894736842,
+        "ratio": null
+      },
+      {
+        "token": "muffin",
+        "true_count": 19,
+        "false_count": 0,
+        "frequency": 0.05,
+        "ratio": null
+      },
+      {
+        "token": "ticket",
+        "true_count": 0,
+        "false_count": 19,
+        "frequency": 0.05,
+        "ratio": null
+      },
+      {
+        "token": "pancake",
+        "true_count": 18,
+        "false_count": 0,
+        "frequency": 0.04736842105263158,
+        "ratio": null
+      },
+      {
+        "token": "spinach",
+        "true_count": 18,
+        "false_count": 0,
+        "frequency": 0.04736842105263158,
+        "ratio": null
+      },
+      {
+        "token": "salmon",
+        "true_count": 14,
+        "false_count": 0,
+        "frequency": 0.03684210526315789,
+        "ratio": null
+      },
+      {
+        "token": "lantern",
+        "true_count": 0,
+        "false_count": 10,
+        "frequency": 0.02631578947368421,
+        "ratio": null
+      }
+    ],
+    "judge_tokens_missing_from_class": [
+      {
+        "token": "bread",
+        "overall_freq": 0.05263157894736842,
+        "doc_count": 20,
+        "true_count": 20,
+        "false_count": 0,
+        "in_true": true,
+        "in_false": false
+      },
+      {
+        "token": "brush",
+        "overall_freq": 0.05263157894736842,
+        "doc_count": 20,
+        "true_count": 0,
+        "false_count": 20,
+        "in_true": false,
+        "in_false": true
+      },
+      {
+        "token": "burrito",
+        "overall_freq": 0.05263157894736842,
+        "doc_count": 20,
+        "true_count": 20,
+        "false_count": 0,
+        "in_true": true,
+        "in_false": false
+      },
+      {
+        "token": "camera",
+        "overall_freq": 0.05263157894736842,
+        "doc_count": 20,
+        "true_count": 0,
+        "false_count": 20,
+        "in_true": false,
+        "in_false": true
+      },
+      {
+        "token": "helmet",
+        "overall_freq": 0.05263157894736842,
+        "doc_count": 20,
+        "true_count": 0,
+        "false_count": 20,
+        "in_true": false,
+        "in_false": true
+      },
+      {
+        "token": "omelet",
+        "overall_freq": 0.05263157894736842,
+        "doc_count": 20,
+        "true_count": 20,
+        "false_count": 0,
+        "in_true": true,
+        "in_false": false
+      },
+      {
+        "token": "rice",
+        "overall_freq": 0.05263157894736842,
+        "doc_count": 20,
+        "true_count": 20,
+        "false_count": 0,
+        "in_true": true,
+        "in_false": false
+      },
+      {
+        "token": "soup",
+        "overall_freq": 0.05263157894736842,
+        "doc_count": 20,
+        "true_count": 20,
+        "false_count": 0,
+        "in_true": true,
+        "in_false": false
+      },
+      {
+        "token": "suitcase",
+        "overall_freq": 0.05263157894736842,
+        "doc_count": 20,
+        "true_count": 0,
+        "false_count": 20,
+        "in_true": false,
+        "in_false": true
+      },
+      {
+        "token": "trophy",
+        "overall_freq": 0.05263157894736842,
+        "doc_count": 20,
+        "true_count": 0,
+        "false_count": 20,
+        "in_true": false,
+        "in_false": true
+      },
+      {
+        "token": "violin",
+        "overall_freq": 0.05263157894736842,
+        "doc_count": 20,
+        "true_count": 0,
+        "false_count": 20,
+        "in_true": false,
+        "in_false": true
+      },
+      {
+        "token": "wallet",
+        "overall_freq": 0.05263157894736842,
+        "doc_count": 20,
+        "true_count": 0,
+        "false_count": 20,
+        "in_true": false,
+        "in_false": true
+      },
+      {
+        "token": "yogurt",
+        "overall_freq": 0.05263157894736842,
+        "doc_count": 20,
+        "true_count": 20,
+        "false_count": 0,
+        "in_true": true,
+        "in_false": false
+      },
+      {
+        "token": "muffin",
+        "overall_freq": 0.05,
+        "doc_count": 19,
+        "true_count": 19,
+        "false_count": 0,
+        "in_true": true,
+        "in_false": false
+      },
+      {
+        "token": "ticket",
+        "overall_freq": 0.05,
+        "doc_count": 19,
+        "true_count": 0,
+        "false_count": 19,
+        "in_true": false,
+        "in_false": true
+      },
+      {
+        "token": "pancake",
+        "overall_freq": 0.04736842105263158,
+        "doc_count": 18,
+        "true_count": 18,
+        "false_count": 0,
+        "in_true": true,
+        "in_false": false
+      },
+      {
+        "token": "spinach",
+        "overall_freq": 0.04736842105263158,
+        "doc_count": 18,
+        "true_count": 18,
+        "false_count": 0,
+        "in_true": true,
+        "in_false": false
+      },
+      {
+        "token": "salmon",
+        "overall_freq": 0.03684210526315789,
+        "doc_count": 14,
+        "true_count": 14,
+        "false_count": 0,
+        "in_true": true,
+        "in_false": false
+      }
+    ],
+    "judge_note": "judge_skewed_tokens and judge_tokens_missing_from_class are reported for the dataset JUDGE to confirm each token is rule-bearing (evaluative/food-denoting); an incidental skewed/one-sided token triggers targeted regeneration. These are NOT programmatic gates.",
+    "audit_hard_pass": true
+  },
+  "audit_hard_pass": true
+}

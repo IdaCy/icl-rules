@@ -1,0 +1,480 @@
+{
+  "n_items": 440,
+  "n_true": 220,
+  "n_false": 220,
+  "is_llm_rule": false,
+  "class_conditional": {
+    "true": {
+      "n": 220,
+      "word_count_mean": 11.0,
+      "word_count_sd": 0.0,
+      "char_count_mean": 59.486363636363635,
+      "char_count_sd": 2.9931429900152926,
+      "stopword_rate": 0.4099173553719008,
+      "comma_rate": 0.0,
+      "capitalized_word_rate": 0.09090909090909091
+    },
+    "false": {
+      "n": 220,
+      "word_count_mean": 11.0,
+      "word_count_sd": 0.0,
+      "char_count_mean": 59.60454545454545,
+      "char_count_sd": 3.154070569442731,
+      "stopword_rate": 0.40826446280991735,
+      "comma_rate": 0.0,
+      "capitalized_word_rate": 0.09090909090909091
+    }
+  },
+  "word_count_mean_abs_diff": 0.0,
+  "length_match_tolerance": 0.2,
+  "length_match_exempt": false,
+  "length_match_ok": true,
+  "top_skewed_tokens": [
+    {
+      "token": "her",
+      "true_count": 80,
+      "false_count": 175,
+      "skew": 95
+    },
+    {
+      "token": "his",
+      "true_count": 79,
+      "false_count": 167,
+      "skew": 88
+    },
+    {
+      "token": "the",
+      "true_count": 220,
+      "false_count": 137,
+      "skew": 83
+    },
+    {
+      "token": "this",
+      "true_count": 60,
+      "false_count": 78,
+      "skew": 18
+    },
+    {
+      "token": "beside",
+      "true_count": 63,
+      "false_count": 55,
+      "skew": 8
+    },
+    {
+      "token": "butter",
+      "true_count": 8,
+      "false_count": 15,
+      "skew": 7
+    },
+    {
+      "token": "a",
+      "true_count": 71,
+      "false_count": 65,
+      "skew": 6
+    },
+    {
+      "token": "behind",
+      "true_count": 53,
+      "false_count": 47,
+      "skew": 6
+    },
+    {
+      "token": "church",
+      "true_count": 1,
+      "false_count": 7,
+      "skew": 6
+    },
+    {
+      "token": "outside",
+      "true_count": 18,
+      "false_count": 24,
+      "skew": 6
+    },
+    {
+      "token": "their",
+      "true_count": 69,
+      "false_count": 63,
+      "skew": 6
+    },
+    {
+      "token": "above",
+      "true_count": 32,
+      "false_count": 37,
+      "skew": 5
+    },
+    {
+      "token": "belt",
+      "true_count": 10,
+      "false_count": 5,
+      "skew": 5
+    },
+    {
+      "token": "grass",
+      "true_count": 5,
+      "false_count": 10,
+      "skew": 5
+    },
+    {
+      "token": "house",
+      "true_count": 4,
+      "false_count": 9,
+      "skew": 5
+    },
+    {
+      "token": "past",
+      "true_count": 35,
+      "false_count": 40,
+      "skew": 5
+    },
+    {
+      "token": "pocket",
+      "true_count": 12,
+      "false_count": 7,
+      "skew": 5
+    },
+    {
+      "token": "river",
+      "true_count": 7,
+      "false_count": 2,
+      "skew": 5
+    },
+    {
+      "token": "seed",
+      "true_count": 3,
+      "false_count": 8,
+      "skew": 5
+    },
+    {
+      "token": "shirt",
+      "true_count": 3,
+      "false_count": 8,
+      "skew": 5
+    }
+  ],
+  "one_sided_high_freq_tokens": [],
+  "generic_probe_battery": [
+    {
+      "predicate": "word_count>=5",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=6",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=7",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=8",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=9",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "word_count>=10",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "char_count>=35",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "char_count>=40",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "char_count>=45",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_the",
+      "agreement": 0.6886363636363636,
+      "score": 0.6886363636363636,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_a",
+      "agreement": 0.5136363636363637,
+      "score": 0.5136363636363637,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_and",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "count_the>=2",
+      "agreement": 1.0,
+      "score": 1.0,
+      "exempt": true,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_starts_vowel",
+      "agreement": 0.5181818181818182,
+      "score": 0.5181818181818182,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_starts_consonant",
+      "agreement": 0.4818181818181818,
+      "score": 0.5181818181818182,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_ends_vowel",
+      "agreement": 0.5045454545454545,
+      "score": 0.5045454545454545,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_ends_consonant",
+      "agreement": 0.4954545454545455,
+      "score": 0.5045454545454545,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_digit",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "contains_comma",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=4",
+      "agreement": 0.5045454545454545,
+      "score": 0.5045454545454545,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=5",
+      "agreement": 0.5068181818181818,
+      "score": 0.5068181818181818,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=6",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=7",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_len>=8",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_word_len<=3",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_word_len<=4",
+      "agreement": 0.5136363636363637,
+      "score": 0.5136363636363637,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_word_len<=5",
+      "agreement": 0.5181818181818182,
+      "score": 0.5181818181818182,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "last_word_len<=6",
+      "agreement": 0.5045454545454545,
+      "score": 0.5045454545454545,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_letter_bucket_a-f",
+      "agreement": 0.5181818181818182,
+      "score": 0.5181818181818182,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_letter_bucket_g-m",
+      "agreement": 0.5113636363636364,
+      "score": 0.5113636363636364,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_letter_bucket_n-s",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_letter_bucket_t-z",
+      "agreement": 0.47045454545454546,
+      "score": 0.5295454545454545,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "nonfirst_word_capitalized",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "all_lowercase",
+      "agreement": 0.5,
+      "score": 0.5,
+      "exempt": false,
+      "passes": true,
+      "skipped": false
+    },
+    {
+      "predicate": "first_word_pos=noun",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=verb",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=adjective",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=adverb",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=pronoun",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    },
+    {
+      "predicate": "first_word_pos=determiner",
+      "agreement": null,
+      "score": null,
+      "exempt": false,
+      "passes": true,
+      "skipped": true
+    }
+  ],
+  "battery_violations": [],
+  "battery_ok": true,
+  "overall_pass": true
+}
