@@ -1,0 +1,593 @@
+{
+  "model": "gpt-4.1-mini",
+  "arms": [
+    "examples",
+    "no_examples"
+  ],
+  "rules": {
+    "all_words_longer_than_3_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 1,
+        "accuracy": 0.08333333333333333,
+        "wilson_ci_95": [
+          0.014865094404917095,
+          0.35387991114111694
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "cross:contains_digit",
+        "modal_count": 3,
+        "modal_is_true": false,
+        "true_predicate_key": "true:all_words_longer_than_3",
+        "choice_distribution": {
+          "cross:contains_digit": 3,
+          "word_the": 2,
+          "avg_word_len_ge_5": 3,
+          "all_plural_noun_or_verb": 1,
+          "wc_lt_8": 2,
+          "true:all_words_longer_than_3": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:all_words_longer_than_3",
+        "choice_distribution": {}
+      }
+    },
+    "contains_first_name_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 10,
+        "accuracy": 0.8333333333333334,
+        "wilson_ci_95": [
+          0.5519691377470267,
+          0.9530348578161462
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:contains_first_name",
+        "modal_count": 10,
+        "modal_is_true": true,
+        "true_predicate_key": "true:contains_first_name",
+        "choice_distribution": {
+          "true:contains_first_name": 10,
+          "woman_name": 1,
+          "city": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:contains_first_name",
+        "choice_distribution": {}
+      }
+    },
+    "even_word_count_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 1,
+        "accuracy": 0.08333333333333333,
+        "wilson_ci_95": [
+          0.014865094404917095,
+          0.35387991114111694
+        ],
+        "n_parse_failures": 9,
+        "modal_predicate_key": "true:even_word_count",
+        "modal_count": 1,
+        "modal_is_true": true,
+        "true_predicate_key": "true:even_word_count",
+        "choice_distribution": {
+          "true:even_word_count": 1,
+          "cross:contains_digit": 1,
+          "cross:exactly_two_commas": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:even_word_count",
+        "choice_distribution": {}
+      }
+    },
+    "first_two_words_alphabetical_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 2,
+        "accuracy": 0.16666666666666666,
+        "wilson_ci_95": [
+          0.04696514218385378,
+          0.4480308622529734
+        ],
+        "n_parse_failures": 2,
+        "modal_predicate_key": "starts_adj",
+        "modal_count": 3,
+        "modal_is_true": false,
+        "true_predicate_key": "true:first_two_words_alphabetical",
+        "choice_distribution": {
+          "first_two_adjacent_initials": 1,
+          "true:first_two_words_alphabetical": 2,
+          "first_len_lt_second": 1,
+          "second_plural_noun": 1,
+          "starts_adj": 3,
+          "first_two_same_initial": 1,
+          "cross:contains_digit": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:first_two_words_alphabetical",
+        "choice_distribution": {}
+      }
+    },
+    "first_word_longer_than_last_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 2,
+        "accuracy": 0.16666666666666666,
+        "wilson_ci_95": [
+          0.04696514218385378,
+          0.4480308622529734
+        ],
+        "n_parse_failures": 1,
+        "modal_predicate_key": "starts_plural",
+        "modal_count": 5,
+        "modal_is_true": false,
+        "true_predicate_key": "true:first_word_longer_than_last",
+        "choice_distribution": {
+          "starts_plural": 5,
+          "first_syllables_gt_last": 1,
+          "first_len_ge_7": 1,
+          "cross:first_last_same_letter": 1,
+          "true:first_word_longer_than_last": 2,
+          "last_len_le_4": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:first_word_longer_than_last",
+        "choice_distribution": {}
+      }
+    },
+    "food_topic_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 12,
+        "accuracy": 1.0,
+        "wilson_ci_95": [
+          0.7575059933447592,
+          1.0
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:food_topic",
+        "modal_count": 12,
+        "modal_is_true": true,
+        "true_predicate_key": "true:food_topic",
+        "choice_distribution": {
+          "true:food_topic": 12
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:food_topic",
+        "choice_distribution": {}
+      }
+    },
+    "last_word_ends_with_vowel_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 2,
+        "accuracy": 0.16666666666666666,
+        "wilson_ci_95": [
+          0.04696514218385378,
+          0.4480308622529734
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "last_noun",
+        "modal_count": 6,
+        "modal_is_true": false,
+        "true_predicate_key": "true:last_word_ends_with_vowel",
+        "choice_distribution": {
+          "last_noun": 6,
+          "last_ends_y": 3,
+          "cross:past_tense": 1,
+          "true:last_word_ends_with_vowel": 2
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:last_word_ends_with_vowel",
+        "choice_distribution": {}
+      }
+    },
+    "mentions_animal_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 11,
+        "accuracy": 0.9166666666666666,
+        "wilson_ci_95": [
+          0.646120088858883,
+          0.9851349055950829
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:mentions_animal",
+        "modal_count": 11,
+        "modal_is_true": true,
+        "true_predicate_key": "true:mentions_animal",
+        "choice_distribution": {
+          "true:mentions_animal": 11,
+          "farm_animal": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:mentions_animal",
+        "choice_distribution": {}
+      }
+    },
+    "mentions_color_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 12,
+        "accuracy": 1.0,
+        "wilson_ci_95": [
+          0.7575059933447592,
+          1.0
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:mentions_color",
+        "modal_count": 12,
+        "modal_is_true": true,
+        "true_predicate_key": "true:mentions_color",
+        "choice_distribution": {
+          "true:mentions_color": 12
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:mentions_color",
+        "choice_distribution": {}
+      }
+    },
+    "passive_voice_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 7,
+        "accuracy": 0.5833333333333334,
+        "wilson_ci_95": [
+          0.31951131254954973,
+          0.8067396863412435
+        ],
+        "n_parse_failures": 2,
+        "modal_predicate_key": "true:passive_voice",
+        "modal_count": 7,
+        "modal_is_true": true,
+        "true_predicate_key": "true:passive_voice",
+        "choice_distribution": {
+          "true:passive_voice": 7,
+          "first_noun_person": 1,
+          "was_were": 1,
+          "cross:contains_digit": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:passive_voice",
+        "choice_distribution": {}
+      }
+    },
+    "positive_sentiment_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 11,
+        "accuracy": 0.9166666666666666,
+        "wilson_ci_95": [
+          0.646120088858883,
+          0.9851349055950829
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:positive_sentiment",
+        "modal_count": 11,
+        "modal_is_true": true,
+        "true_predicate_key": "true:positive_sentiment",
+        "choice_distribution": {
+          "true:positive_sentiment": 11,
+          "word_not": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:positive_sentiment",
+        "choice_distribution": {}
+      }
+    },
+    "second_word_capitalized_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 3,
+        "accuracy": 0.25,
+        "wilson_ci_95": [
+          0.08894166839405476,
+          0.5323053349335656
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "second_is_name",
+        "modal_count": 4,
+        "modal_is_true": false,
+        "true_predicate_key": "true:second_word_capitalized",
+        "choice_distribution": {
+          "second_is_name": 4,
+          "cross:mentions_animal": 1,
+          "proper_noun": 1,
+          "cross:contains_digit": 2,
+          "starts_adverb": 1,
+          "true:second_word_capitalized": 3
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:second_word_capitalized",
+        "choice_distribution": {}
+      }
+    },
+    "starts_with_vowel_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 6,
+        "modal_predicate_key": "first_noun",
+        "modal_count": 5,
+        "modal_is_true": false,
+        "true_predicate_key": "true:starts_with_vowel",
+        "choice_distribution": {
+          "starts_plural": 1,
+          "first_noun": 5
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:starts_with_vowel",
+        "choice_distribution": {}
+      }
+    },
+    "the_appears_twice_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 2,
+        "accuracy": 0.16666666666666666,
+        "wilson_ci_95": [
+          0.04696514218385378,
+          0.4480308622529734
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "begins_The",
+        "modal_count": 5,
+        "modal_is_true": false,
+        "true_predicate_key": "true:the_appears_twice",
+        "choice_distribution": {
+          "begins_The": 5,
+          "nouns_geq_2": 2,
+          "word_the": 2,
+          "wc_gt_8": 1,
+          "true:the_appears_twice": 2
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:the_appears_twice",
+        "choice_distribution": {}
+      }
+    },
+    "word_count_geq_8_deconfounded": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 6,
+        "accuracy": 0.5,
+        "wilson_ci_95": [
+          0.2537815976337061,
+          0.7462184023662939
+        ],
+        "n_parse_failures": 1,
+        "modal_predicate_key": "true:word_count_geq_8",
+        "modal_count": 6,
+        "modal_is_true": true,
+        "true_predicate_key": "true:word_count_geq_8",
+        "choice_distribution": {
+          "wc_geq_6": 2,
+          "cross:contains_digit": 1,
+          "true:word_count_geq_8": 6,
+          "cross:even_word_count": 1,
+          "nouns_geq_3": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:word_count_geq_8",
+        "choice_distribution": {}
+      }
+    }
+  },
+  "aggregate": {
+    "examples": {
+      "n_queries": 180,
+      "n_correct": 82,
+      "query_accuracy": 0.45555555555555555,
+      "n_rules": 15,
+      "n_rules_modal_true": 8,
+      "modal_true_rate": 0.5333333333333333,
+      "n_parse_failures": 21,
+      "chance": 0.125
+    },
+    "no_examples": {
+      "n_queries": 180,
+      "n_correct": 0,
+      "query_accuracy": 0.0,
+      "n_rules": 15,
+      "n_rules_modal_true": 0,
+      "modal_true_rate": 0.0,
+      "n_parse_failures": 180,
+      "chance": 0.125
+    }
+  },
+  "wall_seconds": 76.16114090802148,
+  "client_stats": {
+    "api_calls": 360,
+    "cache_hits": 0,
+    "n_429": 0,
+    "retryable_errors": 0,
+    "failures": 0,
+    "rate_429": 0.0,
+    "error_rate": 0.0
+  }
+}

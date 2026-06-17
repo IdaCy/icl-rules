@@ -1,0 +1,156 @@
+{
+  "primary_judge": "gpt-4.1",
+  "second_judge": "gpt-4o",
+  "n_comparable": 132,
+  "n_parse_failures": 0,
+  "exact_agreement": 0.8106060606060606,
+  "within_one_agreement": 1.0,
+  "per_rule": {
+    "food_topic": {
+      "n": 12,
+      "exact": 12,
+      "primary": {
+        "2": 10,
+        "1": 2
+      },
+      "second": {
+        "2": 10,
+        "1": 2
+      },
+      "exact_agreement": 1.0
+    },
+    "passive_voice": {
+      "n": 12,
+      "exact": 10,
+      "primary": {
+        "1": 11,
+        "0": 1
+      },
+      "second": {
+        "1": 9,
+        "0": 2,
+        "2": 1
+      },
+      "exact_agreement": 0.8333333333333334
+    },
+    "positive_sentiment": {
+      "n": 12,
+      "exact": 12,
+      "primary": {
+        "2": 12
+      },
+      "second": {
+        "2": 12
+      },
+      "exact_agreement": 1.0
+    },
+    "mentions_animal": {
+      "n": 12,
+      "exact": 9,
+      "primary": {
+        "2": 8,
+        "1": 4
+      },
+      "second": {
+        "2": 5,
+        "1": 7
+      },
+      "exact_agreement": 0.75
+    },
+    "contains_first_name": {
+      "n": 12,
+      "exact": 11,
+      "primary": {
+        "2": 7,
+        "1": 5
+      },
+      "second": {
+        "2": 8,
+        "1": 4
+      },
+      "exact_agreement": 0.9166666666666666
+    },
+    "second_word_capitalized": {
+      "n": 12,
+      "exact": 8,
+      "primary": {
+        "0": 4,
+        "1": 6,
+        "2": 2
+      },
+      "second": {
+        "0": 8,
+        "1": 2,
+        "2": 2
+      },
+      "exact_agreement": 0.6666666666666666
+    },
+    "physically_impossible": {
+      "n": 12,
+      "exact": 8,
+      "primary": {
+        "1": 10,
+        "2": 2
+      },
+      "second": {
+        "1": 6,
+        "2": 6
+      },
+      "exact_agreement": 0.6666666666666666
+    },
+    "word_count_geq_8": {
+      "n": 12,
+      "exact": 12,
+      "primary": {
+        "0": 12
+      },
+      "second": {
+        "0": 12
+      },
+      "exact_agreement": 1.0
+    },
+    "repeated_content_word": {
+      "n": 12,
+      "exact": 8,
+      "primary": {
+        "0": 3,
+        "1": 9
+      },
+      "second": {
+        "0": 7,
+        "1": 5
+      },
+      "exact_agreement": 0.6666666666666666
+    },
+    "contains_digit": {
+      "n": 12,
+      "exact": 6,
+      "primary": {
+        "0": 2,
+        "1": 8,
+        "2": 2
+      },
+      "second": {
+        "0": 8,
+        "2": 2,
+        "1": 2
+      },
+      "exact_agreement": 0.5
+    },
+    "mentions_color": {
+      "n": 12,
+      "exact": 11,
+      "primary": {
+        "0": 6,
+        "1": 3,
+        "2": 3
+      },
+      "second": {
+        "0": 6,
+        "1": 2,
+        "2": 4
+      },
+      "exact_agreement": 0.9166666666666666
+    }
+  }
+}

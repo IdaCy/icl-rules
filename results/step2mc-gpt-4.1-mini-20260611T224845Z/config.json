@@ -1,0 +1,1207 @@
+{
+  "task": "step2-mc",
+  "model": "gpt-4.1-mini",
+  "price_per_mtok": {
+    "prompt": 0.4,
+    "completion": 1.6
+  },
+  "rules": [
+    "passive_voice",
+    "food_topic",
+    "positive_sentiment",
+    "mentions_animal",
+    "contains_first_name",
+    "second_word_capitalized",
+    "physically_impossible",
+    "word_count_geq_8",
+    "repeated_content_word",
+    "contains_digit",
+    "mentions_color"
+  ],
+  "arms": [
+    "examples",
+    "no_examples"
+  ],
+  "run_seed": 0,
+  "context_seeds": [
+    0,
+    1,
+    2
+  ],
+  "n_contexts": 3,
+  "n_orders": 4,
+  "n_options": 8,
+  "disagreement_floor": 0.25,
+  "order_seed_base": 1000,
+  "k_few_shot": 32,
+  "temperature": 0.0,
+  "max_tokens": 256,
+  "logprobs": true,
+  "top_logprobs": 10,
+  "api_seed": 0,
+  "concurrency": 4,
+  "template_hash": "122fe33824483f2b21d27f02bdbae94fe1ee7de8bea7e4e2e29a2862e1d17559",
+  "expected_total_calls": 264,
+  "data_dir": "data",
+  "rules_meta": {
+    "passive_voice": {
+      "rule_id": "passive_voice",
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_queries_per_arm": 12,
+      "options": [
+        {
+          "is_true": true,
+          "text": "The input is in the passive voice",
+          "predicate_key": "true:passive_voice",
+          "seed": null
+        },
+        {
+          "is_true": false,
+          "text": "The input contains the word 'by'",
+          "predicate_key": "word_by",
+          "seed": "The input contains the word 'by' — ~30% disagreement by construction"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains 'was' or 'were'",
+          "predicate_key": "was_were",
+          "seed": "The input contains 'was' or 'were' — ~25% disagreement (progressive actives)"
+        },
+        {
+          "is_true": false,
+          "text": "The first noun names a person",
+          "predicate_key": "first_noun_person",
+          "seed": "The first noun names a person — animacy-balanced, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input is longer than 8 words",
+          "predicate_key": "wc_gt_8",
+          "seed": "The input is longer than 8 words — counts matched, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains a digit",
+          "predicate_key": "cross:contains_digit",
+          "seed": "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains an exclamation mark",
+          "predicate_key": "cross:contains_exclamation",
+          "seed": "The input contains an exclamation mark — cross-rule canonical (r3); none, labels everything False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "Every word in the input is longer than 3 letters",
+          "predicate_key": "cross:all_words_longer_than_3",
+          "seed": "Every word in the input is longer than 3 letters — cross-rule canonical (r30); 'the'/'was'/'by' are short, labels everything False, 50%"
+        }
+      ],
+      "disagreement_per_context": {
+        "The input contains the word 'by' — ~30% disagreement by construction": [
+          0.46875,
+          0.59375,
+          0.5
+        ],
+        "The input contains 'was' or 'were' — ~25% disagreement (progressive actives)": [
+          0.3125,
+          0.28125,
+          0.375
+        ],
+        "The first noun names a person — animacy-balanced, ~50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input is longer than 8 words — counts matched, ~50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input contains an exclamation mark — cross-rule canonical (r3); none, labels everything False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "Every word in the input is longer than 3 letters — cross-rule canonical (r30); 'the'/'was'/'by' are short, labels everything False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "min_disagreement": 0.28125,
+      "rejected_seeds": [
+        {
+          "seed": "The input is in the past tense — everything is past, labels all True, 50%",
+          "reason": "below 25% in a context",
+          "per_context": [
+            0.21875,
+            0.25,
+            0.125
+          ]
+        }
+      ]
+    },
+    "food_topic": {
+      "rule_id": "food_topic",
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_queries_per_arm": 12,
+      "options": [
+        {
+          "is_true": true,
+          "text": "The input is about food or cooking",
+          "predicate_key": "true:food_topic",
+          "seed": null
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions eating or drinking",
+          "predicate_key": "eat_drink",
+          "seed": "The input mentions eating or drinking — 27.5% expected disagreement (0.5*0.55) enforced by the 55% no-verb quota; checked per context"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions a meal time",
+          "predicate_key": "meal_time",
+          "seed": "The input mentions a meal time (breakfast/lunch/dinner) — subset of True, >= 25% (check)"
+        },
+        {
+          "is_true": false,
+          "text": "The input is about a restaurant",
+          "predicate_key": "restaurant",
+          "seed": "The input is about a restaurant — subset, >= 25% (check)"
+        },
+        {
+          "is_true": false,
+          "text": "The input is about a hobby or pastime",
+          "predicate_key": "hobby",
+          "seed": "The input is about a hobby or pastime — cuts across both, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions something you can buy",
+          "predicate_key": "buyable",
+          "seed": "The input mentions something you can buy — shopping in False topics too, check >= 25%"
+        },
+        {
+          "is_true": false,
+          "text": "The input expresses a positive sentiment",
+          "predicate_key": "positive_lex",
+          "seed": "The input expresses a positive sentiment — cross-rule canonical (r15); both classes sentiment-neutral by construction, labels ~everything False, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains a digit",
+          "predicate_key": "cross:contains_digit",
+          "seed": "The input contains a digit (0-9) — cross-rule canonical (r2); digits rare under the shared style constraints, labels ~everything False, ~50% (builder-checked)"
+        }
+      ],
+      "disagreement_per_context": {
+        "The input mentions eating or drinking — 27.5% expected disagreement (0.5*0.55) enforced by the 55% no-verb quota; checked per context": [
+          0.40625,
+          0.46875,
+          0.3125
+        ],
+        "The input mentions a meal time (breakfast/lunch/dinner) — subset of True, >= 25% (check)": [
+          0.46875,
+          0.4375,
+          0.40625
+        ],
+        "The input is about a restaurant — subset, >= 25% (check)": [
+          0.5,
+          0.4375,
+          0.46875
+        ],
+        "The input is about a hobby or pastime — cuts across both, ~50%": [
+          0.5625,
+          0.65625,
+          0.59375
+        ],
+        "The input mentions something you can buy — shopping in False topics too, check >= 25%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input expresses a positive sentiment — cross-rule canonical (r15); both classes sentiment-neutral by construction, labels ~everything False, ~50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input contains a digit (0-9) — cross-rule canonical (r2); digits rare under the shared style constraints, labels ~everything False, ~50% (builder-checked)": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "min_disagreement": 0.3125,
+      "rejected_seeds": []
+    },
+    "positive_sentiment": {
+      "rule_id": "positive_sentiment",
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_queries_per_arm": 12,
+      "options": [
+        {
+          "is_true": true,
+          "text": "The input expresses a positive sentiment",
+          "predicate_key": "true:positive_sentiment",
+          "seed": null
+        },
+        {
+          "is_true": false,
+          "text": "The input is about food or restaurants",
+          "predicate_key": "food_or_restaurant",
+          "seed": "The input is about food or restaurants — topics balanced, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains the word 'not'",
+          "predicate_key": "word_not",
+          "seed": "The input contains the word 'not' — negator audit caps skew, ~45-55% (check)"
+        },
+        {
+          "is_true": false,
+          "text": "The input is longer than 8 words",
+          "predicate_key": "wc_gt_8",
+          "seed": "The input is longer than 8 words — length audit, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input describes a past event",
+          "predicate_key": "past_event",
+          "seed": "The input describes a past event — mixed tenses both classes, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions other people",
+          "predicate_key": "mentions_person",
+          "seed": "The input mentions other people — ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains an exclamation mark",
+          "predicate_key": "cross:contains_exclamation",
+          "seed": "The input contains an exclamation mark — cross-rule canonical (r3); banned by style in this rule's data, labels everything False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "Every word in the input is longer than 3 letters",
+          "predicate_key": "cross:all_words_longer_than_3",
+          "seed": "Every word in the input is longer than 3 letters — cross-rule canonical (r30); short function words everywhere, labels everything False, 50%"
+        }
+      ],
+      "disagreement_per_context": {
+        "The input is about food or restaurants — topics balanced, ~50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input contains the word 'not' — negator audit caps skew, ~45-55% (check)": [
+          0.53125,
+          0.5,
+          0.5
+        ],
+        "The input is longer than 8 words — length audit, ~50%": [
+          0.5625,
+          0.53125,
+          0.53125
+        ],
+        "The input describes a past event — mixed tenses both classes, ~50%": [
+          0.53125,
+          0.5625,
+          0.53125
+        ],
+        "The input mentions other people — ~50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input contains an exclamation mark — cross-rule canonical (r3); banned by style in this rule's data, labels everything False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "Every word in the input is longer than 3 letters — cross-rule canonical (r30); short function words everywhere, labels everything False, 50%": [
+          0.6875,
+          0.5,
+          0.5625
+        ]
+      },
+      "min_disagreement": 0.5,
+      "rejected_seeds": []
+    },
+    "mentions_animal": {
+      "rule_id": "mentions_animal",
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_queries_per_arm": 12,
+      "options": [
+        {
+          "is_true": true,
+          "text": "The input mentions a real living animal",
+          "predicate_key": "true:mentions_animal",
+          "seed": null
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions a pet",
+          "predicate_key": "pet",
+          "seed": "The input mentions a pet — wild animals disagree, >= 25% of True items are non-pets (check)"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions a farm animal",
+          "predicate_key": "farm_animal",
+          "seed": "The input mentions a farm animal — subset of True, ~25-35% disagreement (check)"
+        },
+        {
+          "is_true": false,
+          "text": "The input is about the outdoors",
+          "predicate_key": "outdoors",
+          "seed": "The input is about the outdoors — frames shared, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains the letter z",
+          "predicate_key": "cross:contains_letter_z",
+          "seed": "The input contains the letter z — cross-rule canonical (r5); z is rare in both banks, labels ~everything False, ~50% (builder-checked)"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains exactly two commas",
+          "predicate_key": "cross:exactly_two_commas",
+          "seed": "The input contains exactly two commas — cross-rule canonical (r26); no commas, labels everything False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The word 'the' appears at least twice",
+          "predicate_key": "cross:the_appears_twice",
+          "seed": "The word 'the' appears at least twice — cross-rule canonical (r21); frames shared verbatim, determiner counts identical across classes, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input is in the past tense",
+          "predicate_key": "cross:past_tense",
+          "seed": "The input is in the past tense — cross-rule canonical (r8); frames shared verbatim across classes, ~50%"
+        }
+      ],
+      "disagreement_per_context": {
+        "The input mentions a pet — wild animals disagree, >= 25% of True items are non-pets (check)": [
+          0.46875,
+          0.4375,
+          0.5
+        ],
+        "The input mentions a farm animal — subset of True, ~25-35% disagreement (check)": [
+          0.40625,
+          0.40625,
+          0.4375
+        ],
+        "The input is about the outdoors — frames shared, ~50%": [
+          0.40625,
+          0.5,
+          0.5625
+        ],
+        "The input contains the letter z — cross-rule canonical (r5); z is rare in both banks, labels ~everything False, ~50% (builder-checked)": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input contains exactly two commas — cross-rule canonical (r26); no commas, labels everything False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The word 'the' appears at least twice — cross-rule canonical (r21); frames shared verbatim, determiner counts identical across classes, ~50%": [
+          0.46875,
+          0.625,
+          0.46875
+        ],
+        "The input is in the past tense — cross-rule canonical (r8); frames shared verbatim across classes, ~50%": [
+          0.5,
+          0.65625,
+          0.46875
+        ]
+      },
+      "min_disagreement": 0.40625,
+      "rejected_seeds": [
+        {
+          "seed": "The input mentions a living thing — plants are ~25% of the False bank, so expected disagreement is only ~12.5% (plant-item share / 2); SPARE CANDIDATE ONLY: usable only if the per-context check passes, and replaced globally otherwise (step2_mc_policy)",
+          "reason": "below 25% in a context",
+          "per_context": [
+            0.03125,
+            0.125,
+            0.15625
+          ]
+        },
+        {
+          "seed": "The input mentions something that can move on its own — vehicles+animals: disagrees on vehicle False items, check >= 25%",
+          "reason": "below 25% in a context",
+          "per_context": [
+            0.03125,
+            0.0,
+            0.0625
+          ]
+        }
+      ]
+    },
+    "contains_first_name": {
+      "rule_id": "contains_first_name",
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_queries_per_arm": 12,
+      "options": [
+        {
+          "is_true": true,
+          "text": "The input contains a person's first name",
+          "predicate_key": "true:contains_first_name",
+          "seed": null
+        },
+        {
+          "is_true": false,
+          "text": "The input contains a capitalized word other than the first word",
+          "predicate_key": "cap_after_first",
+          "seed": "The input contains a capitalized word other than the first word — true for the 70% of frames with a non-initial slot, false for the 30% sentence-initial-slot frames; either way independent of the labels, ~50% disagreement"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions a city",
+          "predicate_key": "city",
+          "seed": "The input mentions a city — 50% of False items, 25% disagreement"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions a month",
+          "predicate_key": "month",
+          "seed": "The input mentions a month — 20% of False, only 10% disagreement; SPARE CANDIDATE ONLY: usable only if the per-context check passes, replaced globally otherwise (step2_mc_policy)"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions a woman's name",
+          "predicate_key": "woman_name",
+          "seed": "The input mentions a woman's name — 50% of True items, 25% disagreement"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains a proper noun",
+          "predicate_key": "proper_noun",
+          "seed": "The input contains a proper noun — all items, labels all True, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input is about a letter or message",
+          "predicate_key": "letter_msg",
+          "seed": "The input is about a letter or message — frames varied, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains a digit",
+          "predicate_key": "cross:contains_digit",
+          "seed": "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%"
+        }
+      ],
+      "disagreement_per_context": {
+        "The input contains a capitalized word other than the first word — true for the 70% of frames with a non-initial slot, false for the 30% sentence-initial-slot frames; either way independent of the labels, ~50% disagreement": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input mentions a city — 50% of False items, 25% disagreement": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "The input mentions a month — 20% of False, only 10% disagreement; SPARE CANDIDATE ONLY: usable only if the per-context check passes, replaced globally otherwise (step2_mc_policy)": [
+          0.5625,
+          0.625,
+          0.625
+        ],
+        "The input mentions a woman's name — 50% of True items, 25% disagreement": [
+          0.46875,
+          0.4375,
+          0.375
+        ],
+        "The input contains a proper noun — all items, labels all True, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input is about a letter or message — frames varied, ~50%": [
+          0.5,
+          0.53125,
+          0.625
+        ],
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "min_disagreement": 0.375,
+      "rejected_seeds": []
+    },
+    "second_word_capitalized": {
+      "rule_id": "second_word_capitalized",
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_queries_per_arm": 12,
+      "options": [
+        {
+          "is_true": true,
+          "text": "The input has a capitalized second word",
+          "predicate_key": "true:second_word_capitalized",
+          "seed": null
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions a person",
+          "predicate_key": "mentions_person",
+          "seed": "The input mentions a person — name share 50% in both slot uses, ~37% (check)"
+        },
+        {
+          "is_true": false,
+          "text": "The second word is a person's name",
+          "predicate_key": "second_is_name",
+          "seed": "The second word is a person's name — disagrees on True items with cities/months, 25%"
+        },
+        {
+          "is_true": false,
+          "text": "The input starts with an adverb",
+          "predicate_key": "starts_adverb",
+          "seed": "The input starts with an adverb — adverb openers appear at matched rates in both classes (opener constraint), ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains a proper noun",
+          "predicate_key": "proper_noun",
+          "seed": "The input contains a proper noun — labels all True items and the 50% of False items that carry a re-seated proper noun True -> disagrees on those False items, 25%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains a digit",
+          "predicate_key": "cross:contains_digit",
+          "seed": "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input is in the past tense",
+          "predicate_key": "cross:past_tense",
+          "seed": "The input is in the past tense — cross-rule canonical (r8); verbs shared across classes, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions an animal",
+          "predicate_key": "cross:mentions_animal",
+          "seed": "The input mentions an animal — cross-rule canonical (r13); no animal nouns in the frame banks, labels everything False, 50%"
+        }
+      ],
+      "disagreement_per_context": {
+        "The input mentions a person — name share 50% in both slot uses, ~37% (check)": [
+          0.375,
+          0.53125,
+          0.40625
+        ],
+        "The second word is a person's name — disagrees on True items with cities/months, 25%": [
+          0.28125,
+          0.34375,
+          0.25
+        ],
+        "The input starts with an adverb — adverb openers appear at matched rates in both classes (opener constraint), ~50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input contains a proper noun — labels all True items and the 50% of False items that carry a re-seated proper noun True -> disagrees on those False items, 25%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input is in the past tense — cross-rule canonical (r8); verbs shared across classes, ~50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input mentions an animal — cross-rule canonical (r13); no animal nouns in the frame banks, labels everything False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "min_disagreement": 0.25,
+      "rejected_seeds": [
+        {
+          "seed": "The input contains a capitalized word after the first word — disagrees on False items with late-position proper nouns, 25%",
+          "reason": "below 25% in a context",
+          "per_context": [
+            0.1875,
+            0.21875,
+            0.25
+          ]
+        }
+      ]
+    },
+    "physically_impossible": {
+      "rule_id": "physically_impossible",
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_queries_per_arm": 12,
+      "options": [
+        {
+          "is_true": true,
+          "text": "The input describes something physically impossible",
+          "predicate_key": "true:physically_impossible",
+          "seed": null
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions an object doing a human action",
+          "predicate_key": "object_human_action",
+          "seed": "The input mentions an object doing a human action — types b/c/d disagree, >= 25% by type mix"
+        },
+        {
+          "is_true": false,
+          "text": "The input is about magic or fantasy",
+          "predicate_key": "magic",
+          "seed": "The input is about magic or fantasy — vocabulary banned, labels all False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input is grammatically incorrect",
+          "predicate_key": "ungrammatical",
+          "seed": "The input is grammatically incorrect — all grammatical, labels all False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions something dangerous",
+          "predicate_key": "dangerous",
+          "seed": "The input mentions something dangerous — orthogonal, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input is about household objects",
+          "predicate_key": "household",
+          "seed": "The input is about household objects — objects in both classes by reuse guard, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains a digit",
+          "predicate_key": "cross:contains_digit",
+          "seed": "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions an animal",
+          "predicate_key": "cross:mentions_animal",
+          "seed": "The input mentions an animal — cross-rule canonical (r13); animals appear in both classes via the cross-class reuse guard, ~50% (builder-checked)"
+        }
+      ],
+      "disagreement_per_context": {
+        "The input mentions an object doing a human action — types b/c/d disagree, >= 25% by type mix": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input is about magic or fantasy — vocabulary banned, labels all False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input is grammatically incorrect — all grammatical, labels all False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input mentions something dangerous — orthogonal, ~50%": [
+          0.5,
+          0.46875,
+          0.53125
+        ],
+        "The input is about household objects — objects in both classes by reuse guard, ~50%": [
+          0.53125,
+          0.5,
+          0.4375
+        ],
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input mentions an animal — cross-rule canonical (r13); animals appear in both classes via the cross-class reuse guard, ~50% (builder-checked)": [
+          0.53125,
+          0.5,
+          0.5625
+        ]
+      },
+      "min_disagreement": 0.4375,
+      "rejected_seeds": []
+    },
+    "word_count_geq_8": {
+      "rule_id": "word_count_geq_8",
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_queries_per_arm": 12,
+      "options": [
+        {
+          "is_true": true,
+          "text": "The input has at least 8 words",
+          "predicate_key": "true:word_count_geq_8",
+          "seed": null
+        },
+        {
+          "is_true": false,
+          "text": "The input is longer than 40 characters",
+          "predicate_key": "chars_gt_40",
+          "seed": "The input is longer than 40 characters — discordance quota guarantees >= 25% disagreement"
+        },
+        {
+          "is_true": false,
+          "text": "The input has at least 6 words",
+          "predicate_key": "wc_geq_6",
+          "seed": "The input has at least 6 words — labels the 6- and 7-word False items (70% of the False class) True -> 0.5*0.7 = 35% disagreement"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains a comma",
+          "predicate_key": "has_comma",
+          "seed": "The input contains a comma — no commas, all False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input has more than one clause",
+          "predicate_key": "multi_clause",
+          "seed": "The input has more than one clause (predicate: contains 'and'/'while'/'because') — adjunct-built lengths, mostly single-clause both classes, ~50% (check)"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions more than two things",
+          "predicate_key": "nouns_geq_3",
+          "seed": "The input mentions more than two things (predicate: >= 3 nouns) — noun counts overlap heavily, check >= 25%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains a digit",
+          "predicate_key": "cross:contains_digit",
+          "seed": "The input contains a digit (0-9) — cross-rule canonical (r2); no digits in this rule's data, labels everything False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input has an even number of words",
+          "predicate_key": "cross:even_word_count",
+          "seed": "The input has an even number of words — cross-rule canonical (r25); even = 60% of True ({8,10}) vs 40% of False ({6,4}) -> disagreement 0.5*0.4 + 0.5*0.4 = 40%"
+        }
+      ],
+      "disagreement_per_context": {
+        "The input is longer than 40 characters — discordance quota guarantees >= 25% disagreement": [
+          0.3125,
+          0.375,
+          0.375
+        ],
+        "The input has at least 6 words — labels the 6- and 7-word False items (70% of the False class) True -> 0.5*0.7 = 35% disagreement": [
+          0.375,
+          0.46875,
+          0.4375
+        ],
+        "The input contains a comma — no commas, all False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input has more than one clause (predicate: contains 'and'/'while'/'because') — adjunct-built lengths, mostly single-clause both classes, ~50% (check)": [
+          0.5,
+          0.46875,
+          0.46875
+        ],
+        "The input mentions more than two things (predicate: >= 3 nouns) — noun counts overlap heavily, check >= 25%": [
+          0.46875,
+          0.5,
+          0.46875
+        ],
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits in this rule's data, labels everything False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input has an even number of words — cross-rule canonical (r25); even = 60% of True ({8,10}) vs 40% of False ({6,4}) -> disagreement 0.5*0.4 + 0.5*0.4 = 40%": [
+          0.40625,
+          0.40625,
+          0.28125
+        ]
+      },
+      "min_disagreement": 0.28125,
+      "rejected_seeds": []
+    },
+    "repeated_content_word": {
+      "rule_id": "repeated_content_word",
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_queries_per_arm": 12,
+      "options": [
+        {
+          "is_true": true,
+          "text": "The input repeats a content word",
+          "predicate_key": "true:repeated_content_word",
+          "seed": null
+        },
+        {
+          "is_true": false,
+          "text": "Some word appears at least twice, counting words like 'the' and 'a'",
+          "predicate_key": "any_word_repeats",
+          "seed": "Some word appears at least twice, counting words like 'the' and 'a' — labels the >= 60% stopword-repeat False items True, >= 30% disagreement"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains the word 'the' at least twice",
+          "predicate_key": "the_twice",
+          "seed": "The input contains the word 'the' at least twice — both classes ~balanced on this by frame design, ~40-50% (check)"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains the word 'and'",
+          "predicate_key": "word_and",
+          "seed": "The input contains the word 'and' — coordination frames in both classes, labels ~all True, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions two or more people or things doing something",
+          "predicate_key": "nouns_geq_2",
+          "seed": "The input mentions two or more people or things doing something (predicate: >= 2 distinct nouns) — all items have >= 2 nouns, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input is longer than 9 words",
+          "predicate_key": "wc_gt_9",
+          "seed": "The input is longer than 9 words — length-matched, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains a digit",
+          "predicate_key": "cross:contains_digit",
+          "seed": "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions an animal",
+          "predicate_key": "cross:mentions_animal",
+          "seed": "The input mentions an animal — cross-rule canonical (r13); fillers balanced across classes, ~50%"
+        }
+      ],
+      "disagreement_per_context": {
+        "Some word appears at least twice, counting words like 'the' and 'a' — labels the >= 60% stopword-repeat False items True, >= 30% disagreement": [
+          0.46875,
+          0.5,
+          0.5
+        ],
+        "The input contains the word 'the' at least twice — both classes ~balanced on this by frame design, ~40-50% (check)": [
+          0.34375,
+          0.5,
+          0.6875
+        ],
+        "The input contains the word 'and' — coordination frames in both classes, labels ~all True, ~50%": [
+          0.53125,
+          0.4375,
+          0.46875
+        ],
+        "The input mentions two or more people or things doing something (predicate: >= 2 distinct nouns) — all items have >= 2 nouns, ~50%": [
+          0.5,
+          0.46875,
+          0.5
+        ],
+        "The input is longer than 9 words — length-matched, ~50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input mentions an animal — cross-rule canonical (r13); fillers balanced across classes, ~50%": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "min_disagreement": 0.34375,
+      "rejected_seeds": []
+    },
+    "contains_digit": {
+      "rule_id": "contains_digit",
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_queries_per_arm": 12,
+      "options": [
+        {
+          "is_true": true,
+          "text": "The input contains a digit character",
+          "predicate_key": "true:contains_digit",
+          "seed": null
+        },
+        {
+          "is_true": false,
+          "text": "The input contains exactly one digit character",
+          "predicate_key": "one_digit",
+          "seed": "The input contains exactly one digit character — disagrees on all two-digit True items (~25%)"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions a measurement or amount of money",
+          "predicate_key": "measurement",
+          "seed": "The input mentions a measurement or amount of money — no units in data, labels ~all False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input has more than 7 words",
+          "predicate_key": "wc_gt_7",
+          "seed": "The input has more than 7 words — length-matched, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains no uppercase letters",
+          "predicate_key": "cross:all_lowercase",
+          "seed": "The input contains no uppercase letters — cross-rule canonical (r1); every item is sentence case, labels everything False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions an animal",
+          "predicate_key": "cross:mentions_animal",
+          "seed": "The input mentions an animal — cross-rule canonical (r13); fillers balanced across classes, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains exactly two commas",
+          "predicate_key": "cross:exactly_two_commas",
+          "seed": "The input contains exactly two commas — cross-rule canonical (r26); no commas in this data, labels everything False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains an exclamation mark",
+          "predicate_key": "cross:contains_exclamation",
+          "seed": "The input contains an exclamation mark — cross-rule canonical (r3); '!' absent from this data, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%"
+        }
+      ],
+      "disagreement_per_context": {
+        "The input contains exactly one digit character — disagrees on all two-digit True items (~25%)": [
+          0.3125,
+          0.25,
+          0.28125
+        ],
+        "The input mentions a measurement or amount of money — no units in data, labels ~all False, 50%": [
+          0.40625,
+          0.4375,
+          0.46875
+        ],
+        "The input has more than 7 words — length-matched, ~50%": [
+          0.53125,
+          0.375,
+          0.65625
+        ],
+        "The input contains no uppercase letters — cross-rule canonical (r1); every item is sentence case, labels everything False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input mentions an animal — cross-rule canonical (r13); fillers balanced across classes, ~50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input contains exactly two commas — cross-rule canonical (r26); no commas in this data, labels everything False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input contains an exclamation mark — cross-rule canonical (r3); '!' absent from this data, labels all 32 examples False -> agrees only on the 16 shown-False = 16/32, disagreement exactly 50%": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "min_disagreement": 0.25,
+      "rejected_seeds": [
+        {
+          "seed": "The input mentions a number or quantity, in digits or words (checking predicate: contains a digit OR a NUMBER_WORDS-lexicon word; 'several/many/some' do NOT count) — disagrees on the 25% spelled-number False items",
+          "reason": "below 25% in a context",
+          "per_context": [
+            0.1875,
+            0.28125,
+            0.21875
+          ]
+        },
+        {
+          "seed": "The input contains a number greater than 10 — disagrees on small digits and all spelled items, >= 25% (check per context)",
+          "reason": "below 25% in a context",
+          "per_context": [
+            0.1875,
+            0.25,
+            0.21875
+          ]
+        }
+      ]
+    },
+    "mentions_color": {
+      "rule_id": "mentions_color",
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_queries_per_arm": 12,
+      "options": [
+        {
+          "is_true": true,
+          "text": "The input mentions a specific color",
+          "predicate_key": "true:mentions_color",
+          "seed": null
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions the color red",
+          "predicate_key": "color_red",
+          "seed": "The input mentions the color red — single-color subset, ~42% disagreement on True items (check)"
+        },
+        {
+          "is_true": false,
+          "text": "The input describes how something looks",
+          "predicate_key": "visual_adj",
+          "seed": "The input describes how something looks (predicate: contains any visual adjective incl. non-color) — False adjectives qualify too, labels ~all True, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions clothing",
+          "predicate_key": "clothing",
+          "seed": "The input mentions clothing — nouns varied, ~50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains an adjective directly before a noun",
+          "predicate_key": "adj_before_noun",
+          "seed": "The input contains an adjective directly before a noun — both classes do, labels all True, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions something bright or shiny",
+          "predicate_key": "bright_shiny",
+          "seed": "The input mentions something bright or shiny — no such words, all False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input contains a digit",
+          "predicate_key": "cross:contains_digit",
+          "seed": "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%"
+        },
+        {
+          "is_true": false,
+          "text": "The input mentions an animal",
+          "predicate_key": "cross:mentions_animal",
+          "seed": "The input mentions an animal — cross-rule canonical (r13); nouns identical across classes, ~50% (builder-checked)"
+        }
+      ],
+      "disagreement_per_context": {
+        "The input mentions the color red — single-color subset, ~42% disagreement on True items (check)": [
+          0.34375,
+          0.40625,
+          0.46875
+        ],
+        "The input describes how something looks (predicate: contains any visual adjective incl. non-color) — False adjectives qualify too, labels ~all True, 50%": [
+          0.46875,
+          0.46875,
+          0.40625
+        ],
+        "The input mentions clothing — nouns varied, ~50%": [
+          0.5,
+          0.46875,
+          0.5
+        ],
+        "The input contains an adjective directly before a noun — both classes do, labels all True, 50%": [
+          0.46875,
+          0.4375,
+          0.40625
+        ],
+        "The input mentions something bright or shiny — no such words, all False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input contains a digit (0-9) — cross-rule canonical (r2); no digits, labels everything False, 50%": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "The input mentions an animal — cross-rule canonical (r13); nouns identical across classes, ~50% (builder-checked)": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "min_disagreement": 0.34375,
+      "rejected_seeds": []
+    }
+  },
+  "run_id": "step2mc-gpt-4.1-mini-20260611T224845Z",
+  "started_utc": "20260611T224845Z",
+  "cost_estimate_usd": 0.14993599999999996,
+  "cost_actual_usd": 0.04923160000000001,
+  "finished_utc": "20260611T225004Z",
+  "client_stats": {
+    "api_calls": 232,
+    "cache_hits": 32,
+    "n_429": 0,
+    "retryable_errors": 0,
+    "failures": 0,
+    "rate_429": 0.0,
+    "error_rate": 0.0
+  },
+  "cost": {
+    "prompt_tokens": {
+      "gpt-4.1-mini": 83931
+    },
+    "completion_tokens": {
+      "gpt-4.1-mini": 9787
+    },
+    "total_usd": 0.04923160000000001
+  }
+}

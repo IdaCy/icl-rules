@@ -1,0 +1,24 @@
+{
+  "task": "step2-second-judge",
+  "judge_model": "gpt-4o",
+  "primary_judge": "gpt-4.1",
+  "n_jobs": 132,
+  "price_per_mtok": {
+    "prompt": 2.5,
+    "completion": 10.0
+  },
+  "run_id": "step2-regrade-gpt-4o-20260611T225132Z",
+  "started_utc": "20260611T225132Z",
+  "cost_estimate_usd": 0.8207349999999999,
+  "cost_actual_usd": 0.3195575,
+  "finished_utc": "20260611T225203Z",
+  "cost": {
+    "prompt_tokens": {
+      "gpt-4o": 105451
+    },
+    "completion_tokens": {
+      "gpt-4o": 5593
+    },
+    "total_usd": 0.3195575
+  }
+}
