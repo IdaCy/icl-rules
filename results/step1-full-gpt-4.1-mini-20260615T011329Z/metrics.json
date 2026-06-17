@@ -1,0 +1,132 @@
+{
+  "mode": "full",
+  "model": "gpt-4.1-mini",
+  "rules": {
+    "passive_voice_deconfounded_c": {
+      "contexts": [
+        {
+          "context_index": 0,
+          "context_seed": 0,
+          "n": 120,
+          "n_correct": 118,
+          "accuracy": 0.9833333333333333,
+          "wilson_ci_95": [
+            0.941264037027841,
+            0.9954174354340789
+          ],
+          "n_parse_failures": 0,
+          "format_ok_rate": 1.0,
+          "mean_logprob_margin": 16.040540449705833,
+          "n_with_margin": 74,
+          "per_class": {
+            "true": {
+              "n": 60,
+              "n_correct": 59,
+              "accuracy": 0.9833333333333333
+            },
+            "false": {
+              "n": 60,
+              "n_correct": 59,
+              "accuracy": 0.9833333333333333
+            }
+          },
+          "predictions": {
+            "true": 60,
+            "false": 60,
+            "parse_failure": 0
+          }
+        },
+        {
+          "context_index": 1,
+          "context_seed": 1,
+          "n": 120,
+          "n_correct": 119,
+          "accuracy": 0.9916666666666667,
+          "wilson_ci_95": [
+            0.9543037087549505,
+            0.998527444266658
+          ],
+          "n_parse_failures": 0,
+          "format_ok_rate": 1.0,
+          "mean_logprob_margin": 12.421460155649513,
+          "n_with_margin": 113,
+          "per_class": {
+            "true": {
+              "n": 60,
+              "n_correct": 60,
+              "accuracy": 1.0
+            },
+            "false": {
+              "n": 60,
+              "n_correct": 59,
+              "accuracy": 0.9833333333333333
+            }
+          },
+          "predictions": {
+            "true": 61,
+            "false": 59,
+            "parse_failure": 0
+          }
+        },
+        {
+          "context_index": 2,
+          "context_seed": 2,
+          "n": 120,
+          "n_correct": 116,
+          "accuracy": 0.9666666666666667,
+          "wilson_ci_95": [
+            0.917419662440894,
+            0.9869624489016494
+          ],
+          "n_parse_failures": 0,
+          "format_ok_rate": 1.0,
+          "mean_logprob_margin": 12.86582571358295,
+          "n_with_margin": 109,
+          "per_class": {
+            "true": {
+              "n": 60,
+              "n_correct": 57,
+              "accuracy": 0.95
+            },
+            "false": {
+              "n": 60,
+              "n_correct": 59,
+              "accuracy": 0.9833333333333333
+            }
+          },
+          "predictions": {
+            "true": 58,
+            "false": 62,
+            "parse_failure": 0
+          }
+        }
+      ],
+      "pooled": {
+        "n_contexts": 3,
+        "n_items": 120,
+        "mean_accuracy": 0.9805555555555555,
+        "n_parse_failures": 0,
+        "cluster_bootstrap_ci_95": [
+          0.9583333333333334,
+          0.9972222222222222
+        ]
+      }
+    }
+  },
+  "overall": {
+    "n_calls": 360,
+    "n_correct": 353,
+    "n_parse_failures": 0,
+    "parse_failure_rate": 0.0
+  },
+  "wall_seconds": 14.078766270016786,
+  "client_stats": {
+    "api_calls": 360,
+    "cache_hits": 0,
+    "n_429": 0,
+    "retryable_errors": 0,
+    "failures": 0,
+    "rate_429": 0.0,
+    "error_rate": 0.0
+  }
+}

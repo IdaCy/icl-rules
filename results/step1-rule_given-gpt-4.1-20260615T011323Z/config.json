@@ -1,0 +1,61 @@
+{
+  "task": "step1-classification",
+  "mode": "rule_given",
+  "model": "gpt-4.1",
+  "price_per_mtok": {
+    "prompt": 2.0,
+    "completion": 8.0
+  },
+  "rules": [
+    "passive_voice_deconfounded_c"
+  ],
+  "rules_file": "data/rule_texts_deconfounded_b.json",
+  "run_seed": 0,
+  "context_seeds": null,
+  "n_contexts": 1,
+  "k_few_shot": 0,
+  "query_split": "held_out",
+  "n_items_per_rule": 120,
+  "temperature": 0.0,
+  "max_tokens": 2,
+  "logprobs": true,
+  "top_logprobs": 5,
+  "api_seed": 0,
+  "concurrency": 16,
+  "template_hash": "8aef0e7d11177cae537b44b5f41d8de70063344aee125643f208cb61a88e1eab",
+  "expected_total_calls": 120,
+  "data_dir": "data",
+  "contexts": {
+    "passive_voice_deconfounded_c": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff its main clause is in the passive voice — the subject undergoes the action rather than performing it, typically expressed with a form of \"be\" (was/were) plus a past participle — and False iff it is in the active voice. (Voice-defined: the be-form is the typical surface shape, not the definition, so get-passives count as passive — consistent with the probe ruling below.)"
+      }
+    ]
+  },
+  "run_id": "step1-rule_given-gpt-4.1-20260615T011323Z",
+  "started_utc": "20260615T011323Z",
+  "cost_estimate_usd": 0.03821,
+  "cost_actual_usd": 0.033,
+  "finished_utc": "20260615T011328Z",
+  "client_stats": {
+    "api_calls": 120,
+    "cache_hits": 0,
+    "n_429": 0,
+    "retryable_errors": 0,
+    "failures": 0,
+    "rate_429": 0.0,
+    "error_rate": 0.0
+  },
+  "cost": {
+    "prompt_tokens": {
+      "gpt-4.1": 16020
+    },
+    "completion_tokens": {
+      "gpt-4.1": 120
+    },
+    "prompt_cache_hit_tokens": {},
+    "prompt_cache_miss_tokens": {},
+    "total_usd": 0.033
+  }
+}

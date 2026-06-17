@@ -1,0 +1,27 @@
+{
+  "task": "insession-articulation",
+  "experiment": "exp1-no-cot",
+  "model": "claude-opus-4-8",
+  "wall_seconds": 411.87063103402033,
+  "client_stats": {
+    "api_calls": 60,
+    "cache_hits": 0,
+    "n_429": 0,
+    "retryable_errors": 0,
+    "failures": 0,
+    "rate_429": 0.0,
+    "error_rate": 0.0
+  },
+  "cost": {
+    "prompt_tokens": {
+      "gpt-4.1": 47507
+    },
+    "completion_tokens": {
+      "gpt-4.1": 3426
+    },
+    "prompt_cache_hit_tokens": {},
+    "prompt_cache_miss_tokens": {},
+    "total_usd": 5.527507,
+    "claude_usd": 5.405085
+  }
+}

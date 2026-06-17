@@ -1,0 +1,422 @@
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "decode": {
+      "do_sample": false,
+      "num_beams": 1,
+      "max_new_tokens": 2,
+      "greedy": true,
+      "no_cot": true
+    },
+    "k_few_shot": 32,
+    "n_contexts": 3,
+    "n_items_per_context": 120,
+    "query_split": "held_out",
+    "run_seed": 0,
+    "context_seeds": [
+      0,
+      1,
+      2
+    ],
+    "batch_size": 24,
+    "rules": [
+      "mentions_color_deconfounded",
+      "mentions_animal_deconfounded",
+      "food_topic_deconfounded",
+      "positive_sentiment_deconfounded",
+      "contains_first_name_deconfounded",
+      "starts_with_vowel_deconfounded",
+      "last_word_ends_with_vowel_deconfounded",
+      "word_count_geq_8_deconfounded",
+      "second_word_capitalized_deconfounded",
+      "even_word_count_deconfounded",
+      "passive_voice_deconfounded",
+      "the_appears_twice_deconfounded",
+      "first_word_longer_than_last_deconfounded",
+      "all_words_longer_than_3_deconfounded",
+      "first_two_words_alphabetical_deconfounded"
+    ],
+    "transformers": "5.12.0",
+    "torch": "2.12.0+cu130"
+  },
+  "wall_seconds": 524.6082623030525,
+  "rules": {
+    "mentions_color_deconfounded": {
+      "rule_id": "mentions_color_deconfounded",
+      "per_context_accuracy": [
+        0.6833333333333333,
+        0.7416666666666667,
+        0.7083333333333334
+      ],
+      "pooled_accuracy": 0.7111111111111111,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 124,
+        "false": 236,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-mentions_color_deconfounded.jsonl",
+      "wall_seconds": 37.43252074898919
+    },
+    "mentions_animal_deconfounded": {
+      "rule_id": "mentions_animal_deconfounded",
+      "per_context_accuracy": [
+        0.6916666666666667,
+        0.6416666666666667,
+        0.7333333333333333
+      ],
+      "pooled_accuracy": 0.6888888888888888,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 142,
+        "false": 218,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-mentions_animal_deconfounded.jsonl",
+      "wall_seconds": 35.07107183197513
+    },
+    "food_topic_deconfounded": {
+      "rule_id": "food_topic_deconfounded",
+      "per_context_accuracy": [
+        0.65,
+        0.7416666666666667,
+        0.6333333333333333
+      ],
+      "pooled_accuracy": 0.6749999999999999,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 155,
+        "false": 205,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-food_topic_deconfounded.jsonl",
+      "wall_seconds": 33.7771515789791
+    },
+    "positive_sentiment_deconfounded": {
+      "rule_id": "positive_sentiment_deconfounded",
+      "per_context_accuracy": [
+        1.0,
+        0.975,
+        1.0
+      ],
+      "pooled_accuracy": 0.9916666666666667,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 183,
+        "false": 177,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-positive_sentiment_deconfounded.jsonl",
+      "wall_seconds": 30.363278612028807
+    },
+    "contains_first_name_deconfounded": {
+      "rule_id": "contains_first_name_deconfounded",
+      "per_context_accuracy": [
+        0.6333333333333333,
+        0.6333333333333333,
+        0.6916666666666667
+      ],
+      "pooled_accuracy": 0.6527777777777778,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 157,
+        "false": 203,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-contains_first_name_deconfounded.jsonl",
+      "wall_seconds": 34.55793236097088
+    },
+    "starts_with_vowel_deconfounded": {
+      "rule_id": "starts_with_vowel_deconfounded",
+      "per_context_accuracy": [
+        0.43333333333333335,
+        0.48333333333333334,
+        0.5083333333333333
+      ],
+      "pooled_accuracy": 0.47500000000000003,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 147,
+        "false": 213,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-starts_with_vowel_deconfounded.jsonl",
+      "wall_seconds": 32.99730341200484
+    },
+    "last_word_ends_with_vowel_deconfounded": {
+      "rule_id": "last_word_ends_with_vowel_deconfounded",
+      "per_context_accuracy": [
+        0.5333333333333333,
+        0.48333333333333334,
+        0.43333333333333335
+      ],
+      "pooled_accuracy": 0.48333333333333334,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 174,
+        "false": 186,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-last_word_ends_with_vowel_deconfounded.jsonl",
+      "wall_seconds": 34.899450047989376
+    },
+    "word_count_geq_8_deconfounded": {
+      "rule_id": "word_count_geq_8_deconfounded",
+      "per_context_accuracy": [
+        0.625,
+        0.7583333333333333,
+        0.6666666666666666
+      ],
+      "pooled_accuracy": 0.6833333333333332,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 118,
+        "false": 242,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-word_count_geq_8_deconfounded.jsonl",
+      "wall_seconds": 36.48145150201162
+    },
+    "second_word_capitalized_deconfounded": {
+      "rule_id": "second_word_capitalized_deconfounded",
+      "per_context_accuracy": [
+        0.49166666666666664,
+        0.5083333333333333,
+        0.5166666666666667
+      ],
+      "pooled_accuracy": 0.5055555555555555,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 126,
+        "false": 234,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-second_word_capitalized_deconfounded.jsonl",
+      "wall_seconds": 36.17069217795506
+    },
+    "even_word_count_deconfounded": {
+      "rule_id": "even_word_count_deconfounded",
+      "per_context_accuracy": [
+        0.55,
+        0.5166666666666667,
+        0.55
+      ],
+      "pooled_accuracy": 0.5388888888888889,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 156,
+        "false": 204,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-even_word_count_deconfounded.jsonl",
+      "wall_seconds": 34.23979170800885
+    },
+    "passive_voice_deconfounded": {
+      "rule_id": "passive_voice_deconfounded",
+      "per_context_accuracy": [
+        0.5583333333333333,
+        0.5166666666666667,
+        0.5083333333333333
+      ],
+      "pooled_accuracy": 0.5277777777777778,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 16,
+        "false": 344,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-passive_voice_deconfounded.jsonl",
+      "wall_seconds": 31.968860012013465
+    },
+    "the_appears_twice_deconfounded": {
+      "rule_id": "the_appears_twice_deconfounded",
+      "per_context_accuracy": [
+        0.48333333333333334,
+        0.5,
+        0.5166666666666667
+      ],
+      "pooled_accuracy": 0.5,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 158,
+        "false": 202,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-the_appears_twice_deconfounded.jsonl",
+      "wall_seconds": 42.593005106027704
+    },
+    "first_word_longer_than_last_deconfounded": {
+      "rule_id": "first_word_longer_than_last_deconfounded",
+      "per_context_accuracy": [
+        0.5666666666666667,
+        0.48333333333333334,
+        0.5083333333333333
+      ],
+      "pooled_accuracy": 0.5194444444444445,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 121,
+        "false": 239,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-first_word_longer_than_last_deconfounded.jsonl",
+      "wall_seconds": 34.90659655601485
+    },
+    "all_words_longer_than_3_deconfounded": {
+      "rule_id": "all_words_longer_than_3_deconfounded",
+      "per_context_accuracy": [
+        0.5333333333333333,
+        0.575,
+        0.55
+      ],
+      "pooled_accuracy": 0.5527777777777777,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 113,
+        "false": 247,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-all_words_longer_than_3_deconfounded.jsonl",
+      "wall_seconds": 34.48528202902526
+    },
+    "first_two_words_alphabetical_deconfounded": {
+      "rule_id": "first_two_words_alphabetical_deconfounded",
+      "per_context_accuracy": [
+        0.43333333333333335,
+        0.475,
+        0.48333333333333334
+      ],
+      "pooled_accuracy": 0.46388888888888885,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 119,
+        "false": 241,
+        "parse_failure": 0
+      },
+      "raw_file": "results/deconfound-sweep/qwen-step1-20260614T171204Z/local-qwen-step1-first_two_words_alphabetical_deconfounded.jsonl",
+      "wall_seconds": 34.663772397034336
+    }
+  },
+  "pooled_accuracy_table": {
+    "mentions_color_deconfounded": 0.7111111111111111,
+    "mentions_animal_deconfounded": 0.6888888888888888,
+    "food_topic_deconfounded": 0.6749999999999999,
+    "positive_sentiment_deconfounded": 0.9916666666666667,
+    "contains_first_name_deconfounded": 0.6527777777777778,
+    "starts_with_vowel_deconfounded": 0.47500000000000003,
+    "last_word_ends_with_vowel_deconfounded": 0.48333333333333334,
+    "word_count_geq_8_deconfounded": 0.6833333333333332,
+    "second_word_capitalized_deconfounded": 0.5055555555555555,
+    "even_word_count_deconfounded": 0.5388888888888889,
+    "passive_voice_deconfounded": 0.5277777777777778,
+    "the_appears_twice_deconfounded": 0.5,
+    "first_word_longer_than_last_deconfounded": 0.5194444444444445,
+    "all_words_longer_than_3_deconfounded": 0.5527777777777777,
+    "first_two_words_alphabetical_deconfounded": 0.46388888888888885
+  }
+}

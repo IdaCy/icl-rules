@@ -1,0 +1,31 @@
+{
+  "task": "step2-second-judge",
+  "judge_model": "gpt-4o",
+  "primary_judge": "gpt-4.1",
+  "n_jobs": 270,
+  "input_run_dirs": [
+    "results/deconfound-sweep/step2-freeform-gpt-4.1-20260614T170537Z",
+    "results/deconfound-sweep/step2-freeform-gpt-4.1-mini-20260614T170726Z",
+    "results/deconfound-sweep/step2-freeform-deepseek-v4-flash-20260614T170925Z"
+  ],
+  "price_per_mtok": {
+    "prompt": 2.5,
+    "completion": 10.0
+  },
+  "run_id": "step2-regrade-gpt-4o-20260614T175236Z",
+  "started_utc": "20260614T175236Z",
+  "cost_estimate_usd": 1.6721274999999989,
+  "cost_actual_usd": 0.6504125,
+  "finished_utc": "20260614T175308Z",
+  "cost": {
+    "prompt_tokens": {
+      "gpt-4o": 213933
+    },
+    "completion_tokens": {
+      "gpt-4o": 11558
+    },
+    "prompt_cache_hit_tokens": {},
+    "prompt_cache_miss_tokens": {},
+    "total_usd": 0.6504125
+  }
+}

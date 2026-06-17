@@ -1,0 +1,27 @@
+{
+  "task": "insession-articulation",
+  "experiment": "exp1-no-cot",
+  "model": "gpt-4.1",
+  "wall_seconds": 59.87869238201529,
+  "client_stats": {
+    "api_calls": 270,
+    "cache_hits": 0,
+    "n_429": 0,
+    "retryable_errors": 0,
+    "failures": 0,
+    "rate_429": 0.0,
+    "error_rate": 0.0
+  },
+  "cost": {
+    "prompt_tokens": {
+      "gpt-4.1": 188154
+    },
+    "completion_tokens": {
+      "gpt-4.1": 1579
+    },
+    "prompt_cache_hit_tokens": {},
+    "prompt_cache_miss_tokens": {},
+    "total_usd": 0.38894,
+    "claude_usd": 0.0
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "task": "step2-freeform",
+  "model": "claude-opus-4-8",
+  "judge_model": "gpt-4.1",
+  "rules": {
+    "food_topic": {
+      "n_generations": 24,
+      "primary_median_direct": 2.0,
+      "secondary_best_variant": 2,
+      "grade_counts": {
+        "0": 0,
+        "1": 0,
+        "2": 24
+      },
+      "by_variant": {
+        "direct": {
+          "median": 2.0,
+          "max": 2,
+          "grades": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        }
+      },
+      "no_examples_control": {
+        "n": 2,
+        "median": 0.0,
+        "max": 0,
+        "grade_counts": {
+          "0": 2,
+          "1": 0,
+          "2": 0
+        }
+      }
+    },
+    "physically_impossible": {
+      "n_generations": 24,
+      "primary_median_direct": 2.0,
+      "secondary_best_variant": 2,
+      "grade_counts": {
+        "0": 0,
+        "1": 7,
+        "2": 17
+      },
+      "by_variant": {
+        "direct": {
+          "median": 2.0,
+          "max": 2,
+          "grades": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            2,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2
+          ]
+        }
+      },
+      "no_examples_control": {
+        "n": 2,
+        "median": 0.0,
+        "max": 0,
+        "grade_counts": {
+          "0": 2,
+          "1": 0,
+          "2": 0
+        }
+      }
+    },
+    "positive_sentiment": {
+      "n_generations": 24,
+      "primary_median_direct": 2.0,
+      "secondary_best_variant": 2,
+      "grade_counts": {
+        "0": 0,
+        "1": 0,
+        "2": 24
+      },
+      "by_variant": {
+        "direct": {
+          "median": 2.0,
+          "max": 2,
+          "grades": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        }
+      },
+      "no_examples_control": {
+        "n": 2,
+        "median": 0.0,
+        "max": 0,
+        "grade_counts": {
+          "0": 2,
+          "1": 0,
+          "2": 0
+        }
+      }
+    },
+    "second_word_capitalized": {
+      "n_generations": 24,
+      "primary_median_direct": 1.0,
+      "secondary_best_variant": 2,
+      "grade_counts": {
+        "0": 1,
+        "1": 16,
+        "2": 7
+      },
+      "by_variant": {
+        "direct": {
+          "median": 1.0,
+          "max": 2,
+          "grades": [
+            1,
+            1,
+            1,
+            2,
+            2,
+            1,
+            2,
+            2,
+            2,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "no_examples_control": {
+        "n": 2,
+        "median": 0.0,
+        "max": 0,
+        "grade_counts": {
+          "0": 2,
+          "1": 0,
+          "2": 0
+        }
+      }
+    },
+    "word_count_geq_8": {
+      "n_generations": 24,
+      "primary_median_direct": 0.0,
+      "secondary_best_variant": 1,
+      "grade_counts": {
+        "0": 23,
+        "1": 1,
+        "2": 0
+      },
+      "by_variant": {
+        "direct": {
+          "median": 0.0,
+          "max": 1,
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "no_examples_control": {
+        "n": 2,
+        "median": 0.0,
+        "max": 0,
+        "grade_counts": {
+          "0": 2,
+          "1": 0,
+          "2": 0
+        }
+      }
+    }
+  },
+  "overall": {
+    "n_rules": 5,
+    "n_generations": 120,
+    "n_controls": 10,
+    "grade_counts_with_examples": {
+      "0": 24,
+      "1": 24,
+      "2": 72
+    }
+  },
+  "wall_seconds": 82.72486233495874,
+  "client_stats": {
+    "api_calls": 130,
+    "cache_hits": 0,
+    "n_429": 0,
+    "retryable_errors": 0,
+    "failures": 0,
+    "rate_429": 0.0,
+    "error_rate": 0.0
+  }
+}

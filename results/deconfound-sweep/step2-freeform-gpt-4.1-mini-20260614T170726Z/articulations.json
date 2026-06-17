@@ -1,0 +1,142 @@
+{
+  "articulations": {
+    "all_words_longer_than_3_deconfounded": "The sentence is labeled True if it contains a number word from three to nine inclusive; otherwise, it is labeled False.",
+    "contains_first_name_deconfounded": "Label True if the input mentions a person’s name or a personal item, and False if it mentions a place or non-person entity.",
+    "even_word_count_deconfounded": "Label as True if the input contains at least one adjective followed by an adverb ending in -ly; otherwise, label as False.",
+    "first_two_words_alphabetical_deconfounded": "Label as True if the second word is a plural noun referring to living beings or natural elements, otherwise label as False.",
+    "first_word_longer_than_last_deconfounded": "Label True if the second noun in the phrase is a tangible, concrete object or place, otherwise label False.",
+    "food_topic_deconfounded": "Label True if the object is bread, rice, or soup and is located inside or near a place, otherwise label False.",
+    "last_word_ends_with_vowel_deconfounded": "Label True if the last word in the sentence is a noun that can also be a common English place name or a word associated with locations; otherwise, label False.",
+    "mentions_animal_deconfounded": "Label True if the sentence contains an animal or bird as the subject or object, otherwise label False.",
+    "mentions_color_deconfounded": "Label as True if the adjective is a color (yellow, orange, purple, turquoise) and False otherwise.",
+    "passive_voice_deconfounded": "Label True if the verb is in past participle form (usually ending in -ed) indicating a passive or completed action, otherwise label False.",
+    "positive_sentiment_deconfounded": "Label as True if the sentence contains a positive adjective (pleasant or wonderful) describing the subject; otherwise, label as False.",
+    "second_word_capitalized_deconfounded": "Label True if the second word is a proper noun or a capitalized common noun referring to a person, place, or group, otherwise label False.",
+    "starts_with_vowel_deconfounded": "Label as True if the subject is a living being or a person performing an action, or if the subject is \"Always\" or \"Onions\" and the verb indicates movement or appearance; otherwise, label as False.",
+    "the_appears_twice_deconfounded": "Label as True if the input contains at least one possessive pronoun (his, her, their, this, or their) followed immediately by a noun, otherwise label as False.",
+    "word_count_geq_8_deconfounded": "Label True if the sentence contains at least one adjective before the noun being acted upon and the verb is not \"painted\"; otherwise, label False."
+  },
+  "selection": {
+    "all_words_longer_than_3_deconfounded": {
+      "row_index": 210,
+      "context_index": 2,
+      "phrasing": 0,
+      "modal_count": 2,
+      "n_direct_with_examples": 6,
+      "candidate": "The sentence is labeled True if it contains a number word from three to nine inclusive; otherwise, it is labeled False."
+    },
+    "contains_first_name_deconfounded": {
+      "row_index": 64,
+      "context_index": 1,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label True if the input mentions a person’s name or a personal item, and False if it mentions a place or non-person entity."
+    },
+    "even_word_count_deconfounded": {
+      "row_index": 143,
+      "context_index": 1,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label as True if the input contains at least one adjective followed by an adverb ending in -ly; otherwise, label as False."
+    },
+    "first_two_words_alphabetical_deconfounded": {
+      "row_index": 218,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label as True if the second word is a plural noun referring to living beings or natural elements, otherwise label as False."
+    },
+    "first_word_longer_than_last_deconfounded": {
+      "row_index": 186,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label True if the second noun in the phrase is a tangible, concrete object or place, otherwise label False."
+    },
+    "food_topic_deconfounded": {
+      "row_index": 34,
+      "context_index": 2,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label True if the object is bread, rice, or soup and is located inside or near a place, otherwise label False."
+    },
+    "last_word_ends_with_vowel_deconfounded": {
+      "row_index": 90,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label True if the last word in the sentence is a noun that can also be a common English place name or a word associated with locations; otherwise, label False."
+    },
+    "mentions_animal_deconfounded": {
+      "row_index": 20,
+      "context_index": 2,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label True if the sentence contains an animal or bird as the subject or object, otherwise label False."
+    },
+    "mentions_color_deconfounded": {
+      "row_index": 0,
+      "context_index": 1,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label as True if the adjective is a color (yellow, orange, purple, turquoise) and False otherwise."
+    },
+    "passive_voice_deconfounded": {
+      "row_index": 155,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label True if the verb is in past participle form (usually ending in -ed) indicating a passive or completed action, otherwise label False."
+    },
+    "positive_sentiment_deconfounded": {
+      "row_index": 44,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label as True if the sentence contains a positive adjective (pleasant or wonderful) describing the subject; otherwise, label as False."
+    },
+    "second_word_capitalized_deconfounded": {
+      "row_index": 124,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label True if the second word is a proper noun or a capitalized common noun referring to a person, place, or group, otherwise label False."
+    },
+    "starts_with_vowel_deconfounded": {
+      "row_index": 77,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label as True if the subject is a living being or a person performing an action, or if the subject is \"Always\" or \"Onions\" and the verb indicates movement or appearance; otherwise, label as False."
+    },
+    "the_appears_twice_deconfounded": {
+      "row_index": 172,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label as True if the input contains at least one possessive pronoun (his, her, their, this, or their) followed immediately by a noun, otherwise label as False."
+    },
+    "word_count_geq_8_deconfounded": {
+      "row_index": 114,
+      "context_index": 2,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label True if the sentence contains at least one adjective before the noun being acted upon and the verb is not \"painted\"; otherwise, label False."
+    }
+  },
+  "selection_policy": "modal normalized direct with-examples candidate; tie by context_index, phrasing, row order"
+}

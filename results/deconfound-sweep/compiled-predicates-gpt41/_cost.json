@@ -1,0 +1,33 @@
+{
+  "freeform_responses": "results/deconfound-sweep/step2-freeform-gpt-4.1-20260614T170537Z/responses.jsonl",
+  "data_dir": "data",
+  "rules": [
+    "all_words_longer_than_3_deconfounded",
+    "contains_first_name_deconfounded",
+    "even_word_count_deconfounded",
+    "first_two_words_alphabetical_deconfounded",
+    "first_word_longer_than_last_deconfounded",
+    "food_topic_deconfounded",
+    "last_word_ends_with_vowel_deconfounded",
+    "mentions_animal_deconfounded",
+    "mentions_color_deconfounded",
+    "passive_voice_deconfounded",
+    "positive_sentiment_deconfounded",
+    "second_word_capitalized_deconfounded",
+    "starts_with_vowel_deconfounded",
+    "the_appears_twice_deconfounded",
+    "word_count_geq_8_deconfounded"
+  ],
+  "by_coder_tokens": {
+    "gpt-4.1": [
+      9331,
+      65389
+    ],
+    "claude-opus-4-8": [
+      13264,
+      82531
+    ]
+  },
+  "total_usd": 2.6714,
+  "n_calls": 180
+}

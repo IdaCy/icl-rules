@@ -1,0 +1,130 @@
+{
+  "model": "claude-opus-4-8",
+  "arms": [
+    "examples"
+  ],
+  "rules": {
+    "food_topic": {
+      "examples": {
+        "n_queries": 48,
+        "n_correct": 48,
+        "accuracy": 1.0,
+        "wilson_ci_95": [
+          0.9258998703338824,
+          0.9999999999999999
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:food_topic",
+        "modal_count": 48,
+        "modal_is_true": true,
+        "true_predicate_key": "true:food_topic",
+        "choice_distribution": {
+          "true:food_topic": 48
+        }
+      }
+    },
+    "physically_impossible": {
+      "examples": {
+        "n_queries": 48,
+        "n_correct": 48,
+        "accuracy": 1.0,
+        "wilson_ci_95": [
+          0.9258998703338824,
+          0.9999999999999999
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:physically_impossible",
+        "modal_count": 48,
+        "modal_is_true": true,
+        "true_predicate_key": "true:physically_impossible",
+        "choice_distribution": {
+          "true:physically_impossible": 48
+        }
+      }
+    },
+    "positive_sentiment": {
+      "examples": {
+        "n_queries": 48,
+        "n_correct": 48,
+        "accuracy": 1.0,
+        "wilson_ci_95": [
+          0.9258998703338824,
+          0.9999999999999999
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:positive_sentiment",
+        "modal_count": 48,
+        "modal_is_true": true,
+        "true_predicate_key": "true:positive_sentiment",
+        "choice_distribution": {
+          "true:positive_sentiment": 48
+        }
+      }
+    },
+    "second_word_capitalized": {
+      "examples": {
+        "n_queries": 48,
+        "n_correct": 8,
+        "accuracy": 0.16666666666666666,
+        "wilson_ci_95": [
+          0.08695513576485567,
+          0.295778284012556
+        ],
+        "n_parse_failures": 15,
+        "modal_predicate_key": "true:second_word_capitalized",
+        "modal_count": 8,
+        "modal_is_true": true,
+        "true_predicate_key": "true:second_word_capitalized",
+        "choice_distribution": {
+          "starts_adverb": 4,
+          "true:second_word_capitalized": 8,
+          "cross:contains_digit": 5,
+          "cross:past_tense": 3,
+          "cross:contains_exclamation": 5,
+          "proper_noun": 1,
+          "cross:mentions_animal": 4,
+          "mentions_person": 3
+        }
+      }
+    },
+    "word_count_geq_8": {
+      "examples": {
+        "n_queries": 48,
+        "n_correct": 1,
+        "accuracy": 0.020833333333333332,
+        "wilson_ci_95": [
+          0.003687110977510649,
+          0.10899217995251861
+        ],
+        "n_parse_failures": 26,
+        "modal_predicate_key": "wc_geq_6",
+        "modal_count": 18,
+        "modal_is_true": false,
+        "true_predicate_key": "true:word_count_geq_8",
+        "choice_distribution": {
+          "wc_geq_6": 18,
+          "multi_clause": 2,
+          "true:word_count_geq_8": 1,
+          "cross:contains_digit": 1
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "examples": {
+      "n_queries": 240,
+      "n_correct": 153,
+      "query_accuracy": 0.6375,
+      "n_rules": 5,
+      "n_rules_modal_true": 4,
+      "modal_true_rate": 0.8,
+      "n_parse_failures": 41,
+      "chance": 0.125
+    }
+  },
+  "wall_seconds": 79.92841171298642,
+  "client_stats": {
+    "api_calls": 240,
+    "provider": "anthropic"
+  }
+}

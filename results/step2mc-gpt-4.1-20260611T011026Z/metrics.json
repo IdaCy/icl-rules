@@ -1,0 +1,426 @@
+{
+  "model": "gpt-4.1",
+  "arms": [
+    "examples",
+    "no_examples"
+  ],
+  "rules": {
+    "contains_digit": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 12,
+        "accuracy": 1.0,
+        "wilson_ci_95": [
+          0.7575059933447592,
+          1.0
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:contains_digit",
+        "modal_count": 12,
+        "modal_is_true": true,
+        "true_predicate_key": "true:contains_digit",
+        "choice_distribution": {
+          "true:contains_digit": 12
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:contains_digit",
+        "choice_distribution": {}
+      }
+    },
+    "contains_first_name": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 12,
+        "accuracy": 1.0,
+        "wilson_ci_95": [
+          0.7575059933447592,
+          1.0
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:contains_first_name",
+        "modal_count": 12,
+        "modal_is_true": true,
+        "true_predicate_key": "true:contains_first_name",
+        "choice_distribution": {
+          "true:contains_first_name": 12
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:contains_first_name",
+        "choice_distribution": {}
+      }
+    },
+    "food_topic": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 12,
+        "accuracy": 1.0,
+        "wilson_ci_95": [
+          0.7575059933447592,
+          1.0
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:food_topic",
+        "modal_count": 12,
+        "modal_is_true": true,
+        "true_predicate_key": "true:food_topic",
+        "choice_distribution": {
+          "true:food_topic": 12
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:food_topic",
+        "choice_distribution": {}
+      }
+    },
+    "mentions_animal": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 12,
+        "accuracy": 1.0,
+        "wilson_ci_95": [
+          0.7575059933447592,
+          1.0
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:mentions_animal",
+        "modal_count": 12,
+        "modal_is_true": true,
+        "true_predicate_key": "true:mentions_animal",
+        "choice_distribution": {
+          "true:mentions_animal": 12
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:mentions_animal",
+        "choice_distribution": {}
+      }
+    },
+    "mentions_color": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 6,
+        "accuracy": 0.5,
+        "wilson_ci_95": [
+          0.2537815976337061,
+          0.7462184023662939
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:mentions_color",
+        "modal_count": 6,
+        "modal_is_true": true,
+        "true_predicate_key": "true:mentions_color",
+        "choice_distribution": {
+          "true:mentions_color": 6,
+          "adj_before_noun": 4,
+          "visual_adj": 2
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:mentions_color",
+        "choice_distribution": {}
+      }
+    },
+    "passive_voice": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 8,
+        "accuracy": 0.6666666666666666,
+        "wilson_ci_95": [
+          0.39062208887279953,
+          0.8618799089087867
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:passive_voice",
+        "modal_count": 8,
+        "modal_is_true": true,
+        "true_predicate_key": "true:passive_voice",
+        "choice_distribution": {
+          "true:passive_voice": 8,
+          "was_were": 4
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:passive_voice",
+        "choice_distribution": {}
+      }
+    },
+    "physically_impossible": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 1,
+        "accuracy": 0.08333333333333333,
+        "wilson_ci_95": [
+          0.014865094404917095,
+          0.35387991114111694
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "object_human_action",
+        "modal_count": 11,
+        "modal_is_true": false,
+        "true_predicate_key": "true:physically_impossible",
+        "choice_distribution": {
+          "object_human_action": 11,
+          "true:physically_impossible": 1
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:physically_impossible",
+        "choice_distribution": {}
+      }
+    },
+    "positive_sentiment": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 12,
+        "accuracy": 1.0,
+        "wilson_ci_95": [
+          0.7575059933447592,
+          1.0
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:positive_sentiment",
+        "modal_count": 12,
+        "modal_is_true": true,
+        "true_predicate_key": "true:positive_sentiment",
+        "choice_distribution": {
+          "true:positive_sentiment": 12
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:positive_sentiment",
+        "choice_distribution": {}
+      }
+    },
+    "repeated_content_word": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 9,
+        "accuracy": 0.75,
+        "wilson_ci_95": [
+          0.4676946650664343,
+          0.9110583316059452
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "true:repeated_content_word",
+        "modal_count": 9,
+        "modal_is_true": true,
+        "true_predicate_key": "true:repeated_content_word",
+        "choice_distribution": {
+          "true:repeated_content_word": 9,
+          "any_word_repeats": 1,
+          "nouns_geq_2": 2
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 10,
+        "modal_predicate_key": "any_word_repeats",
+        "modal_count": 2,
+        "modal_is_true": false,
+        "true_predicate_key": "true:repeated_content_word",
+        "choice_distribution": {
+          "any_word_repeats": 2
+        }
+      }
+    },
+    "second_word_capitalized": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 3,
+        "accuracy": 0.25,
+        "wilson_ci_95": [
+          0.08894166839405476,
+          0.5323053349335656
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "second_is_name",
+        "modal_count": 5,
+        "modal_is_true": false,
+        "true_predicate_key": "true:second_word_capitalized",
+        "choice_distribution": {
+          "proper_noun": 4,
+          "true:second_word_capitalized": 3,
+          "second_is_name": 5
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:second_word_capitalized",
+        "choice_distribution": {}
+      }
+    },
+    "word_count_geq_8": {
+      "examples": {
+        "n_queries": 12,
+        "n_correct": 5,
+        "accuracy": 0.4166666666666667,
+        "wilson_ci_95": [
+          0.19326031365875668,
+          0.6804886874504503
+        ],
+        "n_parse_failures": 0,
+        "modal_predicate_key": "wc_geq_6",
+        "modal_count": 7,
+        "modal_is_true": false,
+        "true_predicate_key": "true:word_count_geq_8",
+        "choice_distribution": {
+          "true:word_count_geq_8": 5,
+          "wc_geq_6": 7
+        }
+      },
+      "no_examples": {
+        "n_queries": 12,
+        "n_correct": 0,
+        "accuracy": 0.0,
+        "wilson_ci_95": [
+          2.7755575615628914e-17,
+          0.24249400665524085
+        ],
+        "n_parse_failures": 12,
+        "modal_predicate_key": null,
+        "modal_count": 0,
+        "modal_is_true": false,
+        "true_predicate_key": "true:word_count_geq_8",
+        "choice_distribution": {}
+      }
+    }
+  },
+  "aggregate": {
+    "examples": {
+      "n_queries": 132,
+      "n_correct": 92,
+      "query_accuracy": 0.696969696969697,
+      "n_rules": 11,
+      "n_rules_modal_true": 8,
+      "modal_true_rate": 0.7272727272727273,
+      "n_parse_failures": 0,
+      "chance": 0.125
+    },
+    "no_examples": {
+      "n_queries": 132,
+      "n_correct": 0,
+      "query_accuracy": 0.0,
+      "n_rules": 11,
+      "n_rules_modal_true": 0,
+      "modal_true_rate": 0.0,
+      "n_parse_failures": 130,
+      "chance": 0.125
+    }
+  },
+  "wall_seconds": 13.119000596998376,
+  "client_stats": {
+    "api_calls": 264,
+    "cache_hits": 0,
+    "n_429": 0,
+    "retryable_errors": 0,
+    "failures": 0,
+    "rate_429": 0.0,
+    "error_rate": 0.0
+  }
+}

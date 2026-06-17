@@ -1,0 +1,59 @@
+{
+  "task": "step1-classification",
+  "mode": "rule_given",
+  "model": "gpt-4.1-mini",
+  "price_per_mtok": {
+    "prompt": 0.4,
+    "completion": 1.6
+  },
+  "rules": [
+    "second_word_capitalized_v2"
+  ],
+  "rules_file": "data/rule_texts_v2.json",
+  "run_seed": 0,
+  "context_seeds": null,
+  "n_contexts": 1,
+  "k_few_shot": 0,
+  "query_split": "held_out",
+  "n_items_per_rule": 120,
+  "temperature": 0.0,
+  "max_tokens": 2,
+  "logprobs": true,
+  "top_logprobs": 5,
+  "api_seed": 0,
+  "concurrency": 4,
+  "template_hash": "8aef0e7d11177cae537b44b5f41d8de70063344aee125643f208cb61a88e1eab",
+  "expected_total_calls": 120,
+  "data_dir": "data",
+  "contexts": {
+    "second_word_capitalized_v2": [
+      {
+        "context_index": 0,
+        "rule_text": "The label is True if and only if the second word of the input begins with a capital letter; otherwise it is False."
+      }
+    ]
+  },
+  "run_id": "step1-rule_given-gpt-4.1-mini-20260612T213714Z",
+  "started_utc": "20260612T213714Z",
+  "cost_estimate_usd": 0.004268000000000008,
+  "cost_actual_usd": 0.0036196,
+  "finished_utc": "20260612T213731Z",
+  "client_stats": {
+    "api_calls": 120,
+    "cache_hits": 0,
+    "n_429": 0,
+    "retryable_errors": 0,
+    "failures": 0,
+    "rate_429": 0.0,
+    "error_rate": 0.0
+  },
+  "cost": {
+    "prompt_tokens": {
+      "gpt-4.1-mini": 8569
+    },
+    "completion_tokens": {
+      "gpt-4.1-mini": 120
+    },
+    "total_usd": 0.0036196
+  }
+}

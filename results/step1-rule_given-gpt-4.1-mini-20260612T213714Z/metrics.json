@@ -1,0 +1,65 @@
+{
+  "mode": "rule_given",
+  "model": "gpt-4.1-mini",
+  "rules": {
+    "second_word_capitalized_v2": {
+      "contexts": [
+        {
+          "context_index": 0,
+          "context_seed": null,
+          "n": 120,
+          "n_correct": 118,
+          "accuracy": 0.9833333333333333,
+          "wilson_ci_95": [
+            0.941264037027841,
+            0.9954174354340789
+          ],
+          "n_parse_failures": 0,
+          "format_ok_rate": 1.0,
+          "mean_logprob_margin": 10.901041655090022,
+          "n_with_margin": 120,
+          "per_class": {
+            "true": {
+              "n": 60,
+              "n_correct": 58,
+              "accuracy": 0.9666666666666667
+            },
+            "false": {
+              "n": 60,
+              "n_correct": 60,
+              "accuracy": 1.0
+            }
+          },
+          "predictions": {
+            "true": 58,
+            "false": 62,
+            "parse_failure": 0
+          }
+        }
+      ],
+      "pooled": {
+        "n_contexts": 1,
+        "n_items": 120,
+        "mean_accuracy": 0.9833333333333333,
+        "n_parse_failures": 0,
+        "cluster_bootstrap_ci_95": null
+      }
+    }
+  },
+  "overall": {
+    "n_calls": 120,
+    "n_correct": 118,
+    "n_parse_failures": 0,
+    "parse_failure_rate": 0.0
+  },
+  "wall_seconds": 17.506310616008705,
+  "client_stats": {
+    "api_calls": 120,
+    "cache_hits": 0,
+    "n_429": 0,
+    "retryable_errors": 0,
+    "failures": 0,
+    "rate_429": 0.0,
+    "error_rate": 0.0
+  }
+}

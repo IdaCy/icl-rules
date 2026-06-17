@@ -1,0 +1,142 @@
+{
+  "articulations": {
+    "all_words_longer_than_3_deconfounded": "The sentence must contain a number that is a multiple of three.",
+    "contains_first_name_deconfounded": "The label is True if the sentence mentions a person's name, and False if it mentions a place.",
+    "even_word_count_deconfounded": "The label is True if and only if the input contains exactly one adverb.",
+    "first_two_words_alphabetical_deconfounded": "The label is True if and only if the input contains a location phrase that includes both a preposition and a noun (e.g., \"under the bridge\", \"at the market\", \"by the door\") and does not contain any location phrase that is a single word or a simple adverb (e.g., \"at once\", \"on foot\", \"abroad\", \"everywhere\",",
+    "first_word_longer_than_last_deconfounded": "The label is True if and only if the noun in the subject and the noun in the object are both concrete (physical) or both abstract (non-physical), but not one of each.",
+    "food_topic_deconfounded": "The label is True if and only if the sentence mentions bread, rice, or soup in a location that is not a lamp, cabinet, hallway, or window.",
+    "last_word_ends_with_vowel_deconfounded": "The label is True if and only if the input contains a noun that is a physical object that can be touched or moved, and not an abstract concept, season, body part, or person.",
+    "mentions_animal_deconfounded": "The label is True if and only if the input describes an animal in an unusual or unexpected location.",
+    "mentions_color_deconfounded": "A sentence is True if it contains a color adjective (other than \"gentle\" or \"shallow\") modifying a noun, and False otherwise.",
+    "passive_voice_deconfounded": "The label is True if the verb is a past participle (passive voice) and False if it is a present participle (active voice).",
+    "positive_sentiment_deconfounded": "The label is True if the sentence contains a positive adjective (pleasant, wonderful) and False if it contains a negative adjective (awful, poor).",
+    "second_word_capitalized_deconfounded": "The label is True if and only if the adverb and the verb both start with the same letter.",
+    "starts_with_vowel_deconfounded": "The input is True if and only if the first word is a plural noun referring to a living thing or a group of people, or the word \"Always\" or \"Onions\".",
+    "the_appears_twice_deconfounded": "The label is True if and only if the sentence contains a preposition that is not \"toward\" or \"past\".",
+    "word_count_geq_8_deconfounded": "The input is True if and only if it contains at least one adjective before the subject and at least one adjective before the direct object."
+  },
+  "selection": {
+    "all_words_longer_than_3_deconfounded": {
+      "row_index": 209,
+      "context_index": 1,
+      "phrasing": 1,
+      "modal_count": 2,
+      "n_direct_with_examples": 6,
+      "candidate": "The sentence must contain a number that is a multiple of three."
+    },
+    "contains_first_name_deconfounded": {
+      "row_index": 66,
+      "context_index": 1,
+      "phrasing": 0,
+      "modal_count": 2,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if the sentence mentions a person's name, and False if it mentions a place."
+    },
+    "even_word_count_deconfounded": {
+      "row_index": 142,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 3,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the input contains exactly one adverb."
+    },
+    "first_two_words_alphabetical_deconfounded": {
+      "row_index": 226,
+      "context_index": 1,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the input contains a location phrase that includes both a preposition and a noun (e.g., \"under the bridge\", \"at the market\", \"by the door\") and does not contain any location phrase that is a single word or a simple adverb (e.g., \"at once\", \"on foot\", \"abroad\", \"everywhere\","
+    },
+    "first_word_longer_than_last_deconfounded": {
+      "row_index": 197,
+      "context_index": 2,
+      "phrasing": 1,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the noun in the subject and the noun in the object are both concrete (physical) or both abstract (non-physical), but not one of each."
+    },
+    "food_topic_deconfounded": {
+      "row_index": 36,
+      "context_index": 2,
+      "phrasing": 0,
+      "modal_count": 2,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the sentence mentions bread, rice, or soup in a location that is not a lamp, cabinet, hallway, or window."
+    },
+    "last_word_ends_with_vowel_deconfounded": {
+      "row_index": 98,
+      "context_index": 1,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the input contains a noun that is a physical object that can be touched or moved, and not an abstract concept, season, body part, or person."
+    },
+    "mentions_animal_deconfounded": {
+      "row_index": 20,
+      "context_index": 2,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the input describes an animal in an unusual or unexpected location."
+    },
+    "mentions_color_deconfounded": {
+      "row_index": 1,
+      "context_index": 1,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "A sentence is True if it contains a color adjective (other than \"gentle\" or \"shallow\") modifying a noun, and False otherwise."
+    },
+    "passive_voice_deconfounded": {
+      "row_index": 156,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 2,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if the verb is a past participle (passive voice) and False if it is a present participle (active voice)."
+    },
+    "positive_sentiment_deconfounded": {
+      "row_index": 48,
+      "context_index": 0,
+      "phrasing": 1,
+      "modal_count": 3,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if the sentence contains a positive adjective (pleasant, wonderful) and False if it contains a negative adjective (awful, poor)."
+    },
+    "second_word_capitalized_deconfounded": {
+      "row_index": 125,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the adverb and the verb both start with the same letter."
+    },
+    "starts_with_vowel_deconfounded": {
+      "row_index": 83,
+      "context_index": 2,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The input is True if and only if the first word is a plural noun referring to a living thing or a group of people, or the word \"Always\" or \"Onions\"."
+    },
+    "the_appears_twice_deconfounded": {
+      "row_index": 177,
+      "context_index": 1,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the sentence contains a preposition that is not \"toward\" or \"past\"."
+    },
+    "word_count_geq_8_deconfounded": {
+      "row_index": 111,
+      "context_index": 1,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The input is True if and only if it contains at least one adjective before the subject and at least one adjective before the direct object."
+    }
+  },
+  "selection_policy": "modal normalized direct with-examples candidate; tie by context_index, phrasing, row order"
+}
