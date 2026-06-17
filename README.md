@@ -4,25 +4,22 @@ This study measures if a language model can put into words a binary classificati
 
 ## Main findings
 
-Across 30 rules with confound audits on gpt-4.1 and gpt-4.1-mini:
+With 30 rules, with confound audits on gpt-4.1 and gpt-4.1-mini:
 
 - Learning tracks word-level vocabulary. Rules whose vocabulary differs by class average 0.94 held-out accuracy, but a bag-of-words baseline solves 5 of the 6 semantic rules, so much of this is lexical lookup. A simple character rule, `all_lowercase`, is close to chance when learned from examples but reaches 0.98 when the rule is given.
 - Classifying works better than stating the rule, but the classification is easier tested. Articulation has more confounding factors, like potential judges bias (which we tried to mitigate).
 - When removing confounds, results become clearer. The articulation for `word_count_geq_8` moves to the new surface feature ("two adjectives", never "8 words"), and a simple character counter (0.942) beats the model (0.772). For `second_word_capitalized`, accuracy from examples drops to near chance (0.97 to 0.56, and 0.81 to 0.58) once proper-noun-ness is separated from capitalisation, even though the model still applies the rule almost perfectly when it is told it (rule-given, to 1.00).
 - Grades were checked by a separate judge (gpt-4o, exact agreement 0.81 overall, weaker on a few important rules) and by compiled stated-rule checks.
 
-## Repository layout
+## Repo structure
 
 ```
 src/icl_articulation/    library: async client, prompts, multiple-choice/free-form grading,
                          faithfulness probes, stats, run logging
 data/<rule>/             one directory per rule: items.jsonl + confound_report.json
-                         (30 rules across surface, syntactic, semantic, positional,
-                         numeric and deliberately-hard categories)
-scripts/                 run_step*.py experiment runners plus local analysis
-                         scripts and reproduce_no_api.py
-results/                 per-run output dirs (config.json with seeds + template
-                         hashes + per-run cost, responses.jsonl, metrics.json)
+                         (30 rules across surface, syntactic, semantic, positional, numeric and deliberately-hard categories)
+scripts/                 run_step*.py experiment runners plus local analysis scripts and reproduce_no_api.py
+results/                 per-run output dirs (config.json with seeds + template hashes + per-run cost, responses.jsonl, metrics.json)
 results/figures/         the report figures (+ captions), the deconfound +
                          confound/grade audits, and the consolidated metrics_table.csv
 ```
@@ -68,7 +65,7 @@ Report numbers come from the raw `results/*/responses.jsonl` logs and a small se
 - `results/figures/judge_agreement.json`
 - `results/local-qwen-step1-metrics.json` if the Qwen limitation is retained
 
-## Re-run paid experiments
+## Run paid experiments
 
 ```bash
 # 1. install the package (Python >= 3.12)
@@ -93,20 +90,20 @@ $PY scripts/run_step1.py --mode confirmation --model gpt-4.1 \
     --rules "$($PY scripts/select_survivors.py --print-rules)"
 
 # 4. Steps 2 and 3 — articulation and faithfulness (on the selected rules)
-$PY scripts/run_step2_mc.py           --model gpt-4.1   # recognition (8-way multiple-choice)
-$PY scripts/run_step2_freeform.py     --model gpt-4.1   # production (free-form, LLM-graded)
-$PY scripts/run_step3_faithfulness.py --model gpt-4.1   # counterfactual faithfulness test
+$PY scripts/run_step2_mc.py           --model gpt-4.1   # 8-way multiple-choice
+$PY scripts/run_step2_freeform.py     --model gpt-4.1   # 1-sentence, LLM-graded
+$PY scripts/run_step3_faithfulness.py --model gpt-4.1
 
 # (repeat steps 3-4 with --model gpt-4.1-mini for the second subject)
 
 # 5. analysis + figures (all local, no API calls)
 $PY scripts/analyze_step3.py       # corrected step-3 -> results/figures/step3_corrected.json
 $PY scripts/make_figures.py --tables-only # metrics_table for dependent files
-$PY scripts/analyze_confounds.py   # compiled predicates + confound re-audit -> confound_audit.json
+$PY scripts/analyze_confounds.py
 $PY scripts/analyze_deconfound.py
 $PY scripts/analyze_swc_deconfound.py
 $PY scripts/analyze_confound_grade.py
 $PY scripts/analyze_local_qwen.py
-$PY scripts/make_figures.py        # consolidate metrics + render every figure
+$PY scripts/make_figures.py
 ```
 
