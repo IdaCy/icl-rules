@@ -1,0 +1,257 @@
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "decode": {
+      "do_sample": false,
+      "num_beams": 1,
+      "max_new_tokens": 2,
+      "greedy": true,
+      "no_cot": true
+    },
+    "k_few_shot": 32,
+    "n_contexts": 3,
+    "n_items_per_context": 120,
+    "query_split": "held_out",
+    "run_seed": 0,
+    "context_seeds": [
+      0,
+      1,
+      2
+    ],
+    "batch_size": 24,
+    "rules": [
+      "physically_impossible",
+      "food_topic",
+      "all_lowercase",
+      "second_word_capitalized",
+      "second_word_capitalized_v2",
+      "word_count_geq_8",
+      "word_count_geq_8_v2",
+      "mentions_animal",
+      "positive_sentiment"
+    ],
+    "transformers": "5.12.0",
+    "torch": "2.12.0+cu130"
+  },
+  "rules": {
+    "all_lowercase": {
+      "rule_id": "all_lowercase",
+      "per_context_accuracy": [
+        0.5166666666666667,
+        0.6083333333333333,
+        0.5833333333333334
+      ],
+      "pooled_accuracy": 0.5694444444444445,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 185,
+        "false": 175,
+        "parse_failure": 0
+      },
+      "raw_file": "results/local-qwen-step1-all_lowercase.jsonl"
+    },
+    "food_topic": {
+      "rule_id": "food_topic",
+      "per_context_accuracy": [
+        0.6166666666666667,
+        0.6333333333333333,
+        0.6166666666666667
+      ],
+      "pooled_accuracy": 0.6222222222222222,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 310,
+        "false": 50,
+        "parse_failure": 0
+      },
+      "raw_file": "results/local-qwen-step1-food_topic.jsonl"
+    },
+    "mentions_animal": {
+      "rule_id": "mentions_animal",
+      "per_context_accuracy": [
+        0.625,
+        0.7333333333333333,
+        0.8
+      ],
+      "pooled_accuracy": 0.7194444444444444,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 167,
+        "false": 193,
+        "parse_failure": 0
+      },
+      "raw_file": "results/local-qwen-step1-mentions_animal.jsonl"
+    },
+    "physically_impossible": {
+      "rule_id": "physically_impossible",
+      "per_context_accuracy": [
+        0.475,
+        0.6666666666666666,
+        0.425
+      ],
+      "pooled_accuracy": 0.5222222222222223,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 140,
+        "false": 220,
+        "parse_failure": 0
+      },
+      "raw_file": "results/local-qwen-step1-physically_impossible.jsonl"
+    },
+    "positive_sentiment": {
+      "rule_id": "positive_sentiment",
+      "per_context_accuracy": [
+        0.975,
+        0.95,
+        0.95
+      ],
+      "pooled_accuracy": 0.9583333333333334,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 191,
+        "false": 169,
+        "parse_failure": 0
+      },
+      "raw_file": "results/local-qwen-step1-positive_sentiment.jsonl"
+    },
+    "second_word_capitalized": {
+      "rule_id": "second_word_capitalized",
+      "per_context_accuracy": [
+        0.6166666666666667,
+        0.5416666666666666,
+        0.5666666666666667
+      ],
+      "pooled_accuracy": 0.5750000000000001,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 141,
+        "false": 219,
+        "parse_failure": 0
+      },
+      "raw_file": "results/local-qwen-step1-second_word_capitalized.jsonl"
+    },
+    "second_word_capitalized_v2": {
+      "rule_id": "second_word_capitalized_v2",
+      "per_context_accuracy": [
+        0.49166666666666664,
+        0.5083333333333333,
+        0.5166666666666667
+      ],
+      "pooled_accuracy": 0.5055555555555555,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 126,
+        "false": 234,
+        "parse_failure": 0
+      },
+      "raw_file": "results/local-qwen-step1-second_word_capitalized_v2.jsonl"
+    },
+    "word_count_geq_8": {
+      "rule_id": "word_count_geq_8",
+      "per_context_accuracy": [
+        0.65,
+        0.575,
+        0.6416666666666667
+      ],
+      "pooled_accuracy": 0.6222222222222222,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 188,
+        "false": 172,
+        "parse_failure": 0
+      },
+      "raw_file": "results/local-qwen-step1-word_count_geq_8.jsonl"
+    },
+    "word_count_geq_8_v2": {
+      "rule_id": "word_count_geq_8_v2",
+      "per_context_accuracy": [
+        0.625,
+        0.7583333333333333,
+        0.6666666666666666
+      ],
+      "pooled_accuracy": 0.6833333333333332,
+      "n_items_per_context": 120,
+      "n_contexts": 3,
+      "context_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_parse_failures": 0,
+      "predictions": {
+        "true": 118,
+        "false": 242,
+        "parse_failure": 0
+      },
+      "raw_file": "results/local-qwen-step1-word_count_geq_8_v2.jsonl"
+    }
+  },
+  "pooled_accuracy_table": {
+    "all_lowercase": 0.5694444444444445,
+    "food_topic": 0.6222222222222222,
+    "mentions_animal": 0.7194444444444444,
+    "physically_impossible": 0.5222222222222223,
+    "positive_sentiment": 0.9583333333333334,
+    "second_word_capitalized": 0.5750000000000001,
+    "second_word_capitalized_v2": 0.5055555555555555,
+    "word_count_geq_8": 0.6222222222222222,
+    "word_count_geq_8_v2": 0.6833333333333332
+  },
+  "recomputed_from_raw_jsonl": true
+}
