@@ -1,0 +1,34 @@
+{
+  "task": "wc8v2-articulation-probe",
+  "rule": "word_count_geq_8_v2",
+  "models": [
+    "gpt-4.1",
+    "gpt-4.1-mini"
+  ],
+  "price_per_mtok": {
+    "gpt-4.1": {
+      "prompt": 2.0,
+      "completion": 8.0
+    },
+    "gpt-4.1-mini": {
+      "prompt": 0.4,
+      "completion": 1.6
+    }
+  },
+  "run_id": "step2-freeform-wc8v2-probe-20260612T012316Z",
+  "started_utc": "20260612T012316Z",
+  "cost_estimate_usd": 0.01536,
+  "cost_actual_usd": 0.009744,
+  "finished_utc": "20260612T012320Z",
+  "cost": {
+    "prompt_tokens": {
+      "gpt-4.1": 3218,
+      "gpt-4.1-mini": 3218
+    },
+    "completion_tokens": {
+      "gpt-4.1": 206,
+      "gpt-4.1-mini": 233
+    },
+    "total_usd": 0.009744
+  }
+}
