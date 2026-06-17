@@ -1,0 +1,362 @@
+{
+  "_note": "Compiled-predicate check: the model compiles its OWN articulations to executable predicates (sandboxed). Anchors are hand-written predicate accuracies (swc=0.600 predicate, NOT the 1.000 vocab lookup).",
+  "per_coder": {
+    "claude-opus-4-8": {
+      "contains_digit": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.5,
+        "acc_median": 0.5098,
+        "acc_max": 0.5174,
+        "spread": 0.0174,
+        "anchor": null,
+        "bucket": "structural"
+      },
+      "contains_first_name": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.5,
+        "acc_median": 0.8286,
+        "acc_max": 0.8339,
+        "spread": 0.3339,
+        "anchor": null,
+        "bucket": "semantic"
+      },
+      "food_topic": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.9282,
+        "acc_median": 0.964,
+        "acc_max": 0.9856,
+        "spread": 0.0574,
+        "anchor": 0.902,
+        "bucket": "semantic"
+      },
+      "mentions_animal": {
+        "n_compiled": 5,
+        "parse_fail": 1,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.6104,
+        "acc_median": 0.8646,
+        "acc_max": 0.9854,
+        "spread": 0.375,
+        "anchor": null,
+        "bucket": "semantic"
+      },
+      "mentions_color": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.4914,
+        "acc_median": 0.5,
+        "acc_max": 0.5966,
+        "spread": 0.1052,
+        "anchor": null,
+        "bucket": "semantic"
+      },
+      "passive_voice": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.5104,
+        "acc_median": 0.8073,
+        "acc_max": 1.0,
+        "spread": 0.4896,
+        "anchor": null,
+        "bucket": "structural"
+      },
+      "physically_impossible": {
+        "n_compiled": 5,
+        "parse_fail": 1,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.4989,
+        "acc_median": 0.5011,
+        "acc_max": 0.5033,
+        "spread": 0.0044,
+        "anchor": 0.605,
+        "bucket": "semantic"
+      },
+      "positive_sentiment": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.5312,
+        "acc_median": 0.6406,
+        "acc_max": 0.6847,
+        "spread": 0.1535,
+        "anchor": null,
+        "bucket": "semantic"
+      },
+      "repeated_content_word": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.5,
+        "acc_median": 0.5174,
+        "acc_max": 1.0,
+        "spread": 0.5,
+        "anchor": null,
+        "bucket": "structural"
+      },
+      "second_word_capitalized": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 480,
+        "acc_min": 0.0,
+        "acc_median": 0.5,
+        "acc_max": 0.6458,
+        "spread": 0.6458,
+        "anchor": 0.6,
+        "bucket": "structural"
+      },
+      "word_count_geq_8": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.4725,
+        "acc_median": 0.6907,
+        "acc_max": 0.9195,
+        "spread": 0.447,
+        "anchor": 0.977,
+        "bucket": "structural"
+      }
+    },
+    "gpt-4.1": {
+      "contains_digit": {
+        "n_compiled": 2,
+        "parse_fail": 4,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.5,
+        "acc_median": 0.5087,
+        "acc_max": 0.5174,
+        "spread": 0.0174,
+        "anchor": null,
+        "bucket": "structural"
+      },
+      "contains_first_name": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.5,
+        "acc_median": 0.6027,
+        "acc_max": 0.8482,
+        "spread": 0.3482,
+        "anchor": null,
+        "bucket": "semantic"
+      },
+      "food_topic": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.9224,
+        "acc_median": 0.9282,
+        "acc_max": 0.9282,
+        "spread": 0.0058,
+        "anchor": 0.902,
+        "bucket": "semantic"
+      },
+      "mentions_animal": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.6062,
+        "acc_median": 0.7875,
+        "acc_max": 0.8854,
+        "spread": 0.2792,
+        "anchor": null,
+        "bucket": "semantic"
+      },
+      "mentions_color": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.4707,
+        "acc_median": 0.5051,
+        "acc_max": 0.6362,
+        "spread": 0.1655,
+        "anchor": null,
+        "bucket": "semantic"
+      },
+      "passive_voice": {
+        "n_compiled": 4,
+        "parse_fail": 2,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.5,
+        "acc_median": 0.55,
+        "acc_max": 0.8333,
+        "spread": 0.3333,
+        "anchor": null,
+        "bucket": "structural"
+      },
+      "physically_impossible": {
+        "n_compiled": 3,
+        "parse_fail": 3,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.4989,
+        "acc_median": 0.4989,
+        "acc_max": 0.5011,
+        "spread": 0.0022,
+        "anchor": 0.605,
+        "bucket": "semantic"
+      },
+      "positive_sentiment": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.4943,
+        "acc_median": 0.5923,
+        "acc_max": 0.6619,
+        "spread": 0.1676,
+        "anchor": null,
+        "bucket": "semantic"
+      },
+      "repeated_content_word": {
+        "n_compiled": 5,
+        "parse_fail": 1,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.5,
+        "acc_median": 0.5261,
+        "acc_max": 0.6457,
+        "spread": 0.1457,
+        "anchor": null,
+        "bucket": "structural"
+      },
+      "second_word_capitalized": {
+        "n_compiled": 6,
+        "parse_fail": 0,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.3583,
+        "acc_median": 0.5,
+        "acc_max": 0.5,
+        "spread": 0.1417,
+        "anchor": 0.6,
+        "bucket": "structural"
+      },
+      "word_count_geq_8": {
+        "n_compiled": 4,
+        "parse_fail": 2,
+        "exec_fail": 0,
+        "item_errors": 0,
+        "acc_min": 0.5,
+        "acc_median": 0.5858,
+        "acc_max": 0.7606,
+        "spread": 0.2606,
+        "anchor": 0.977,
+        "bucket": "structural"
+      }
+    }
+  },
+  "verdicts": {
+    "claude-opus-4-8": {
+      "anchors_within_0.05": 0,
+      "anchor_detail": {
+        "word_count_geq_8": {
+          "anchor": 0.977,
+          "model_median": 0.6907,
+          "within_0.05": false
+        },
+        "second_word_capitalized": {
+          "anchor": 0.6,
+          "model_median": 0.5,
+          "within_0.05": false
+        },
+        "physically_impossible": {
+          "anchor": 0.605,
+          "model_median": 0.5011,
+          "within_0.05": false
+        },
+        "food_topic": {
+          "anchor": 0.902,
+          "model_median": 0.964,
+          "within_0.05": false
+        }
+      },
+      "compiled_majority": true,
+      "compiled": 64,
+      "total": 66,
+      "VALIDATES": false,
+      "structural_median": 0.5174,
+      "semantic_median": 0.7346,
+      "REVEALS_SPLIT": false
+    },
+    "gpt-4.1": {
+      "anchors_within_0.05": 1,
+      "anchor_detail": {
+        "word_count_geq_8": {
+          "anchor": 0.977,
+          "model_median": 0.5858,
+          "within_0.05": false
+        },
+        "second_word_capitalized": {
+          "anchor": 0.6,
+          "model_median": 0.5,
+          "within_0.05": false
+        },
+        "physically_impossible": {
+          "anchor": 0.605,
+          "model_median": 0.4989,
+          "within_0.05": false
+        },
+        "food_topic": {
+          "anchor": 0.902,
+          "model_median": 0.9282,
+          "within_0.05": true
+        }
+      },
+      "compiled_majority": true,
+      "compiled": 54,
+      "total": 66,
+      "VALIDATES": false,
+      "structural_median": 0.5261,
+      "semantic_median": 0.5975,
+      "REVEALS_SPLIT": false
+    }
+  },
+  "cross_coder": {
+    "coders": [
+      "claude-opus-4-8",
+      "gpt-4.1"
+    ],
+    "n_rules": 11,
+    "mean_abs_median_diff": 0.0697,
+    "max_abs_median_diff": 0.2573
+  },
+  "cost": {
+    "by_coder_tokens": {
+      "gpt-4.1": [
+        6635,
+        57301
+      ],
+      "claude-opus-4-8": [
+        9573,
+        70851
+      ]
+    },
+    "total_usd": 2.2908,
+    "n_calls": 132
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "_note": "Cross-family check. Public design note: results/cross_family/NOTES.md.",
+  "B1_deconfound_generality": {
+    "per_dataset": {
+      "think_off": {
+        "second_word_capitalized": {
+          "n": 360,
+          "n_parsed": 360,
+          "parse_fail": 0,
+          "parse_fail_rate": 0.0,
+          "accuracy": 1.0,
+          "per_context_accuracy": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0
+          }
+        },
+        "second_word_capitalized_v2": {
+          "n": 360,
+          "n_parsed": 359,
+          "parse_fail": 1,
+          "parse_fail_rate": 0.0028,
+          "accuracy": 0.9805,
+          "per_context_accuracy": {
+            "0": 0.9832,
+            "1": 1.0,
+            "2": 0.9583
+          }
+        },
+        "word_count_geq_8": {
+          "n": 360,
+          "n_parsed": 360,
+          "parse_fail": 0,
+          "parse_fail_rate": 0.0,
+          "accuracy": 0.9944,
+          "per_context_accuracy": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 0.9833
+          }
+        },
+        "word_count_geq_8_v2": {
+          "n": 360,
+          "n_parsed": 359,
+          "parse_fail": 1,
+          "parse_fail_rate": 0.0028,
+          "accuracy": 0.8022,
+          "per_context_accuracy": {
+            "0": 0.7917,
+            "1": 0.8167,
+            "2": 0.7983
+          }
+        }
+      },
+      "think_on": {
+        "second_word_capitalized": {
+          "n": 360,
+          "n_parsed": 360,
+          "parse_fail": 0,
+          "parse_fail_rate": 0.0,
+          "accuracy": 1.0,
+          "per_context_accuracy": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0
+          }
+        },
+        "word_count_geq_8": {
+          "n": 360,
+          "n_parsed": 334,
+          "parse_fail": 26,
+          "parse_fail_rate": 0.0722,
+          "accuracy": 1.0,
+          "per_context_accuracy": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0
+          }
+        }
+      }
+    },
+    "deconfound_verdicts": {
+      "word_count_geq_8": {
+        "v1": 0.9944,
+        "v2": 0.8022,
+        "delta_v1_minus_v2": 0.1922,
+        "verdict": "DOES-NOT-REPLICATE"
+      },
+      "second_word_capitalized": {
+        "v1": 1.0,
+        "v2": 0.9805,
+        "delta_v1_minus_v2": 0.0195,
+        "verdict": "DOES-NOT-REPLICATE"
+      }
+    }
+  },
+  "B1_nocot_robustness": {
+    "second_word_capitalized": {
+      "n": 360,
+      "n_reasoned": 1,
+      "reasoned_rate": 0.0028,
+      "accuracy_overall": 1.0,
+      "accuracy_clean_only": 1.0,
+      "accuracy_reasoned_only": 1.0
+    },
+    "second_word_capitalized_v2": {
+      "n": 359,
+      "n_reasoned": 36,
+      "reasoned_rate": 0.1003,
+      "accuracy_overall": 0.9805,
+      "accuracy_clean_only": 0.9814,
+      "accuracy_reasoned_only": 0.9722
+    },
+    "word_count_geq_8": {
+      "n": 360,
+      "n_reasoned": 0,
+      "reasoned_rate": 0.0,
+      "accuracy_overall": 0.9944,
+      "accuracy_clean_only": 0.9944,
+      "accuracy_reasoned_only": null
+    },
+    "word_count_geq_8_v2": {
+      "n": 359,
+      "n_reasoned": 34,
+      "reasoned_rate": 0.0947,
+      "accuracy_overall": 0.8022,
+      "accuracy_clean_only": 0.8308,
+      "accuracy_reasoned_only": 0.5294
+    }
+  },
+  "B2_third_validator": {
+    "food_topic": {
+      "n": 348,
+      "n_parsed": 348,
+      "parse_fail_rate": 0.0,
+      "agreement": 0.9741,
+      "verdict": "not OpenAI-idiosyncratic (>=0.90)"
+    },
+    "physically_impossible": {
+      "n": 451,
+      "n_parsed": 451,
+      "parse_fail_rate": 0.0,
+      "agreement": 0.8847,
+      "verdict": "partial (0.80-0.90)",
+      "by_impossibility_type": {
+        "container_size": {
+          "agree": 100,
+          "n": 104,
+          "rate": 0.9615
+        },
+        "inanimate_agent": {
+          "agree": 138,
+          "n": 146,
+          "rate": 0.9452
+        },
+        "material_state": {
+          "agree": 89,
+          "n": 114,
+          "rate": 0.7807
+        },
+        "scale_strength": {
+          "agree": 72,
+          "n": 87,
+          "rate": 0.8276
+        }
+      },
+      "minimal_pairs": {
+        "n_frames_with_both_labels": 100,
+        "both_twins_correct": 77,
+        "rate": 0.77
+      }
+    },
+    "positive_sentiment": {
+      "n": 352,
+      "n_parsed": 352,
+      "parse_fail_rate": 0.0,
+      "agreement": 0.9915,
+      "verdict": "not OpenAI-idiosyncratic (>=0.90)"
+    }
+  },
+  "cost": {
+    "b1-think": {
+      "model": "claude-opus-4-8",
+      "input_tokens": 590412,
+      "output_tokens": 57624,
+      "usd": 4.39266
+    },
+    "b1": {
+      "model": "claude-opus-4-8",
+      "input_tokens": 1185312,
+      "output_tokens": 5269,
+      "usd": 6.058285
+    },
+    "b2": {
+      "model": "claude-opus-4-8",
+      "input_tokens": 86122,
+      "output_tokens": 4477,
+      "usd": 0.542535
+    },
+    "deconfounded-step1": {
+      "model": "claude-opus-4-8",
+      "input_tokens": 4380111,
+      "output_tokens": 18411,
+      "usd": 22.36083
+    },
+    "smoke": {
+      "model": "claude-opus-4-8",
+      "input_tokens": 87,
+      "output_tokens": 6,
+      "usd": 0.000585
+    },
+    "total_usd": 33.3549
+  }
+}

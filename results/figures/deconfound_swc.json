@@ -1,0 +1,255 @@
+{
+  "_note": "Original vs deconfounded second_word_capitalized. v2 uses minimal casing pairs on a shared common+proper W2 pool, so capitalization of word 2 is the intended signal while proper-noun-ness and case-folded bag-of-words drop to chance. Regenerated locally from datasets, metrics.json files, and articulation-probe responses.",
+  "original": {
+    "confound": {
+      "naive_bayes_bow_heldout": 0.9833333333333333,
+      "proper_noun_proxy_extensional_acc": 1.0,
+      "proper_noun_rates_by_label": {
+        "true": 1.0,
+        "false": 0.0
+      },
+      "best_single_token": {
+        "token": "at",
+        "accuracy": 0.6229166666666667,
+        "true_count": 91,
+        "false_count": 32
+      },
+      "char_length_best_threshold": 0.7833333333333333,
+      "n_one_sided_high_freq_tokens": 16,
+      "one_sided_examples": [
+        [
+          "behind",
+          0,
+          27
+        ],
+        [
+          "someone",
+          0,
+          27
+        ],
+        [
+          "toward",
+          0,
+          27
+        ],
+        [
+          "somebody",
+          0,
+          26
+        ],
+        [
+          "travelers",
+          0,
+          26
+        ],
+        [
+          "anyone",
+          0,
+          24
+        ],
+        [
+          "below",
+          0,
+          24
+        ],
+        [
+          "beyond",
+          0,
+          24
+        ]
+      ],
+      "true_second_words_distinct": 115,
+      "false_second_words_distinct": 10,
+      "overlap": 0,
+      "false_second_words": [
+        "anyone",
+        "everyone",
+        "neighbors",
+        "nobody",
+        "people",
+        "somebody",
+        "someone",
+        "students",
+        "travelers",
+        "workers"
+      ]
+    },
+    "step1": {
+      "gpt-4.1": {
+        "in_context": {
+          "run_dir": "step1-full-gpt-4.1-20260611T000748Z",
+          "acc": 0.9722222222222222,
+          "ci95": [
+            0.9555555555555556,
+            0.9861111111111112
+          ],
+          "n_contexts": 3,
+          "n_items": 120,
+          "n_parse_failures": 0,
+          "predictions": {
+            "true": 172,
+            "false": 188,
+            "parse_failure": 0
+          }
+        },
+        "rule_given": {
+          "run_dir": "step1-rule_given-gpt-4.1-20260611T002539Z",
+          "acc": 0.8166666666666667,
+          "ci95": [
+            0.7379908648282967,
+            0.8756969964398578
+          ],
+          "n_contexts": 1,
+          "n_items": 120,
+          "n_parse_failures": 0,
+          "predictions": {
+            "true": 82,
+            "false": 38,
+            "parse_failure": 0
+          }
+        }
+      },
+      "gpt-4.1-mini": {
+        "in_context": {
+          "run_dir": "step1-full-gpt-4.1-mini-20260611T001640Z",
+          "acc": 0.8111111111111112,
+          "ci95": [
+            0.7749999999999999,
+            0.8472222222222223
+          ],
+          "n_contexts": 3,
+          "n_items": 120,
+          "n_parse_failures": 0,
+          "predictions": {
+            "true": 168,
+            "false": 192,
+            "parse_failure": 0
+          }
+        },
+        "rule_given": {
+          "run_dir": "step1-rule_given-gpt-4.1-mini-20260611T002808Z",
+          "acc": 0.7833333333333333,
+          "ci95": [
+            0.7014563746709164,
+            0.8476327643584851
+          ],
+          "n_contexts": 1,
+          "n_items": 120,
+          "n_parse_failures": 0,
+          "predictions": {
+            "true": 78,
+            "false": 42,
+            "parse_failure": 0
+          }
+        }
+      }
+    },
+    "articulation_gpt_4_1": "The subject is a specific person, city, country, or month (a proper noun).",
+    "judge_grade_median_direct_gpt_4_1": 1.0
+  },
+  "deconfounded_v2": {
+    "confound": {
+      "naive_bayes_bow_heldout": 0.525,
+      "proper_noun_proxy_extensional_acc": 0.5,
+      "proper_noun_rates_by_label": {
+        "true": 0.5,
+        "false": 0.5
+      },
+      "best_single_token": {
+        "token": "noon",
+        "accuracy": 0.5291666666666667,
+        "true_count": 47,
+        "false_count": 33
+      },
+      "char_length_best_threshold": 0.51875,
+      "n_one_sided_high_freq_tokens": 0,
+      "one_sided_examples": []
+    },
+    "step1": {
+      "gpt-4.1": {
+        "in_context": {
+          "run_dir": "step1-full-gpt-4.1-20260612T213439Z",
+          "acc": 0.5555555555555556,
+          "ci95": [
+            0.5055555555555555,
+            0.6055555555555556
+          ],
+          "n_contexts": 3,
+          "n_items": 120,
+          "n_parse_failures": 0,
+          "predictions": {
+            "true": 158,
+            "false": 202,
+            "parse_failure": 0
+          }
+        },
+        "rule_given": {
+          "run_dir": "step1-rule_given-gpt-4.1-20260612T213653Z",
+          "acc": 1.0,
+          "ci95": [
+            0.9689808335812966,
+            1.0
+          ],
+          "n_contexts": 1,
+          "n_items": 120,
+          "n_parse_failures": 0,
+          "predictions": {
+            "true": 60,
+            "false": 60,
+            "parse_failure": 0
+          }
+        }
+      },
+      "gpt-4.1-mini": {
+        "in_context": {
+          "run_dir": "step1-full-gpt-4.1-mini-20260612T213539Z",
+          "acc": 0.5777777777777778,
+          "ci95": [
+            0.5277777777777778,
+            0.6277777777777778
+          ],
+          "n_contexts": 3,
+          "n_items": 120,
+          "n_parse_failures": 0,
+          "predictions": {
+            "true": 162,
+            "false": 198,
+            "parse_failure": 0
+          }
+        },
+        "rule_given": {
+          "run_dir": "step1-rule_given-gpt-4.1-mini-20260612T213714Z",
+          "acc": 0.9833333333333333,
+          "ci95": [
+            0.941264037027841,
+            0.9954174354340789
+          ],
+          "n_contexts": 1,
+          "n_items": 120,
+          "n_parse_failures": 0,
+          "predictions": {
+            "true": 58,
+            "false": 62,
+            "parse_failure": 0
+          }
+        }
+      }
+    },
+    "articulation_samples": {
+      "gpt-4.1": [
+        "The label is True if and only if the subject is a plural common noun or a city/month name, otherwise False.",
+        "The label is True if and only if the subject is a proper noun (person, city, or group/profession) and the time/location phrase does not contain \"by hand,\" \"on foot,\" \"by day,\" or \"at dusk.\"",
+        "The label is True if the subject is a plural noun, a month, a city, or a company; otherwise, the label is False.",
+        "The label is True if the subject is a proper noun (person, place, or group) and the time/location phrase does not contain \"by hand,\" \"on foot,\" \"by day,\" or \"at dusk\"; otherwise, the label is False."
+      ],
+      "gpt-4.1-mini": [
+        "Label True if the second word is a proper noun or capitalized name; otherwise, label False.",
+        "The sentence is labeled True if the second word is capitalized and is either a proper noun or a known group name, otherwise it is labeled False.",
+        "Label True if the third word is a proper noun or a capitalized place name; otherwise, label False.",
+        "The sentence is labeled True if the second word is a proper noun or capitalized name of a place or person, otherwise False."
+      ]
+    },
+    "articulation_probe_run_dir": "step2-freeform-second_word_capitalized_v2-probe-20260612T213732Z"
+  },
+  "reading": "Near-chance collapse after removing the proper-noun proxy: gpt-4.1 acc=0.556, CI95=[0.5055555555555555, 0.6055555555555556]; gpt-4.1-mini acc=0.578, CI95=[0.5277777777777778, 0.6277777777777778]. Rule-given remains near-perfect, so this is a learning-from-examples gap rather than a competence gap."
+}

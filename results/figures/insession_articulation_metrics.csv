@@ -1,0 +1,16 @@
+model,rule_id,step1_single_call_acc,exp1_nocot_classify_acc,exp2_cot_classify_acc,acc_delta_cot_minus_nocot,exp1_nocot_grade_median,exp2_cot_grade_median,exp1_nocot_grade2_rate,exp2_cot_grade2_rate,grade2_delta_cot_minus_nocot
+claude-opus-4-8,food_topic,,1.0,1.0,0.0,2.0,2,0.9167,1.0,0.0833
+claude-opus-4-8,physically_impossible,,0.9948,1.0,0.0052,1.0,2,0.0,1.0,1.0
+claude-opus-4-8,positive_sentiment,,1.0,1.0,0.0,2.0,2,1.0,1.0,0.0
+claude-opus-4-8,second_word_capitalized,,1.0,1.0,0.0,1.0,1,0.0,0.0,0
+claude-opus-4-8,word_count_geq_8,,0.9844,1.0,0.0156,0.0,0,0.0,0.0,0
+gpt-4.1,food_topic,1.0,1.0,1.0,0.0,1.0,2,0.3333,0.6667,0.3333
+gpt-4.1,physically_impossible,0.9556,1.0,1.0,0.0,1.0,1,0.0,0.3333,0.3333
+gpt-4.1,positive_sentiment,0.9917,1.0,1.0,0.0,2.0,2,0.8333,1.0,0.1667
+gpt-4.1,second_word_capitalized,0.9722,0.974,0.9792,0.0052,1.0,1,0.0,0.0,0
+gpt-4.1,word_count_geq_8,0.9194,0.974,0.9375,-0.0365,0.0,0,0.0,0.0,0
+gpt-4.1-mini,food_topic,0.9972,1.0,,,1.0,,0.4167,,
+gpt-4.1-mini,physically_impossible,0.8194,0.9948,,,1.0,,0.0,,
+gpt-4.1-mini,positive_sentiment,0.9972,1.0,,,1.0,,0.0833,,
+gpt-4.1-mini,second_word_capitalized,0.8111,0.8125,,,1.0,,0.0833,,
+gpt-4.1-mini,word_count_geq_8,0.7194,0.8854,,,0.0,,0.0,,

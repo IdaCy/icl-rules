@@ -1,0 +1,1 @@
+Best generic shortcut baseline on original versus Deconfounded rebuilt datasets. The dashed line marks the pre-registered near-chance target of 0.60; residuals above it are measured and disclosed by type.

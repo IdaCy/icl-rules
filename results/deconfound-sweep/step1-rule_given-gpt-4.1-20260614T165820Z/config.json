@@ -1,0 +1,159 @@
+{
+  "task": "step1-classification",
+  "mode": "rule_given",
+  "model": "gpt-4.1",
+  "price_per_mtok": {
+    "prompt": 2.0,
+    "completion": 8.0
+  },
+  "rules": [
+    "mentions_color_deconfounded",
+    "mentions_animal_deconfounded",
+    "food_topic_deconfounded",
+    "positive_sentiment_deconfounded",
+    "contains_first_name_deconfounded",
+    "starts_with_vowel_deconfounded",
+    "last_word_ends_with_vowel_deconfounded",
+    "word_count_geq_8_deconfounded",
+    "second_word_capitalized_deconfounded",
+    "even_word_count_deconfounded",
+    "passive_voice_deconfounded",
+    "the_appears_twice_deconfounded",
+    "first_word_longer_than_last_deconfounded",
+    "all_words_longer_than_3_deconfounded",
+    "first_two_words_alphabetical_deconfounded"
+  ],
+  "rules_file": "data/rule_texts.json",
+  "run_seed": 0,
+  "context_seeds": null,
+  "n_contexts": 1,
+  "k_few_shot": 0,
+  "query_split": "held_out",
+  "n_items_per_rule": 120,
+  "temperature": 0.0,
+  "max_tokens": 2,
+  "logprobs": true,
+  "top_logprobs": 5,
+  "api_seed": 0,
+  "concurrency": 8,
+  "template_hash": "8aef0e7d11177cae537b44b5f41d8de70063344aee125643f208cb61a88e1eab",
+  "expected_total_calls": 1800,
+  "data_dir": "data",
+  "contexts": {
+    "mentions_color_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it mentions a specific color term (such as red, blue, green, beige)."
+      }
+    ],
+    "mentions_animal_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it mentions an animal — a real, living, non-human animal kind (mammals, birds, fish, insects, etc.)."
+      }
+    ],
+    "food_topic_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff its topic is food or cooking (meals, dishes, ingredients, cooking, eating, restaurants as places to eat), and False iff it is about an unrelated topic."
+      }
+    ],
+    "positive_sentiment_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it expresses a positive sentiment or opinion, and False iff it expresses a negative one."
+      }
+    ],
+    "contains_first_name_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it contains a person's first name (like Anna or David), and False otherwise — including sentences that contain other capitalized proper nouns such as city, month, or brand names."
+      }
+    ],
+    "starts_with_vowel_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff the first letter of its first word is a vowel letter (a, e, i, o, or u), regardless of case and regardless of pronunciation."
+      }
+    ],
+    "last_word_ends_with_vowel_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff the last letter of its last word is a vowel letter (a, e, i, o, or u); y does not count as a vowel."
+      }
+    ],
+    "word_count_geq_8_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it contains at least 8 words."
+      }
+    ],
+    "second_word_capitalized_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff its second word begins with a capital letter."
+      }
+    ],
+    "even_word_count_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it contains an even number of words."
+      }
+    ],
+    "passive_voice_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff its main clause is in the passive voice — the subject undergoes the action rather than performing it, typically expressed with a form of \"be\" (was/were) plus a past participle — and False iff it is in the active voice. (Voice-defined: the be-form is the typical surface shape, not the definition, so get-passives count as passive — consistent with the probe ruling below.)"
+      }
+    ],
+    "the_appears_twice_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff the word \"the\" appears at least twice (case-insensitive, so a sentence-initial \"The\" counts)."
+      }
+    ],
+    "first_word_longer_than_last_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff its first word has strictly more letters than its last word."
+      }
+    ],
+    "all_words_longer_than_3_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff every word in it has more than 3 letters (no word of 1, 2, or 3 letters appears)."
+      }
+    ],
+    "first_two_words_alphabetical_deconfounded": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff its first word comes before its second word in alphabetical order (comparing the words letter by letter, ignoring case)."
+      }
+    ]
+  },
+  "run_id": "step1-rule_given-gpt-4.1-20260614T165820Z",
+  "started_utc": "20260614T165820Z",
+  "cost_estimate_usd": 0.34354200000000257,
+  "cost_actual_usd": 0.294676,
+  "finished_utc": "20260614T170040Z",
+  "client_stats": {
+    "api_calls": 1800,
+    "cache_hits": 0,
+    "n_429": 0,
+    "retryable_errors": 0,
+    "failures": 0,
+    "rate_429": 0.0,
+    "error_rate": 0.0
+  },
+  "cost": {
+    "prompt_tokens": {
+      "gpt-4.1": 140138
+    },
+    "completion_tokens": {
+      "gpt-4.1": 1800
+    },
+    "prompt_cache_hit_tokens": {},
+    "prompt_cache_miss_tokens": {},
+    "total_usd": 0.294676
+  }
+}

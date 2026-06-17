@@ -1,0 +1,198 @@
+{
+  "primary_judge": "gpt-4.1",
+  "second_judge": "gpt-4o",
+  "n_comparable": 270,
+  "n_parse_failures": 0,
+  "exact_agreement": 0.8814814814814815,
+  "within_one_agreement": 1.0,
+  "per_rule": {
+    "mentions_color_deconfounded": {
+      "n": 18,
+      "exact": 13,
+      "primary": {
+        "2": 7,
+        "0": 4,
+        "1": 7
+      },
+      "second": {
+        "2": 9,
+        "0": 5,
+        "1": 4
+      },
+      "exact_agreement": 0.7222222222222222
+    },
+    "mentions_animal_deconfounded": {
+      "n": 18,
+      "exact": 18,
+      "primary": {
+        "1": 14,
+        "2": 4
+      },
+      "second": {
+        "1": 14,
+        "2": 4
+      },
+      "exact_agreement": 1.0
+    },
+    "food_topic_deconfounded": {
+      "n": 18,
+      "exact": 13,
+      "primary": {
+        "1": 17,
+        "0": 1
+      },
+      "second": {
+        "1": 12,
+        "2": 3,
+        "0": 3
+      },
+      "exact_agreement": 0.7222222222222222
+    },
+    "positive_sentiment_deconfounded": {
+      "n": 18,
+      "exact": 10,
+      "primary": {
+        "1": 14,
+        "2": 4
+      },
+      "second": {
+        "2": 12,
+        "1": 6
+      },
+      "exact_agreement": 0.5555555555555556
+    },
+    "contains_first_name_deconfounded": {
+      "n": 18,
+      "exact": 17,
+      "primary": {
+        "2": 10,
+        "1": 8
+      },
+      "second": {
+        "2": 11,
+        "1": 7
+      },
+      "exact_agreement": 0.9444444444444444
+    },
+    "starts_with_vowel_deconfounded": {
+      "n": 18,
+      "exact": 16,
+      "primary": {
+        "0": 16,
+        "1": 2
+      },
+      "second": {
+        "0": 18
+      },
+      "exact_agreement": 0.8888888888888888
+    },
+    "last_word_ends_with_vowel_deconfounded": {
+      "n": 18,
+      "exact": 18,
+      "primary": {
+        "0": 18
+      },
+      "second": {
+        "0": 18
+      },
+      "exact_agreement": 1.0
+    },
+    "word_count_geq_8_deconfounded": {
+      "n": 18,
+      "exact": 17,
+      "primary": {
+        "0": 17,
+        "1": 1
+      },
+      "second": {
+        "0": 18
+      },
+      "exact_agreement": 0.9444444444444444
+    },
+    "second_word_capitalized_deconfounded": {
+      "n": 18,
+      "exact": 13,
+      "primary": {
+        "0": 10,
+        "1": 6,
+        "2": 2
+      },
+      "second": {
+        "0": 14,
+        "1": 3,
+        "2": 1
+      },
+      "exact_agreement": 0.7222222222222222
+    },
+    "even_word_count_deconfounded": {
+      "n": 18,
+      "exact": 18,
+      "primary": {
+        "0": 18
+      },
+      "second": {
+        "0": 18
+      },
+      "exact_agreement": 1.0
+    },
+    "passive_voice_deconfounded": {
+      "n": 18,
+      "exact": 13,
+      "primary": {
+        "1": 10,
+        "0": 5,
+        "2": 3
+      },
+      "second": {
+        "0": 8,
+        "1": 7,
+        "2": 3
+      },
+      "exact_agreement": 0.7222222222222222
+    },
+    "the_appears_twice_deconfounded": {
+      "n": 18,
+      "exact": 18,
+      "primary": {
+        "0": 18
+      },
+      "second": {
+        "0": 18
+      },
+      "exact_agreement": 1.0
+    },
+    "first_word_longer_than_last_deconfounded": {
+      "n": 18,
+      "exact": 18,
+      "primary": {
+        "0": 18
+      },
+      "second": {
+        "0": 18
+      },
+      "exact_agreement": 1.0
+    },
+    "all_words_longer_than_3_deconfounded": {
+      "n": 18,
+      "exact": 18,
+      "primary": {
+        "0": 18
+      },
+      "second": {
+        "0": 18
+      },
+      "exact_agreement": 1.0
+    },
+    "first_two_words_alphabetical_deconfounded": {
+      "n": 18,
+      "exact": 18,
+      "primary": {
+        "0": 18
+      },
+      "second": {
+        "0": 18
+      },
+      "exact_agreement": 1.0
+    }
+  }
+}

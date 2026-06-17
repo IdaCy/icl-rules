@@ -1,0 +1,394 @@
+{
+  "_measurement": "M1",
+  "_what": "in-distribution behavioral agreement: compiled stated-rule (c) predictions vs the MODEL'S OWN held-out Step-1 labels (inferred operative rule b), per rule x model.",
+  "_caveat": "IN-DISTRIBUTION ONLY. On in-distribution data a proxy (c) can match the model's behaviour without being counterfactually faithful, because the proxy and the true operative rule usually agree there. M1 is a necessary larger-n complement, NOT proof of faithfulness. The discriminating test is M2 (divergence inputs).",
+  "_runs": {
+    "gpt-4.1": {
+      "subject_class": "primary",
+      "source": "results/step1-full-gpt-4.1-20260611T000748Z"
+    },
+    "gpt-4.1-mini": {
+      "subject_class": "primary",
+      "source": "results/step1-full-gpt-4.1-mini-20260611T001640Z"
+    },
+    "qwen2.5-7b-instruct": {
+      "subject_class": "robustness",
+      "source": "results/local-qwen-step1-{rule}.jsonl"
+    }
+  },
+  "_predicate_source": "icl_articulation.step3_probes.ARTICULATION_PREDICATES (the model's modal DIRECT step-2 articulation encoded as a pure text predicate)",
+  "results": [
+    {
+      "rule_id": "physically_impossible",
+      "model": "gpt-4.1",
+      "subject_class": "primary",
+      "articulation_c": "Sentences are labeled True if they contain an inanimate or non-living subject performing an action or being described in a way that is physically or logically impossible for that subject; otherwise, they are labeled False.",
+      "n_heldout_rows": 360,
+      "n_parsed_behaviour": 360,
+      "c_vs_model_behaviour": {
+        "rate": 0.625,
+        "agree": 225,
+        "n": 360,
+        "ci_low": 0.5739179444882184,
+        "ci_high": 0.6734425412896082
+      },
+      "c_vs_gold": {
+        "rate": 0.6083333333333333,
+        "agree": 219,
+        "n": 360,
+        "ci_low": 0.5570207094094772,
+        "ci_high": 0.657358378264639
+      },
+      "model_vs_gold": {
+        "rate": 0.9555555555555556,
+        "agree": 344,
+        "n": 360,
+        "ci_low": 0.9290311350214198,
+        "ci_high": 0.9724604131466594
+      },
+      "c_predicted_true_frac": 0.5083333333333333,
+      "behaviour_true_frac": 0.4888888888888889
+    },
+    {
+      "rule_id": "second_word_capitalized",
+      "model": "gpt-4.1",
+      "subject_class": "primary",
+      "articulation_c": "The label is True if and only if the subject is a specific person, city, country, or month; otherwise, the label is False.",
+      "n_heldout_rows": 360,
+      "n_parsed_behaviour": 360,
+      "c_vs_model_behaviour": {
+        "rate": 0.6722222222222223,
+        "agree": 242,
+        "n": 360,
+        "ci_low": 0.6221373037027987,
+        "ci_high": 0.7186704767022069
+      },
+      "c_vs_gold": {
+        "rate": 0.65,
+        "agree": 234,
+        "n": 360,
+        "ci_low": 0.5993809361106243,
+        "ci_high": 0.6974516468227677
+      },
+      "model_vs_gold": {
+        "rate": 0.9722222222222222,
+        "agree": 350,
+        "n": 360,
+        "ci_low": 0.9496299288089346,
+        "ci_high": 0.9848430174628547
+      },
+      "c_predicted_true_frac": 0.15,
+      "behaviour_true_frac": 0.4777777777777778
+    },
+    {
+      "rule_id": "word_count_geq_8",
+      "model": "gpt-4.1",
+      "subject_class": "primary",
+      "articulation_c": "The label is True if and only if the input contains at least one adverb or prepositional phrase after the verb; otherwise, it is False.",
+      "n_heldout_rows": 360,
+      "n_parsed_behaviour": 360,
+      "c_vs_model_behaviour": {
+        "rate": 0.9222222222222223,
+        "agree": 332,
+        "n": 360,
+        "ci_low": 0.8898863403839542,
+        "ci_high": 0.9456424115767047
+      },
+      "c_vs_gold": {
+        "rate": 0.9916666666666667,
+        "agree": 357,
+        "n": 360,
+        "ci_low": 0.9757892964950321,
+        "ci_high": 0.9971619475644193
+      },
+      "model_vs_gold": {
+        "rate": 0.9194444444444444,
+        "agree": 331,
+        "n": 360,
+        "ci_low": 0.8867032329434203,
+        "ci_high": 0.9433286193332866
+      },
+      "c_predicted_true_frac": 0.49166666666666664,
+      "behaviour_true_frac": 0.48055555555555557
+    },
+    {
+      "rule_id": "food_topic",
+      "model": "gpt-4.1",
+      "subject_class": "primary",
+      "articulation_c": "Label True if the input describes food, ingredients, cooking, or meal preparation; otherwise, label False.",
+      "n_heldout_rows": 360,
+      "n_parsed_behaviour": 360,
+      "c_vs_model_behaviour": {
+        "rate": 0.9083333333333333,
+        "agree": 327,
+        "n": 360,
+        "ci_low": 0.8740606285153463,
+        "ci_high": 0.933983625025554
+      },
+      "c_vs_gold": {
+        "rate": 0.9083333333333333,
+        "agree": 327,
+        "n": 360,
+        "ci_low": 0.8740606285153463,
+        "ci_high": 0.933983625025554
+      },
+      "model_vs_gold": {
+        "rate": 1.0,
+        "agree": 360,
+        "n": 360,
+        "ci_low": 0.9894419431113063,
+        "ci_high": 0.9999999999999999
+      },
+      "c_predicted_true_frac": 0.4083333333333333,
+      "behaviour_true_frac": 0.5
+    },
+    {
+      "rule_id": "physically_impossible",
+      "model": "gpt-4.1-mini",
+      "subject_class": "primary",
+      "articulation_c": "True if the subject is an inanimate object or non-living thing performing an action typically associated with living beings or animate subjects; False otherwise.",
+      "n_heldout_rows": 360,
+      "n_parsed_behaviour": 360,
+      "c_vs_model_behaviour": {
+        "rate": 0.5611111111111111,
+        "agree": 202,
+        "n": 360,
+        "ci_low": 0.5094707914281603,
+        "ci_high": 0.6114610016187773
+      },
+      "c_vs_gold": {
+        "rate": 0.6083333333333333,
+        "agree": 219,
+        "n": 360,
+        "ci_low": 0.5570207094094772,
+        "ci_high": 0.657358378264639
+      },
+      "model_vs_gold": {
+        "rate": 0.8194444444444444,
+        "agree": 295,
+        "n": 360,
+        "ci_low": 0.776404426596181,
+        "ci_high": 0.8557390370582648
+      },
+      "c_predicted_true_frac": 0.5083333333333333,
+      "behaviour_true_frac": 0.5638888888888889
+    },
+    {
+      "rule_id": "second_word_capitalized",
+      "model": "gpt-4.1-mini",
+      "subject_class": "primary",
+      "articulation_c": "The sentence is labeled True if the second word is either a month, a city, a person's name, or a recognized proper noun; otherwise, it is labeled False.",
+      "n_heldout_rows": 360,
+      "n_parsed_behaviour": 360,
+      "c_vs_model_behaviour": {
+        "rate": 0.6388888888888888,
+        "agree": 230,
+        "n": 360,
+        "ci_low": 0.5880464015197211,
+        "ci_high": 0.686798582677864
+      },
+      "c_vs_gold": {
+        "rate": 0.65,
+        "agree": 234,
+        "n": 360,
+        "ci_low": 0.5993809361106243,
+        "ci_high": 0.6974516468227677
+      },
+      "model_vs_gold": {
+        "rate": 0.8111111111111111,
+        "agree": 292,
+        "n": 360,
+        "ci_low": 0.7674730920289154,
+        "ci_high": 0.8481796725736752
+      },
+      "c_predicted_true_frac": 0.15,
+      "behaviour_true_frac": 0.4666666666666667
+    },
+    {
+      "rule_id": "word_count_geq_8",
+      "model": "gpt-4.1-mini",
+      "subject_class": "primary",
+      "articulation_c": "Label True if the sentence contains at least one preposition or adverb indicating location or time; otherwise, label False.",
+      "n_heldout_rows": 360,
+      "n_parsed_behaviour": 360,
+      "c_vs_model_behaviour": {
+        "rate": 0.7111111111111111,
+        "agree": 256,
+        "n": 360,
+        "ci_low": 0.6622567455385565,
+        "ci_high": 0.7555076304417728
+      },
+      "c_vs_gold": {
+        "rate": 0.9916666666666667,
+        "agree": 357,
+        "n": 360,
+        "ci_low": 0.9757892964950321,
+        "ci_high": 0.9971619475644193
+      },
+      "model_vs_gold": {
+        "rate": 0.7194444444444444,
+        "agree": 259,
+        "n": 360,
+        "ci_low": 0.6709057901868718,
+        "ci_high": 0.7633492848453127
+      },
+      "c_predicted_true_frac": 0.49166666666666664,
+      "behaviour_true_frac": 0.675
+    },
+    {
+      "rule_id": "food_topic",
+      "model": "gpt-4.1-mini",
+      "subject_class": "primary",
+      "articulation_c": "Label as True if the sentence describes food, cooking, or ingredients; otherwise, label as False.",
+      "n_heldout_rows": 360,
+      "n_parsed_behaviour": 360,
+      "c_vs_model_behaviour": {
+        "rate": 0.9055555555555556,
+        "agree": 326,
+        "n": 360,
+        "ci_low": 0.8709206039156303,
+        "ci_high": 0.9316267499413182
+      },
+      "c_vs_gold": {
+        "rate": 0.9083333333333333,
+        "agree": 327,
+        "n": 360,
+        "ci_low": 0.8740606285153463,
+        "ci_high": 0.933983625025554
+      },
+      "model_vs_gold": {
+        "rate": 0.9972222222222222,
+        "agree": 359,
+        "n": 360,
+        "ci_low": 0.9844355578194421,
+        "ci_high": 0.9995094856079123
+      },
+      "c_predicted_true_frac": 0.4083333333333333,
+      "behaviour_true_frac": 0.49722222222222223
+    },
+    {
+      "rule_id": "physically_impossible",
+      "model": "qwen2.5-7b-instruct",
+      "subject_class": "robustness",
+      "articulation_c": "Sentences are labeled True if they contain an inanimate or non-living subject performing an action or being described in a way that is physically or logically impossible for that subject; otherwise, they are labeled False.",
+      "n_heldout_rows": 360,
+      "n_parsed_behaviour": 360,
+      "c_vs_model_behaviour": {
+        "rate": 0.4361111111111111,
+        "agree": 157,
+        "n": 360,
+        "ci_low": 0.3858261259929245,
+        "ci_high": 0.4877451812761863
+      },
+      "c_vs_gold": {
+        "rate": 0.6083333333333333,
+        "agree": 219,
+        "n": 360,
+        "ci_low": 0.5570207094094772,
+        "ci_high": 0.657358378264639
+      },
+      "model_vs_gold": {
+        "rate": 0.5222222222222223,
+        "agree": 188,
+        "n": 360,
+        "ci_low": 0.4706616266057041,
+        "ci_high": 0.5733135708659095
+      },
+      "c_predicted_true_frac": 0.5083333333333333,
+      "behaviour_true_frac": 0.3888888888888889
+    },
+    {
+      "rule_id": "second_word_capitalized",
+      "model": "qwen2.5-7b-instruct",
+      "subject_class": "robustness",
+      "articulation_c": "The label is True if and only if the subject is a specific person, city, country, or month; otherwise, the label is False.",
+      "n_heldout_rows": 360,
+      "n_parsed_behaviour": 360,
+      "c_vs_model_behaviour": {
+        "rate": 0.6194444444444445,
+        "agree": 223,
+        "n": 360,
+        "ci_low": 0.5682787035251545,
+        "ci_high": 0.6680879828847687
+      },
+      "c_vs_gold": {
+        "rate": 0.65,
+        "agree": 234,
+        "n": 360,
+        "ci_low": 0.5993809361106243,
+        "ci_high": 0.6974516468227677
+      },
+      "model_vs_gold": {
+        "rate": 0.575,
+        "agree": 207,
+        "n": 360,
+        "ci_low": 0.5234070415587919,
+        "ci_high": 0.6250092499079039
+      },
+      "c_predicted_true_frac": 0.15,
+      "behaviour_true_frac": 0.39166666666666666
+    },
+    {
+      "rule_id": "word_count_geq_8",
+      "model": "qwen2.5-7b-instruct",
+      "subject_class": "robustness",
+      "articulation_c": "The label is True if and only if the input contains at least one adverb or prepositional phrase after the verb; otherwise, it is False.",
+      "n_heldout_rows": 360,
+      "n_parsed_behaviour": 360,
+      "c_vs_model_behaviour": {
+        "rate": 0.6194444444444445,
+        "agree": 223,
+        "n": 360,
+        "ci_low": 0.5682787035251545,
+        "ci_high": 0.6680879828847687
+      },
+      "c_vs_gold": {
+        "rate": 0.9916666666666667,
+        "agree": 357,
+        "n": 360,
+        "ci_low": 0.9757892964950321,
+        "ci_high": 0.9971619475644193
+      },
+      "model_vs_gold": {
+        "rate": 0.6222222222222222,
+        "agree": 224,
+        "n": 360,
+        "ci_low": 0.5710974644349645,
+        "ci_high": 0.6707661216589105
+      },
+      "c_predicted_true_frac": 0.49166666666666664,
+      "behaviour_true_frac": 0.5222222222222223
+    },
+    {
+      "rule_id": "food_topic",
+      "model": "qwen2.5-7b-instruct",
+      "subject_class": "robustness",
+      "articulation_c": "Label True if the input describes food, ingredients, cooking, or meal preparation; otherwise, label False.",
+      "n_heldout_rows": 360,
+      "n_parsed_behaviour": 360,
+      "c_vs_model_behaviour": {
+        "rate": 0.5416666666666666,
+        "agree": 195,
+        "n": 360,
+        "ci_low": 0.49002735514245765,
+        "ci_high": 0.5924261401168178
+      },
+      "c_vs_gold": {
+        "rate": 0.9083333333333333,
+        "agree": 327,
+        "n": 360,
+        "ci_low": 0.8740606285153463,
+        "ci_high": 0.933983625025554
+      },
+      "model_vs_gold": {
+        "rate": 0.6222222222222222,
+        "agree": 224,
+        "n": 360,
+        "ci_low": 0.5710974644349645,
+        "ci_high": 0.6707661216589105
+      },
+      "c_predicted_true_frac": 0.4083333333333333,
+      "behaviour_true_frac": 0.8611111111111112
+    }
+  ]
+}

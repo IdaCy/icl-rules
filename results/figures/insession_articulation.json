@@ -1,0 +1,5299 @@
+{
+  "_measurement": "in-session \u2014 in-session per-item classify-then-articulate (Exp1 no-CoT / Exp2 with-CoT)",
+  "_caveat": "Exp1 vs Exp2 differ ONLY by CoT (Exp2). gpt-4.1 prompted-CoT and claude adaptive-thinking are different interventions and never pooled. In-session accuracy uses a GROWING conversation (the model sees its own prior answers) and is NOT identical to the base independent-call Step-1 accuracy, shown for reference.",
+  "per_run": [
+    {
+      "model": "claude-opus-4-8",
+      "experiment": "exp1-no-cot",
+      "cot_mode": "none",
+      "run": "insession-exp1-no-cot-claude-opus-4-8-20260615T175435Z",
+      "rules": {
+        "food_topic": {
+          "rule_id": "food_topic",
+          "model": "claude-opus-4-8",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              2,
+              2,
+              2
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 3
+            },
+            "median": 2,
+            "grade2_names_true_rate": 1.0,
+            "candidates": [
+              "An input is labeled True if it relates to food, cooking, or baking, and False otherwise.",
+              "An input is True if it relates to food, cooking, or baking, and False otherwise.",
+              "True if the input is about cooking, baking, or food/meals; False otherwise."
+            ]
+          }
+        },
+        "physically_impossible": {
+          "rule_id": "physically_impossible",
+          "model": "claude-opus-4-8",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              1,
+              2,
+              1
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 2,
+              "2": 1
+            },
+            "median": 1,
+            "grade2_names_true_rate": 0.3333333333333333,
+            "candidates": [
+              "An input is True if the subject is an inanimate object performing an action only a living being could do, and False if the subject is a living being (or the action matches the subject's nature).",
+              "An input is True if the subject is an inanimate object performing a biological/human action (or being acted upon in a physically impossible way, e.g., a huge object fitting in a tiny container), and False if a living being performs an action it could naturally do.",
+              "An input is True if its subject is an inanimate object performing an action that only a living being could do (or being placed somewhere impossible for its size), and False if the subject is a living being acting normally or an object behaving plausibly."
+            ]
+          }
+        },
+        "positive_sentiment": {
+          "rule_id": "positive_sentiment",
+          "model": "claude-opus-4-8",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              2,
+              2,
+              2
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 3
+            },
+            "median": 2,
+            "grade2_names_true_rate": 1.0,
+            "candidates": [
+              "A statement is labeled True if it expresses a positive sentiment about the subject, and False if it expresses a negative sentiment.",
+              "An input is True if it expresses a positive sentiment about its subject, and False if it expresses a negative sentiment.",
+              "A statement is True if it expresses a positive/favorable sentiment about its subject, and False if it expresses a negative/unfavorable sentiment."
+            ]
+          }
+        },
+        "second_word_capitalized": {
+          "rule_id": "second_word_capitalized",
+          "model": "claude-opus-4-8",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              1,
+              1,
+              1
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 3,
+              "2": 0
+            },
+            "median": 1,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "An input is True if and only if the subject is a proper name (person, city, country, company, or month) and the sentence does not end with a \"near/below/beyond/past/behind\" + proper-noun phrase.",
+              "The label is True if the subject is a proper noun (a specific name, place, company, or month), and False if the subject is a generic plural or indefinite pronoun (people, students, workers, someone, anyone, nobody, everyone, etc.).",
+              "True if the subject is a proper noun (a person's name, place, company, or month/season), and False if the subject is a common indefinite noun (people, workers, neighbors, someone, anyone, nobody, travelers, students)."
+            ]
+          }
+        },
+        "word_count_geq_8": {
+          "rule_id": "word_count_geq_8",
+          "model": "claude-opus-4-8",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              0,
+              0,
+              0
+            ],
+            "grade_counts": {
+              "0": 3,
+              "1": 0,
+              "2": 0
+            },
+            "median": 0,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "An input is True if it contains a locative/movement phrase with \"past,\" \"near,\" or \"in/by\" referencing the subject's path or position (typically intransitive motion or placement with prepositions), and False if the verb simply takes a direct object describing acting upon a thing.",
+              "A sentence is True if it contains a locative/movement prepositional phrase (e.g., \"past/near/in ... by the ...\") or trailing adverbials (like \"outside,\" \"afterwards,\" \"again,\" \"with care,\" \"all day long\"), and False if it is a simple subject-verb-object sentence with only adjectives and no such phrase.",
+              "A sentence is True if it contains an adverb (a word ending in \"-ly\" or a locational/temporal word like \"inside,\" \"outside,\" \"abroad,\" \"downtown,\" \"overhead,\" \"afterwards,\" \"nowadays,\" \"again,\" \"at once,\" \"for now,\" \"for a while,\" \"on foot\") or a prepositional phrase of the form \"near/in/past/by ... \", and False otherwise."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model": "gpt-4.1",
+      "experiment": "exp1-no-cot",
+      "cot_mode": "none",
+      "run": "insession-exp1-no-cot-gpt-4.1-20260615T175435Z",
+      "rules": {
+        "food_topic": {
+          "rule_id": "food_topic",
+          "model": "gpt-4.1",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              1,
+              2,
+              1
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 2,
+              "2": 1
+            },
+            "median": 1,
+            "grade2_names_true_rate": 0.3333333333333333,
+            "candidates": [
+              "Sentences about baking, cooking, or food preparation are labeled True; all other sentences are labeled False.",
+              "The label is True if and only if the input is about food, cooking, or baking; otherwise, it is False.",
+              "Sentences about baking, cooking, or food preparation are labeled True; all other topics are labeled False."
+            ]
+          }
+        },
+        "physically_impossible": {
+          "rule_id": "physically_impossible",
+          "model": "gpt-4.1",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              1,
+              1,
+              1
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 3,
+              "2": 0
+            },
+            "median": 1,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "Label as True if the subject is inanimate or non-human and is described performing a typically animate or human action; otherwise, label as False.",
+              "The label is True if the subject of the sentence is an inanimate object or non-living thing performing a typically animate or human action; otherwise, the label is False.",
+              "Sentences are labeled True if the subject is an inanimate object or non-living thing performing an action or having an experience typically associated with living beings; otherwise, they are labeled False."
+            ]
+          }
+        },
+        "positive_sentiment": {
+          "rule_id": "positive_sentiment",
+          "model": "gpt-4.1",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              2,
+              2,
+              1
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 1,
+              "2": 2
+            },
+            "median": 2,
+            "grade2_names_true_rate": 0.6666666666666666,
+            "candidates": [
+              "Statements that emphasize positive qualities or benefits are labeled True; statements that focus on negative aspects or shortcomings are labeled False.",
+              "Statements are labeled True if they express a positive or beneficial aspect of the subject, and False if they express a negative, critical, or undesirable aspect.",
+              "Assign True to positive or affirming statements about movies or related subjects, and False to negative or critical statements."
+            ]
+          }
+        },
+        "second_word_capitalized": {
+          "rule_id": "second_word_capitalized",
+          "model": "gpt-4.1",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              0,
+              1,
+              1
+            ],
+            "grade_counts": {
+              "0": 1,
+              "1": 2,
+              "2": 0
+            },
+            "median": 1,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "The label is True if the subject is a specific person, city, or month and the location or time phrase does not contain a preposition other than \"at,\" \"by,\" or \"in\"; otherwise, the label is False.",
+              "The label is True if the subject is a specific person, place, month, or organization (not a general group or pronoun like \"people,\" \"students,\" \"someone,\" \"everyone,\" etc.), and False otherwise.",
+              "The label is True if the subject is a proper noun (person, place, month, or organization); otherwise, it is False."
+            ]
+          }
+        },
+        "word_count_geq_8": {
+          "rule_id": "word_count_geq_8",
+          "model": "gpt-4.1",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 0.9791666666666666,
+            "k": 47,
+            "n": 48,
+            "ci": [
+              0.8910078200474814,
+              0.9963128890224893
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 0.9583333333333334,
+                "k": 23,
+                "n": 24,
+                "ci": [
+                  0.7975819352134406,
+                  0.9926065438344942
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              0,
+              0,
+              0
+            ],
+            "grade_counts": {
+              "0": 3,
+              "1": 0,
+              "2": 0
+            },
+            "median": 0,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "The label is True if the subject is an inanimate object or animal and the sentence contains a prepositional phrase indicating location or direction; otherwise, the label is False.",
+              "Sentences are labeled True if the subject is a plausible noun and the verb phrase describes a plausible or neutral action or state, often with a prepositional phrase indicating location or manner, otherwise False.",
+              "The label is True if the sentence contains a prepositional phrase starting with \"past,\" \"by,\" \"in,\" \"near,\" \"overhead,\" \"inside,\" \"outside,\" \"afterwards,\" \"nowadays,\" \"at,\" \"with,\" \"for,\" or \"again\"; otherwise, it is False."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model": "claude-opus-4-8",
+      "experiment": "exp2-cot",
+      "cot_mode": "adaptive_thinking_effort_low",
+      "run": "insession-exp2-cot-claude-opus-4-8-20260615T175435Z",
+      "rules": {
+        "food_topic": {
+          "rule_id": "food_topic",
+          "model": "claude-opus-4-8",
+          "experiment": "exp2-cot",
+          "cot_mode": "adaptive_thinking_effort_low",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              2,
+              2,
+              2
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 3
+            },
+            "median": 2,
+            "grade2_names_true_rate": 1.0,
+            "candidates": [
+              "Label an input True if it is about food, cooking, baking, meals, ingredients, or kitchen items, and False otherwise.",
+              "An input is labeled True if it is about food, cooking, baking, or meals, and False otherwise.",
+              "Label True if the statement is about food, cooking, baking, ingredients, or meals; otherwise label False."
+            ]
+          }
+        },
+        "physically_impossible": {
+          "rule_id": "physically_impossible",
+          "model": "claude-opus-4-8",
+          "experiment": "exp2-cot",
+          "cot_mode": "adaptive_thinking_effort_low",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              2,
+              2,
+              2
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 3
+            },
+            "median": 2,
+            "grade2_names_true_rate": 1.0,
+            "candidates": [
+              "An input is labeled True if it describes a physically impossible or implausible scenario (an inanimate object performing a living/biological action, or an object too large/heavy to be handled as described), and False if the scenario is realistic and plausible.",
+              "Label True if the sentence describes a physically impossible or nonsensical situation (especially an inanimate subject performing a living being's action), and False if the described action is realistic and plausible.",
+              "A sentence is True if it describes something physically impossible\u2014an inanimate object performing an animate action (eating, breathing, blinking, sweating, etc.) or an object too large to fit/behave as stated\u2014and False if it describes a plausible, realistic event."
+            ]
+          }
+        },
+        "positive_sentiment": {
+          "rule_id": "positive_sentiment",
+          "model": "claude-opus-4-8",
+          "experiment": "exp2-cot",
+          "cot_mode": "adaptive_thinking_effort_low",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              2,
+              2,
+              2
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 3
+            },
+            "median": 2,
+            "grade2_names_true_rate": 1.0,
+            "candidates": [
+              "Label a statement True if it expresses a positive/favorable sentiment about its subject, and False if it expresses a negative/critical sentiment.",
+              "A statement is labeled True if it expresses a positive sentiment about its subject and False if it expresses a negative or critical sentiment.",
+              "Label a statement True if it expresses a positive/favorable sentiment and False if it expresses a negative/critical sentiment."
+            ]
+          }
+        },
+        "second_word_capitalized": {
+          "rule_id": "second_word_capitalized",
+          "model": "claude-opus-4-8",
+          "experiment": "exp2-cot",
+          "cot_mode": "adaptive_thinking_effort_low",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              1,
+              1,
+              1
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 3,
+              "2": 0
+            },
+            "median": 1,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "Label True if the sentence's subject is a proper noun (a person, place, or month name), otherwise label False.",
+              "An input is True if its subject is a proper noun (a person, place, company, or month name) and False if its subject is a generic noun or pronoun (everyone, someone, nobody, people, students, workers, neighbors, anyone).",
+              "Label True if the sentence's subject is a proper noun (a capitalized specific name), otherwise label False."
+            ]
+          }
+        },
+        "word_count_geq_8": {
+          "rule_id": "word_count_geq_8",
+          "model": "claude-opus-4-8",
+          "experiment": "exp2-cot",
+          "cot_mode": "adaptive_thinking_effort_low",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              0,
+              0,
+              1
+            ],
+            "grade_counts": {
+              "0": 2,
+              "1": 1,
+              "2": 0
+            },
+            "median": 0,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "An input is True if and only if it contains an extra modifier (an adverb or prepositional phrase) following the direct object, and False if the sentence ends immediately at the object.",
+              "Label True if the sentence contains an adverbial or prepositional modifier after the verb/object (extra trailing material), and False if it is just a simple subject\u2013verb\u2013object clause with nothing following the object.",
+              "A sentence is True if it includes at least one extra trailing adverbial or prepositional phrase after the main verb's object (or after an intransitive verb), and False if it ends immediately at the direct object with no such trailing modifier."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model": "gpt-4.1",
+      "experiment": "exp2-cot",
+      "cot_mode": "prompted_cot",
+      "run": "insession-exp2-cot-gpt-4.1-20260615T175435Z",
+      "rules": {
+        "food_topic": {
+          "rule_id": "food_topic",
+          "model": "gpt-4.1",
+          "experiment": "exp2-cot",
+          "cot_mode": "prompted_cot",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              2,
+              2,
+              1
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 1,
+              "2": 2
+            },
+            "median": 2,
+            "grade2_names_true_rate": 0.6666666666666666,
+            "candidates": [
+              "Label the input \"True\" if it is about food, cooking, or ingredients; otherwise, label it \"False\".",
+              "Label \"True\" only if the statement is about food, cooking, meals, ingredients, or kitchen activities; otherwise, label \"False.\"",
+              "Label True if the statement is about the process, tools, or composition of baking, cooking, or food preparation; otherwise, label False."
+            ]
+          }
+        },
+        "physically_impossible": {
+          "rule_id": "physically_impossible",
+          "model": "gpt-4.1",
+          "experiment": "exp2-cot",
+          "cot_mode": "prompted_cot",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              1,
+              1,
+              2
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 2,
+              "2": 1
+            },
+            "median": 1,
+            "grade2_names_true_rate": 0.3333333333333333,
+            "candidates": [
+              "Label the sentence True if and only if an inanimate object is described as performing an action or having an experience that only a living being can, otherwise label it False.",
+              "Label the sentence True if an inanimate object is described as performing an action or having a property that only living beings can, otherwise label it False.",
+              "Label the sentence \"True\" if it describes an inanimate object or non-living thing performing an action or experiencing a state that only animate beings can do, or if it describes an event that is physically or logically impossible; otherwise, label it \"False\"."
+            ]
+          }
+        },
+        "positive_sentiment": {
+          "rule_id": "positive_sentiment",
+          "model": "gpt-4.1",
+          "experiment": "exp2-cot",
+          "cot_mode": "prompted_cot",
+          "classification": {
+            "rate": 1.0,
+            "k": 48,
+            "n": 48,
+            "ci": [
+              0.9258998703338824,
+              0.9999999999999999
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              2,
+              2,
+              2
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 3
+            },
+            "median": 2,
+            "grade2_names_true_rate": 1.0,
+            "candidates": [
+              "Label statements as True if they are positive or affirming about the subject, and False if they are negative, critical, or complaint-based.",
+              "Statements that emphasize positive or beneficial qualities are labeled True; statements that emphasize negative or critical qualities are labeled False.",
+              "Statements that express positive or uplifting qualities are labeled True, while statements that express negative or critical qualities are labeled False."
+            ]
+          }
+        },
+        "second_word_capitalized": {
+          "rule_id": "second_word_capitalized",
+          "model": "gpt-4.1",
+          "experiment": "exp2-cot",
+          "cot_mode": "prompted_cot",
+          "classification": {
+            "rate": 0.9791666666666666,
+            "k": 47,
+            "n": 48,
+            "ci": [
+              0.8910078200474814,
+              0.9963128890224893
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 0.9583333333333334,
+                "k": 23,
+                "n": 24,
+                "ci": [
+                  0.7975819352134406,
+                  0.9926065438344942
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 24,
+                "n": 24,
+                "ci": [
+                  0.8620237953250198,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              1,
+              1,
+              1
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 3,
+              "2": 0
+            },
+            "median": 1,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "Label True if and only if the subject is a specific person\u2019s name, a city, or a month; otherwise, label False.",
+              "Label the input True if and only if the subject is a specific proper noun (person\u2019s name, place, month, or organization); otherwise, label it False.",
+              "Sentences are labeled True if and only if the subject is a proper noun (person, place, month, or organization); otherwise, they are labeled False."
+            ]
+          }
+        },
+        "word_count_geq_8": {
+          "rule_id": "word_count_geq_8",
+          "model": "gpt-4.1",
+          "experiment": "exp2-cot",
+          "cot_mode": "prompted_cot",
+          "classification": {
+            "rate": 0.9375,
+            "k": 45,
+            "n": 48,
+            "ci": [
+              0.8316456194505365,
+              0.9785167670916107
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 0.9583333333333334,
+                "k": 23,
+                "n": 24,
+                "ci": [
+                  0.7975819352134406,
+                  0.9926065438344942
+                ]
+              },
+              "false": {
+                "rate": 0.9166666666666666,
+                "k": 22,
+                "n": 24,
+                "ci": [
+                  0.7415119780678932,
+                  0.9768411847029566
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 3,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "turn": 3,
+                "n": 3,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "turn": 4,
+                "n": 3,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "turn": 5,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 3,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 3,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              0,
+              0,
+              0
+            ],
+            "grade_counts": {
+              "0": 3,
+              "1": 0,
+              "2": 0
+            },
+            "median": 0,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "Label the sentence True if it ends with a prepositional or adverbial phrase after the object; otherwise, label it False.",
+              "A sentence is labeled True if and only if it ends with a spatial or locational prepositional or adverbial phrase; otherwise, it is labeled False.",
+              "A sentence is labeled True if it contains at least one adverb or prepositional phrase after the verb; otherwise, it is labeled False."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model": "claude-opus-4-8",
+      "experiment": "exp1-no-cot",
+      "cot_mode": "none",
+      "run": "insession-exp1-no-cot-claude-opus-4-8-20260616T002438Z",
+      "rules": {
+        "food_topic": {
+          "rule_id": "food_topic",
+          "model": "claude-opus-4-8",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 192,
+            "n": 192,
+            "ci": [
+              0.980384853933246,
+              1.0
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              2,
+              2,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 1,
+              "2": 11
+            },
+            "median": 2.0,
+            "grade2_names_true_rate": 0.9166666666666666,
+            "candidates": [
+              "An input is True if it is about food, cooking, or baking, and False otherwise.",
+              "Statements about food, cooking, or baking are labeled True, while all others are labeled False.",
+              "An input is True if it is about cooking/baking food, and False otherwise (e.g., flowers, weather, transport, music, sports, work).",
+              "An input is True if it is about baking or food/meals (cooking, ovens, dishes, ingredients), and False otherwise (including flowers/gardening, music, sports, and other topics).",
+              "An input is True if it relates to food, cooking, or baking, and False otherwise.",
+              "Inputs about food, cooking, or baking are labeled True, while all others (including flowers/gardening) are labeled False.",
+              "An input is labeled True if it relates to cooking, baking, or food, and False otherwise.",
+              "An input is labeled True if it relates to food, cooking, baking, or kitchen items, and False otherwise.",
+              "An input is True if it is about food, cooking, baking, or ingredients, and False otherwise (e.g., flowers, weather, transportation, work).",
+              "An input is True if it relates to food, cooking, or baking, and False otherwise.",
+              "An input is True if it is about cooking, baking, or food/restaurants, and False otherwise.",
+              "An input is True if it is about food, cooking, or baking, and False otherwise."
+            ]
+          }
+        },
+        "physically_impossible": {
+          "rule_id": "physically_impossible",
+          "model": "claude-opus-4-8",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 0.9947916666666666,
+            "k": 191,
+            "n": 192,
+            "ci": [
+              0.9710925028432594,
+              0.9990800088615152
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 0.9895833333333334,
+                "k": 95,
+                "n": 96,
+                "ci": [
+                  0.9433338237728424,
+                  0.9981588297831838
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 0.9166666666666666
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 12,
+              "2": 0
+            },
+            "median": 1.0,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "The label is True when an inanimate object is the subject performing a living being's action, and False when the subject is an animate being (or the sentence otherwise describes a physically plausible scenario).",
+              "A sentence is True if its subject is an inanimate object performing a human/animate action or being placed/fit somewhere physically impossible, and False if the subject is a living being acting naturally.",
+              "The label is True when the subject is an inanimate object performing an action only living beings can do (or an animate being doing something physically impossible), and False when an animate being performs a normal action.",
+              "A sentence is True if its subject is an inanimate object performing a living being's action (or being treated as physically impossible for its size), and False if the subject is a living being acting naturally or an object handled in a physically plausible way.",
+              "An input is True if its subject is an inanimate object performing a living being's action (or a living being being treated as an object), and False if the subject is a living being acting normally or an object being handled normally.",
+              "An input is True if its subject is an inanimate object performing an action requiring an animate being (or being acted upon as if movable/animate), and False if the subject is a living being performing a plausible action.",
+              "A sentence is True if its subject is an inanimate object performing an action (biological or physical) that only a living being or improperly-sized container could do, and False if the subject is a living being acting naturally or the action/container is physically plausible.",
+              "A statement is True if its subject is an inanimate object performing an action or experiencing a state that only a living being (or otherwise impossible for that object) could do, and False if the subject is a living being or the action is physically appropriate for the object.",
+              "An input is True if an inanimate object is given an animate/biological action or living attribute (or if a physical object is placed in/treated as an impossibly large container), and False otherwise.",
+              "An input is True if it attributes a human/animate action (eating, drinking, sweating, breathing, fitting/holding/lifting impossibly large objects, etc.) to an inanimate object, and False otherwise.",
+              "An input is True if its subject is an inanimate object performing a human/animate action (or being placed in an impossibly small space), and False if the subject is an animate being acting normally.",
+              "An input is True if its subject is an inanimate object performing an action (or being acted upon) that only an animate being or appropriately-sized thing could do, and False if the subject is a living being or person doing something natural/plausible."
+            ]
+          }
+        },
+        "positive_sentiment": {
+          "rule_id": "positive_sentiment",
+          "model": "claude-opus-4-8",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 192,
+            "n": 192,
+            "ci": [
+              0.980384853933246,
+              1.0
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 12
+            },
+            "median": 2.0,
+            "grade2_names_true_rate": 1.0,
+            "candidates": [
+              "Label True if the statement expresses a positive sentiment about the subject, and False if it expresses a negative sentiment.",
+              "A statement is True if it expresses a positive sentiment about the subject, and False if it expresses a negative sentiment.",
+              "Statements expressing positive sentiment about the subject are labeled True, while those expressing negative or critical sentiment are labeled False.",
+              "Statements expressing a positive sentiment about the subject are labeled True, while those expressing a negative sentiment are labeled False.",
+              "Statements expressing a positive sentiment about the subject are labeled True, while those expressing a negative sentiment are labeled False.",
+              "A statement is True if it expresses a positive sentiment about its subject and False if it expresses a negative sentiment.",
+              "A statement is labeled True if it expresses a positive sentiment about its subject, and False if it expresses a negative sentiment.",
+              "A statement is True if it expresses a positive sentiment about the subject, and False if it expresses a negative sentiment.",
+              "Statements expressing a positive sentiment are labeled True, while those expressing a negative or critical sentiment are labeled False.",
+              "Statements expressing a positive sentiment about the subject are labeled True, while those expressing a negative sentiment are labeled False.",
+              "An input is True if it expresses a positive sentiment about the subject, and False if it expresses a negative or critical sentiment.",
+              "An input is labeled True if it expresses a positive sentiment about the subject, and False if it expresses a negative sentiment."
+            ]
+          }
+        },
+        "second_word_capitalized": {
+          "rule_id": "second_word_capitalized",
+          "model": "claude-opus-4-8",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 192,
+            "n": 192,
+            "ci": [
+              0.980384853933246,
+              1.0
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "grade_counts": {
+              "0": 2,
+              "1": 10,
+              "2": 0
+            },
+            "median": 1.0,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "An input is True if and only if its subject is a proper name (a specific person, city, company, or month) and its ending phrase is a time/manner expression (e.g., \"at dusk,\" \"by hand,\" \"by night\"), not a phrase introduced by a preposition followed by a proper name.",
+              "True if the subject is a proper noun (a specific named person, place, company, or month) and the sentence ends with a time expression rather than a location/direction phrase, otherwise False.",
+              "The label is True if the subject is a proper noun (a specific person, place, company, or month) and False if the subject is an indefinite pronoun (everyone, someone, nobody, anyone, people) or a common-noun group (students, workers, neighbors).",
+              "The label is True if and only if the subject is a proper noun (a name of a person, place, or month/company), and False if the subject is a common noun like people, students, workers, someone, anyone, nobody, neighbors, travelers, or everyone.",
+              "An input is True if and only if its subject is a proper noun (a specific named person, place, company, or month), and False if the subject is a common/indefinite noun (e.g., people, someone, workers, nobody, anyone, travelers, neighbors).",
+              "True if and only if the subject is a proper noun (a specific name of a person, place, or thing), otherwise False.",
+              "True if the subject is a specific proper name (person, place, company, or month), and False if the subject is a generic plural or indefinite pronoun (people, workers, someone, anyone, nobody, etc.).",
+              "An input is True if its subject is a proper noun (a person's name, place, company, or month), and False if its subject is a common noun like people, workers, neighbors, someone, anyone, nobody, or travelers.",
+              "An input is True if and only if its subject is a proper noun (a person's name, month, city, or company), and False if the subject is a common plural/indefinite noun (people, workers, neighbors, someone, anyone, nobody, travelers, etc.).",
+              "An input is True if and only if its subject is a proper noun (a specific named person, place, company, or month), and False otherwise.",
+              "A sentence is True if and only if its subject is a proper name (person, place, brand, or month) AND it ends with a temporal phrase (at dawn/noon/dusk/night, by day/night/hand, in spring, etc.), rather than a plural/indefinite subject or a phrase headed by a spatial/comparative preposition (near, beyond, below, toward, past).",
+              "An input is True if and only if its subject is a singular proper noun (a specific named person, place, or thing), and False if the subject is a common/plural noun (like people, workers, nobody, anyone, everyone)."
+            ]
+          }
+        },
+        "word_count_geq_8": {
+          "rule_id": "word_count_geq_8",
+          "model": "claude-opus-4-8",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 0.984375,
+            "k": 189,
+            "n": 192,
+            "ci": [
+              0.9550757206357001,
+              0.9946721066121318
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 0.9791666666666666,
+                "k": 94,
+                "n": 96,
+                "ci": [
+                  0.9271928648221579,
+                  0.9942680301475697
+                ]
+              },
+              "false": {
+                "rate": 0.9895833333333334,
+                "k": 95,
+                "n": 96,
+                "ci": [
+                  0.9433338237728424,
+                  0.9981588297831838
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 0.9166666666666666
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 0.8333333333333334
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "grade_counts": {
+              "0": 12,
+              "1": 0,
+              "2": 0
+            },
+            "median": 0.0,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "A sentence is True if it contains a prepositional phrase or an adverbial/locative element (e.g., \"past/near/in ... by ...\", or adverbs like nowadays, outside, abroad, afterwards, all day long), and False if it is a simple subject\u2013verb\u2013direct object sentence with only adjectives modifying the noun.",
+              "An input is True if its main verb is intransitive/movement-or-location-based followed by a prepositional phrase (e.g., \"past/near/in ... by ...\"), or if it contains an adverb (like nowadays, gladly, again, outside, today), and False otherwise.",
+              "A sentence is True if it contains an adverb (a word like \"quickly,\" \"calmly,\" \"gladly,\" \"outside,\" \"afterwards,\" etc.) or a prepositional phrase of location (\"near/past/in...by...\"), and False if it has only an adjective-subject performing a plain verb-object action with no such adverb or locative phrase.",
+              "An input is True if it contains a locative/directional prepositional phrase (like \"near,\" \"past,\" \"in,\" \"by\") or an adverbial modifier (like \"outside,\" \"afterwards,\" \"today,\" \"with care,\" \"on foot\"), and False otherwise.",
+              "An input is True if its main verb is intransitive/movement-type used with a prepositional phrase (or the sentence adds a location/manner adverbial phrase like \"outside,\" \"afterwards,\" \"by hand,\" \"with great care\"), and False if it has a simple transitive verb directly taking an object without such a phrase.",
+              "A sentence is True if it contains an adverbial element (a prepositional phrase like \"by the X,\" or an adverb of place/time/manner such as \"afterwards,\" \"outside,\" \"again,\" \"by hand\"), and False otherwise.",
+              "A sentence is True if it contains a locational/directional prepositional phrase or a sentence-final adverb (like \"afterwards,\" \"outside,\" \"today,\" \"nowadays,\" \"for now\"), and False if it is a simple subject-verb-object sentence with only adjectives modifying the noun.",
+              "An input is True if its main verb is one of motion/perception/communication used intransitively with a locative \"near/in/past/by\" phrase, or if the verb takes a place/time adverb (like outside, downtown, afterwards, right away, nearby) \u2014 otherwise it is False.",
+              "A sentence is True if it contains an adverb or a prepositional/locative phrase (extra modifying material beyond a simple subject-verb-object), and False if it is just a plain subject-verb-object (optionally with adjectives) clause.",
+              "An input is True if it contains an adverb (a word like \"gladly,\" \"quietly,\" \"slowly,\" \"past,\" \"near,\" \"in,\" \"by,\" \"outside,\" \"afterwards,\" etc., typically indicating manner, place, time, or a prepositional phrase modifier) and False otherwise.",
+              "A sentence is True if its verb is intransitive/locative followed by a prepositional phrase (like \"led/sat/got near/past/in ... by ...\"), and False if the verb directly takes a noun-phrase object.",
+              "An input is True if and only if its main verb is an intransitive motion/perception verb (e.g., sat, led, met, saw, fed, carried-with-location, cooked-with-location) followed by a prepositional phrase like \"near/past/in arms by the ___,\" otherwise it is False."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model": "gpt-4.1",
+      "experiment": "exp1-no-cot",
+      "cot_mode": "none",
+      "run": "insession-exp1-no-cot-gpt-4.1-20260616T002438Z",
+      "rules": {
+        "food_topic": {
+          "rule_id": "food_topic",
+          "model": "gpt-4.1",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 192,
+            "n": 192,
+            "ci": [
+              0.980384853933246,
+              1.0
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 8,
+              "2": 4
+            },
+            "median": 1.0,
+            "grade2_names_true_rate": 0.3333333333333333,
+            "candidates": [
+              "Sentences about baking, cooking, or food preparation are labeled True; all other sentences are labeled False.",
+              "The label is True if the input is about baking, cooking, or food preparation; otherwise, it is False.",
+              "The label is True if and only if the input is specifically about baking, cooking, or food preparation; otherwise, it is False.",
+              "The label is True if and only if the input is about food, cooking, or baking; otherwise, it is False.",
+              "The label is True if the input describes a fact specifically about food, cooking, or baking; otherwise, it is False.",
+              "The label is True if the input is about food, cooking, or baking; otherwise, it is False.",
+              "The label is True if the input is about baking, cooking, or food preparation; otherwise, it is False.",
+              "The label is True if the input is about baking, cooking, or food preparation; otherwise, it is False.",
+              "The label is True if the input is specifically about baking, cooking, or food preparation; otherwise, it is False.",
+              "The label is True if the input is specifically about food preparation, ingredients, or baking; otherwise, it is False.",
+              "The label is True if the input is about baking or baked goods; otherwise, it is False.",
+              "The label is True if the input is about food, cooking, or baking; otherwise, it is False."
+            ]
+          }
+        },
+        "physically_impossible": {
+          "rule_id": "physically_impossible",
+          "model": "gpt-4.1",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 192,
+            "n": 192,
+            "ci": [
+              0.980384853933246,
+              1.0
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 12,
+              "2": 0
+            },
+            "median": 1.0,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "The label is True if the subject is an inanimate object or non-living thing performing a typically animate or human action; otherwise, the label is False.",
+              "Label as True if the subject is an inanimate object or non-living thing performing an action typically done by a living being; otherwise, label as False.",
+              "Sentences are labeled True if the subject is an inanimate object or non-living thing performing an action or having an experience typically associated with living beings; otherwise, they are labeled False.",
+              "Sentences are labeled True if the subject is an inanimate object or non-living thing performing an action or having an experience typically associated with living beings; otherwise, they are labeled False.",
+              "Sentences are labeled True if the subject is inanimate or non-human, and False if the subject is animate or human.",
+              "The label is True if the subject of the sentence is an inanimate object or non-living thing performing an action or having an experience that only a living being can do; otherwise, the label is False.",
+              "Sentences are labeled True if the subject is an inanimate object or non-human entity performing a human action or experiencing a human state; otherwise, they are labeled False.",
+              "The label is True if the subject of the sentence is an inanimate object or non-living thing performing a typically animate or human action; otherwise, the label is False.",
+              "The label is True if the subject is an inanimate object or non-living thing performing a human or animate action; otherwise, the label is False.",
+              "Sentences are labeled True if the subject is an inanimate object or non-living thing performing an action or having an experience that only living beings can do; otherwise, they are labeled False.",
+              "Sentences are labeled True if the subject is inanimate or non-human and is described performing an action or having an experience that only animate beings or humans can do; otherwise, they are labeled False.",
+              "Sentences are labeled True if the subject is inanimate or non-human and is described performing a typically animate or human action; otherwise, they are labeled False."
+            ]
+          }
+        },
+        "positive_sentiment": {
+          "rule_id": "positive_sentiment",
+          "model": "gpt-4.1",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 192,
+            "n": 192,
+            "ci": [
+              0.980384853933246,
+              1.0
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 2,
+              "2": 10
+            },
+            "median": 2.0,
+            "grade2_names_true_rate": 0.8333333333333334,
+            "candidates": [
+              "Positive, affirming, or beneficial statements about the subject are labeled True; negative, critical, or detrimental statements are labeled False.",
+              "Positive, uplifting, or appreciative statements about the subject are labeled True, while negative, critical, or complaining statements are labeled False.",
+              "Statements that emphasize positive qualities, benefits, or uplifting effects are labeled True, while statements that focus on negative qualities, drawbacks, or criticisms are labeled False.",
+              "Assign True to positive or affirming statements about movies or related topics, and False to negative or critical statements.",
+              "Assign True to positive statements about movies or related experiences, and False to negative or critical statements.",
+              "Statements that emphasize positive qualities or benefits are labeled True, while those that focus on negative aspects or criticisms are labeled False.",
+              "Statements that emphasize positive qualities or benefits are labeled True, while those that focus on negative aspects or criticisms are labeled False.",
+              "Statements that emphasize positive, inspiring, or beneficial aspects are labeled True; statements that focus on negative, critical, or undesirable aspects are labeled False.",
+              "Positive, uplifting, or beneficial statements about the subject are labeled True; negative, critical, or detrimental statements are labeled False.",
+              "Positive, uplifting, or appreciative statements about movies or related experiences are labeled True; negative, critical, or complaining statements are labeled False.",
+              "Statements that express positive, enriching, or beneficial qualities or effects are labeled True; statements that express negative, critical, or detrimental qualities or effects are labeled False.",
+              "Statements that emphasize the positive qualities or benefits of the subject are labeled True, while those that focus on negative aspects or criticisms are labeled False."
+            ]
+          }
+        },
+        "second_word_capitalized": {
+          "rule_id": "second_word_capitalized",
+          "model": "gpt-4.1",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 0.9739583333333334,
+            "k": 187,
+            "n": 192,
+            "ci": [
+              0.9404967518070468,
+              0.9888263909838426
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 0.9479166666666666,
+                "k": 91,
+                "n": 96,
+                "ci": [
+                  0.8838152196850738,
+                  0.9775503995257587
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 0.75
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 0.8333333333333334
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "grade_counts": {
+              "0": 5,
+              "1": 7,
+              "2": 0
+            },
+            "median": 1.0,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "The label is True if the subject is a specific person, place, month, or organization (not a generic group or pronoun like \"people,\" \"students,\" \"workers,\" \"someone,\" \"everyone,\" \"anyone,\" \"nobody,\" \"somebody\"), otherwise the label is False.",
+              "The label is True if the subject is a specific person, place, month, or organization, and False if the subject is a generic group or pronoun.",
+              "The label is True if the subject is a specific person, city, or month and the prepositional phrase does not contain a person\u2019s name, otherwise the label is False.",
+              "The label is True if and only if the subject is a proper noun (person, place, month, or organization); otherwise, it is False.",
+              "The label is True if the subject is a specific person, month, or place (never a generic group or pronoun), and the prepositional phrase at the end does not contain a location word like \"below,\" \"beyond,\" \"behind,\" \"toward,\" \"near,\" or \"past.\"",
+              "The label is True if the subject is a specific person, month, or place (not a generic group or pronoun), and the location or time phrase does not reference another person or city; otherwise, the label is False.",
+              "The label is True if the subject is a proper noun (person, city, or month) and not a plural or generic noun; otherwise, the label is False.",
+              "The label is True if the subject is a proper noun (person, place, month, or organization) and not a generic group (like \"people,\" \"students,\" \"workers,\" \"someone,\" \"nobody,\" \"everyone,\" or \"anyone\"); otherwise, the label is False.",
+              "The label is True if the subject is a specific person, city, or month and the location or time phrase is a standard time of day or season; otherwise, the label is False.",
+              "The label is True if and only if the subject is a specific person, month, or place, otherwise it is False.",
+              "The label is True if and only if the subject is a specific person, place, or month and the prepositional phrase at the end refers to a time of day, season, or location, but not a person or month; otherwise, the label is False.",
+              "The label is True if and only if the subject is a proper noun (person, place, or month) and not a plural or collective noun; otherwise, the label is False."
+            ]
+          }
+        },
+        "word_count_geq_8": {
+          "rule_id": "word_count_geq_8",
+          "model": "gpt-4.1",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 0.9739583333333334,
+            "k": 187,
+            "n": 192,
+            "ci": [
+              0.9404967518070468,
+              0.9888263909838426
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 0.96875,
+                "k": 93,
+                "n": 96,
+                "ci": [
+                  0.9121132067546304,
+                  0.9893159296287989
+                ]
+              },
+              "false": {
+                "rate": 0.9791666666666666,
+                "k": 94,
+                "n": 96,
+                "ci": [
+                  0.9271928648221579,
+                  0.9942680301475697
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 0.9166666666666666
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 0.9166666666666666
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 0.9166666666666666
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 0.8333333333333334
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "grade_counts": {
+              "0": 12,
+              "1": 0,
+              "2": 0
+            },
+            "median": 0.0,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "The label is True if the subject is an inanimate object or animal and the sentence contains a prepositional phrase indicating location or direction; otherwise, the label is False.",
+              "The label is True if the subject noun is plausible in the context of the prepositional phrase(s) at the end of the sentence, regardless of the verb-object relationship; otherwise, the label is False.",
+              "The label is True if the sentence contains a prepositional phrase starting with \"in,\" \"on,\" \"near,\" \"past,\" or \"by\" followed by a plural noun or a noun phrase, otherwise it is False.",
+              "The label is True if the sentence contains a prepositional phrase starting with \"by,\" \"in,\" \"on,\" \"inside,\" \"outside,\" \"upstairs,\" \"downstairs,\" \"abroad,\" \"near,\" \"with,\" \"without,\" or \"past\"; otherwise, it is False.",
+              "The label is True if the subject is a living thing or a natural object and the sentence includes a prepositional phrase indicating location (e.g., \"in,\" \"on,\" \"by,\" \"near,\" \"past,\" \"with\"); otherwise, the label is False.",
+              "Sentences are labeled True if the subject is a concrete noun and the verb phrase describes a plausible or neutral physical or spatial action or state, often involving prepositional phrases, otherwise False.",
+              "The label is True if the subject performed an action involving a prepositional phrase indicating location or movement (e.g., \"on jars by the library\", \"past hats by the bed\"), otherwise the label is False.",
+              "The label is True if the sentence contains a prepositional phrase indicating location or direction (e.g., \"past X\", \"by Y\", \"in Z\", \"overhead\", \"outside\", \"nowadays\", \"afterwards\", \"at home\", \"at work\", \"for a while\"), otherwise it is False.",
+              "The label is True if the subject performs an action involving a prepositional phrase with \"by,\" \"in,\" \"on,\" \"past,\" or similar, indicating location or movement, otherwise False.",
+              "The label is True if the sentence contains a prepositional phrase starting with \"in,\" \"on,\" \"near,\" \"by,\" \"past,\" or \"with\" after the verb and object; otherwise, it is False.",
+              "The label is True if the subject is plausible as performing the action on or near the object(s) in the context given, otherwise False.",
+              "The label is True if the subject is a plausible animate entity or inanimate object that can reasonably perform the action on the object or location in the sentence; otherwise, the label is False."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "experiment": "exp1-no-cot",
+      "cot_mode": "none",
+      "run": "insession-exp1-no-cot-gpt-4.1-mini-20260616T002438Z",
+      "rules": {
+        "food_topic": {
+          "rule_id": "food_topic",
+          "model": "gpt-4.1-mini",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 192,
+            "n": 192,
+            "ci": [
+              0.980384853933246,
+              1.0
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              2,
+              2,
+              1,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 7,
+              "2": 5
+            },
+            "median": 1.0,
+            "grade2_names_true_rate": 0.4166666666666667,
+            "candidates": [
+              "Sentences describing cooking, baking, or food preparation processes or items are labeled True; all others are labeled False.",
+              "Sentences describing food, cooking, or baking processes and ingredients are labeled True, while sentences about plants, flowers, seasons, weather, or unrelated topics are labeled False.",
+              "Sentences describing cooking, baking, or food preparation processes or items are labeled True; all other sentences are labeled False.",
+              "Sentences describing cooking, baking, or food preparation processes or ingredients are labeled True; all others are labeled False.",
+              "Sentences describing baking processes, ingredients, or cooking techniques are labeled True; all others are labeled False.",
+              "Statements specifically describing food preparation, cooking processes, or kitchen-related details are labeled True, while statements about plants, flowers, nature, or general facts are labeled False.",
+              "Sentences describing specific cooking or baking processes and details are labeled True, while sentences about plants, flowers, music, sports, or general statements unrelated to cooking/baking are labeled False.",
+              "Statements describing baking processes, ingredients, or equipment are labeled True; all other statements are labeled False.",
+              "Statements directly related to cooking or baking processes and ingredients are labeled True, while statements about plants, flowers, animals, or general facts unrelated to cooking are labeled False.",
+              "Statements describing facts or processes directly related to cooking or baking are labeled True, while statements about plants, flowers, seasons, or unrelated topics are labeled False.",
+              "Statements directly related to cooking, baking, or food preparation are labeled True; all others are labeled False.",
+              "Statements related to cooking, baking, or food ingredients are labeled True, while statements about flowers, plants, or general non-food topics are labeled False."
+            ]
+          }
+        },
+        "physically_impossible": {
+          "rule_id": "physically_impossible",
+          "model": "gpt-4.1-mini",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 0.9947916666666666,
+            "k": 191,
+            "n": 192,
+            "ci": [
+              0.9710925028432594,
+              0.9990800088615152
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 0.9895833333333334,
+                "k": 95,
+                "n": 96,
+                "ci": [
+                  0.9433338237728424,
+                  0.9981588297831838
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 0.9166666666666666
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 12,
+              "2": 0
+            },
+            "median": 1.0,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "Sentences are labeled True if an inanimate object is described performing a human action, and False otherwise.",
+              "Sentences are labeled True if the subject is an inanimate object or non-living thing performing an action typically associated with living beings, and False if the subject is a living being performing a typical action.",
+              "Sentences are labeled True if an inanimate object or non-living thing is described performing a human action or behavior, and False if a living being or person is described performing a typical action.",
+              "Sentences are labeled True if an inanimate object is described performing a human action or attribute, and False if a human or animate being is described performing a typical human action.",
+              "Sentences are labeled True if an inanimate object or non-living thing is described performing an action typically associated with living beings, and False if a living being is described performing a normal action or an inanimate object is described in a normal or non-anthropomorphic way.",
+              "Sentences are labeled True if the subject is an inanimate object or non-human entity performing an action typically associated with living beings, and False if the subject is a human or animal performing a normal action.",
+              "Sentences are labeled True if an inanimate object or non-living thing is described performing an action typically associated with living beings, and False if a living being is described performing a normal action.",
+              "Sentences are labeled True if the subject is an inanimate object or non-living thing performing an action typically impossible for it, and False if the subject is a living being performing a plausible action.",
+              "Sentences are labeled True if the subject is an inanimate object or non-living thing performing an action typically impossible for it, and False if the subject is a living being performing a plausible action.",
+              "Sentences are labeled True if an inanimate object is described performing a human action, and False otherwise.",
+              "Sentences are labeled True if an inanimate object or non-human entity is described performing an action typically associated with living beings, and False if a human or animate being performs a normal action.",
+              "Sentences are labeled True if an inanimate object is described performing a human action, and False if a human or animate being is described performing a normal action."
+            ]
+          }
+        },
+        "positive_sentiment": {
+          "rule_id": "positive_sentiment",
+          "model": "gpt-4.1-mini",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 1.0,
+            "k": 192,
+            "n": 192,
+            "ci": [
+              0.980384853933246,
+              1.0
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              },
+              "false": {
+                "rate": 1.0,
+                "k": 96,
+                "n": 96,
+                "ci": [
+                  0.9615244121423243,
+                  1.0
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "grade_counts": {
+              "0": 0,
+              "1": 11,
+              "2": 1
+            },
+            "median": 1.0,
+            "grade2_names_true_rate": 0.08333333333333333,
+            "candidates": [
+              "Statements that express positive or beneficial aspects of movies are labeled True, while those that express negative or critical aspects are labeled False.",
+              "Statements expressing positive, inspiring, or beneficial qualities of movies are labeled True, while statements expressing negative, critical, or undesirable qualities are labeled False.",
+              "Statements that highlight positive, beneficial, or admirable qualities of movies are labeled True, while those emphasizing negative, undesirable, or critical aspects are labeled False.",
+              "Statements that highlight positive, beneficial, or enriching aspects of movies are labeled True, while those emphasizing negative, harmful, or undesirable aspects are labeled False.",
+              "Statements that positively highlight the benefits, inspiration, or enjoyment of movies are labeled True, while statements that criticize, highlight negative aspects, or express dissatisfaction with movies are labeled False.",
+              "Statements that express positive, inspiring, or beneficial qualities of movies are labeled True, while statements that highlight negative, critical, or undesirable aspects are labeled False.",
+              "Statements that express positive or beneficial qualities about movies are labeled True, while those expressing negative or critical qualities are labeled False.",
+              "Statements expressing positive or beneficial aspects of movies are labeled True, while those expressing negative or critical aspects are labeled False.",
+              "Statements expressing positive qualities or benefits of movies are labeled True, while statements expressing negative qualities or criticisms are labeled False.",
+              "Statements that express positive, inspiring, or beneficial aspects of movies are labeled True, while statements that express negative, critical, or harmful aspects are labeled False.",
+              "Statements that express positive or beneficial qualities of movies are labeled True, while those expressing negative or critical qualities are labeled False.",
+              "Statements that highlight positive, beneficial, or inspiring aspects of movies are labeled True, while statements that emphasize negative, critical, or detrimental aspects are labeled False."
+            ]
+          }
+        },
+        "second_word_capitalized": {
+          "rule_id": "second_word_capitalized",
+          "model": "gpt-4.1-mini",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 0.8125,
+            "k": 156,
+            "n": 192,
+            "ci": [
+              0.7513628261115768,
+              0.861377707596702
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 0.6979166666666666,
+                "k": 67,
+                "n": 96,
+                "ci": [
+                  0.5999149981303159,
+                  0.7806884150093544
+                ]
+              },
+              "false": {
+                "rate": 0.9270833333333334,
+                "k": 89,
+                "n": 96,
+                "ci": [
+                  0.8570696833485983,
+                  0.9642324186896375
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 0.75
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 0.9166666666666666
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 0.8333333333333334
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 0.9166666666666666
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 0.8333333333333334
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 0.9166666666666666
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 0.75
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 0.25
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 0.75
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 0.4166666666666667
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 1.0
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              2
+            ],
+            "grade_counts": {
+              "0": 4,
+              "1": 7,
+              "2": 1
+            },
+            "median": 1.0,
+            "grade2_names_true_rate": 0.08333333333333333,
+            "candidates": [
+              "The label is True if the second word is a proper noun referring to a month, city, or person's name, and False otherwise.",
+              "The label is True if the adverb is one of {Slowly, Suddenly, Apparently, Usually, Carefully, Luckily, Quietly, Often}, otherwise False.",
+              "The label is True if the sentence contains a proper noun (a specific name of a person, place, or organization) as the subject; otherwise, it is False.",
+              "The label is True if the sentence contains a proper noun referring to a person or a city, and the prepositional phrase indicates a time of day or a location associated with that noun; otherwise, it is False.",
+              "The label is True if the sentence contains a proper noun (name of a person, city, or month) followed by a past tense verb and a noun, and the time or place phrase uses \"at\" or \"by\" with a valid time of day or day, otherwise False.",
+              "The label is True if the subject is a proper noun referring to a person, place, or organization, and False if the subject is a general noun or pronoun referring to people or unspecified entities.",
+              "The label is True if the subject is a proper noun (a specific person, place, or entity) and False if the subject is a common noun or pronoun.",
+              "The label is True if the sentence contains a proper noun referring to a person or a recognized place name followed by a past tense verb and a time phrase indicating a specific time of day or season; otherwise, it is False.",
+              "The label is True if the subject is a singular proper noun or a singular common noun referring to a person or place, and the prepositional phrase includes a valid time expression (e.g., at dawn, at dusk, at noon, by night, in spring); otherwise, the label is False.",
+              "The label is True if the subject is a specific proper noun (person, place, or organization) and False if the subject is a general noun or indefinite pronoun.",
+              "The label is True if the third word is a proper noun referring to a person or a recognized personal name, and False otherwise.",
+              "The label is True if the sentence starts with an adverb of frequency or time followed by a proper noun, and False otherwise."
+            ]
+          }
+        },
+        "word_count_geq_8": {
+          "rule_id": "word_count_geq_8",
+          "model": "gpt-4.1-mini",
+          "experiment": "exp1-no-cot",
+          "cot_mode": "none",
+          "classification": {
+            "rate": 0.8854166666666666,
+            "k": 170,
+            "n": 192,
+            "ci": [
+              0.832610794613997,
+              0.92310253029288
+            ],
+            "n_parse_fail": 0,
+            "per_class": {
+              "true": {
+                "rate": 0.90625,
+                "k": 87,
+                "n": 96,
+                "ci": [
+                  0.8313466930777846,
+                  0.949891891787854
+                ]
+              },
+              "false": {
+                "rate": 0.8645833333333334,
+                "k": 83,
+                "n": 96,
+                "ci": [
+                  0.7819886149785562,
+                  0.9191229355418891
+                ]
+              }
+            },
+            "turn_curve": [
+              {
+                "turn": 0,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 1,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 2,
+                "n": 12,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "turn": 3,
+                "n": 12,
+                "accuracy": 0.8333333333333334
+              },
+              {
+                "turn": 4,
+                "n": 12,
+                "accuracy": 0.5833333333333334
+              },
+              {
+                "turn": 5,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 6,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 7,
+                "n": 12,
+                "accuracy": 0.9166666666666666
+              },
+              {
+                "turn": 8,
+                "n": 12,
+                "accuracy": 0.8333333333333334
+              },
+              {
+                "turn": 9,
+                "n": 12,
+                "accuracy": 0.75
+              },
+              {
+                "turn": 10,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 11,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 12,
+                "n": 12,
+                "accuracy": 1.0
+              },
+              {
+                "turn": 13,
+                "n": 12,
+                "accuracy": 0.9166666666666666
+              },
+              {
+                "turn": 14,
+                "n": 12,
+                "accuracy": 0.75
+              },
+              {
+                "turn": 15,
+                "n": 12,
+                "accuracy": 0.9166666666666666
+              }
+            ]
+          },
+          "articulation": {
+            "grades": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "grade_counts": {
+              "0": 12,
+              "1": 0,
+              "2": 0
+            },
+            "median": 0.0,
+            "grade2_names_true_rate": 0.0,
+            "candidates": [
+              "The label is True if the sentence contains at least one noun that is typically a small, tangible object or household item, and False otherwise.",
+              "The label is True if the sentence contains a verb that can logically apply to an inanimate object performing an action on another noun, otherwise False.",
+              "The label is True if the sentence contains a subject noun that can plausibly perform the verb action or be in the described situation, otherwise False.",
+              "The label is True if the sentence contains at least one animal word; otherwise, it is False.",
+              "The label is True if the input contains a prepositional phrase starting with \"by\" followed by a plural noun; otherwise, it is False.",
+              "The label is True if the sentence contains at least one plausible or meaningful action involving animate subjects or entities, otherwise False.",
+              "The label is True if the sentence contains a prepositional phrase starting with \"in,\" \"by,\" or \"past\" followed by a plural noun; otherwise, it is False.",
+              "The label is True if the sentence contains a phrase with a plural noun preceded by a preposition like \"in,\" \"near,\" \"by,\" or \"past,\" otherwise it is False.",
+              "The label is True if the sentence contains a past tense verb followed by a prepositional phrase indicating location or direction; otherwise, it is False.",
+              "The label is True if the sentence contains a prepositional phrase starting with \"by\" or \"in\" followed by a noun, otherwise False.",
+              "The sentence is labeled True if it contains a prepositional phrase starting with \"by,\" \"past,\" \"in,\" \"on,\" or \"near\" followed by a plural noun; otherwise, it is labeled False.",
+              "The label is True if the sentence contains a noun that can plausibly be an animate agent performing the action, otherwise False."
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "exp1_vs_exp2": [
+    {
+      "model": "claude-opus-4-8",
+      "rule_id": "food_topic",
+      "step1_single_call_acc": null,
+      "exp1_nocot_classify_acc": 1.0,
+      "exp1_nocot_grade_median": 2.0,
+      "exp1_nocot_grade2_rate": 0.9166666666666666,
+      "exp2_cot_classify_acc": 1.0,
+      "exp2_cot_grade_median": 2,
+      "exp2_cot_grade2_rate": 1.0,
+      "acc_delta_cot_minus_nocot": 0.0,
+      "grade2_delta_cot_minus_nocot": 0.08333333333333337
+    },
+    {
+      "model": "claude-opus-4-8",
+      "rule_id": "physically_impossible",
+      "step1_single_call_acc": null,
+      "exp1_nocot_classify_acc": 0.9947916666666666,
+      "exp1_nocot_grade_median": 1.0,
+      "exp1_nocot_grade2_rate": 0.0,
+      "exp2_cot_classify_acc": 1.0,
+      "exp2_cot_grade_median": 2,
+      "exp2_cot_grade2_rate": 1.0,
+      "acc_delta_cot_minus_nocot": 0.00520833333333337,
+      "grade2_delta_cot_minus_nocot": 1.0
+    },
+    {
+      "model": "claude-opus-4-8",
+      "rule_id": "positive_sentiment",
+      "step1_single_call_acc": null,
+      "exp1_nocot_classify_acc": 1.0,
+      "exp1_nocot_grade_median": 2.0,
+      "exp1_nocot_grade2_rate": 1.0,
+      "exp2_cot_classify_acc": 1.0,
+      "exp2_cot_grade_median": 2,
+      "exp2_cot_grade2_rate": 1.0,
+      "acc_delta_cot_minus_nocot": 0.0,
+      "grade2_delta_cot_minus_nocot": 0.0
+    },
+    {
+      "model": "claude-opus-4-8",
+      "rule_id": "second_word_capitalized",
+      "step1_single_call_acc": null,
+      "exp1_nocot_classify_acc": 1.0,
+      "exp1_nocot_grade_median": 1.0,
+      "exp1_nocot_grade2_rate": 0.0,
+      "exp2_cot_classify_acc": 1.0,
+      "exp2_cot_grade_median": 1,
+      "exp2_cot_grade2_rate": 0.0,
+      "acc_delta_cot_minus_nocot": 0.0,
+      "grade2_delta_cot_minus_nocot": 0
+    },
+    {
+      "model": "claude-opus-4-8",
+      "rule_id": "word_count_geq_8",
+      "step1_single_call_acc": null,
+      "exp1_nocot_classify_acc": 0.984375,
+      "exp1_nocot_grade_median": 0.0,
+      "exp1_nocot_grade2_rate": 0.0,
+      "exp2_cot_classify_acc": 1.0,
+      "exp2_cot_grade_median": 0,
+      "exp2_cot_grade2_rate": 0.0,
+      "acc_delta_cot_minus_nocot": 0.015625,
+      "grade2_delta_cot_minus_nocot": 0
+    },
+    {
+      "model": "gpt-4.1",
+      "rule_id": "food_topic",
+      "step1_single_call_acc": 1.0,
+      "exp1_nocot_classify_acc": 1.0,
+      "exp1_nocot_grade_median": 1.0,
+      "exp1_nocot_grade2_rate": 0.3333333333333333,
+      "exp2_cot_classify_acc": 1.0,
+      "exp2_cot_grade_median": 2,
+      "exp2_cot_grade2_rate": 0.6666666666666666,
+      "acc_delta_cot_minus_nocot": 0.0,
+      "grade2_delta_cot_minus_nocot": 0.3333333333333333
+    },
+    {
+      "model": "gpt-4.1",
+      "rule_id": "physically_impossible",
+      "step1_single_call_acc": 0.9555555555555556,
+      "exp1_nocot_classify_acc": 1.0,
+      "exp1_nocot_grade_median": 1.0,
+      "exp1_nocot_grade2_rate": 0.0,
+      "exp2_cot_classify_acc": 1.0,
+      "exp2_cot_grade_median": 1,
+      "exp2_cot_grade2_rate": 0.3333333333333333,
+      "acc_delta_cot_minus_nocot": 0.0,
+      "grade2_delta_cot_minus_nocot": 0.3333333333333333
+    },
+    {
+      "model": "gpt-4.1",
+      "rule_id": "positive_sentiment",
+      "step1_single_call_acc": 0.9916666666666667,
+      "exp1_nocot_classify_acc": 1.0,
+      "exp1_nocot_grade_median": 2.0,
+      "exp1_nocot_grade2_rate": 0.8333333333333334,
+      "exp2_cot_classify_acc": 1.0,
+      "exp2_cot_grade_median": 2,
+      "exp2_cot_grade2_rate": 1.0,
+      "acc_delta_cot_minus_nocot": 0.0,
+      "grade2_delta_cot_minus_nocot": 0.16666666666666663
+    },
+    {
+      "model": "gpt-4.1",
+      "rule_id": "second_word_capitalized",
+      "step1_single_call_acc": 0.9722222222222222,
+      "exp1_nocot_classify_acc": 0.9739583333333334,
+      "exp1_nocot_grade_median": 1.0,
+      "exp1_nocot_grade2_rate": 0.0,
+      "exp2_cot_classify_acc": 0.9791666666666666,
+      "exp2_cot_grade_median": 1,
+      "exp2_cot_grade2_rate": 0.0,
+      "acc_delta_cot_minus_nocot": 0.005208333333333259,
+      "grade2_delta_cot_minus_nocot": 0
+    },
+    {
+      "model": "gpt-4.1",
+      "rule_id": "word_count_geq_8",
+      "step1_single_call_acc": 0.9194444444444444,
+      "exp1_nocot_classify_acc": 0.9739583333333334,
+      "exp1_nocot_grade_median": 0.0,
+      "exp1_nocot_grade2_rate": 0.0,
+      "exp2_cot_classify_acc": 0.9375,
+      "exp2_cot_grade_median": 0,
+      "exp2_cot_grade2_rate": 0.0,
+      "acc_delta_cot_minus_nocot": -0.03645833333333337,
+      "grade2_delta_cot_minus_nocot": 0
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "rule_id": "food_topic",
+      "step1_single_call_acc": 0.9972222222222222,
+      "exp1_nocot_classify_acc": 1.0,
+      "exp1_nocot_grade_median": 1.0,
+      "exp1_nocot_grade2_rate": 0.4166666666666667
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "rule_id": "physically_impossible",
+      "step1_single_call_acc": 0.8194444444444445,
+      "exp1_nocot_classify_acc": 0.9947916666666666,
+      "exp1_nocot_grade_median": 1.0,
+      "exp1_nocot_grade2_rate": 0.0
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "rule_id": "positive_sentiment",
+      "step1_single_call_acc": 0.9972222222222222,
+      "exp1_nocot_classify_acc": 1.0,
+      "exp1_nocot_grade_median": 1.0,
+      "exp1_nocot_grade2_rate": 0.08333333333333333
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "rule_id": "second_word_capitalized",
+      "step1_single_call_acc": 0.8111111111111112,
+      "exp1_nocot_classify_acc": 0.8125,
+      "exp1_nocot_grade_median": 1.0,
+      "exp1_nocot_grade2_rate": 0.08333333333333333
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "rule_id": "word_count_geq_8",
+      "step1_single_call_acc": 0.7194444444444444,
+      "exp1_nocot_classify_acc": 0.8854166666666666,
+      "exp1_nocot_grade_median": 0.0,
+      "exp1_nocot_grade2_rate": 0.0
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "mode": "rule_given",
+  "model": "deepseek-v4-flash",
+  "rules": {
+    "passive_voice_deconfounded_c": {
+      "contexts": [
+        {
+          "context_index": 0,
+          "context_seed": null,
+          "n": 120,
+          "n_correct": 119,
+          "accuracy": 0.9916666666666667,
+          "wilson_ci_95": [
+            0.9543037087549505,
+            0.998527444266658
+          ],
+          "n_parse_failures": 0,
+          "format_ok_rate": 1.0,
+          "mean_logprob_margin": 9927.642857142857,
+          "n_with_margin": 84,
+          "per_class": {
+            "true": {
+              "n": 60,
+              "n_correct": 59,
+              "accuracy": 0.9833333333333333
+            },
+            "false": {
+              "n": 60,
+              "n_correct": 60,
+              "accuracy": 1.0
+            }
+          },
+          "predictions": {
+            "true": 59,
+            "false": 61,
+            "parse_failure": 0
+          }
+        }
+      ],
+      "pooled": {
+        "n_contexts": 1,
+        "n_items": 120,
+        "mean_accuracy": 0.9916666666666667,
+        "n_parse_failures": 0,
+        "cluster_bootstrap_ci_95": null
+      }
+    }
+  },
+  "overall": {
+    "n_calls": 120,
+    "n_correct": 119,
+    "n_parse_failures": 0,
+    "parse_failure_rate": 0.0
+  },
+  "wall_seconds": 7.110565732000396,
+  "client_stats": {
+    "api_calls": 120,
+    "cache_hits": 0,
+    "n_429": 0,
+    "retryable_errors": 0,
+    "failures": 0,
+    "rate_429": 0.0,
+    "error_rate": 0.0
+  }
+}

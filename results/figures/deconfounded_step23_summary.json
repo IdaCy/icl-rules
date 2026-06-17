@@ -1,0 +1,28 @@
+{
+  "n_step2_rows": 61,
+  "n_step3_rows": 9,
+  "step2_models": [
+    "deepseek-v4-flash",
+    "gpt-4.1",
+    "gpt-4.1-mini"
+  ],
+  "step3_models": [
+    "deepseek-v4-flash",
+    "gpt-4.1",
+    "gpt-4.1-mini"
+  ],
+  "step3_rules": [
+    "food_topic",
+    "second_word_capitalized",
+    "word_count_geq_8"
+  ],
+  "physically_impossible_in_deconfounded": false,
+  "outputs": [
+    "deconfounded_step2_articulation.json",
+    "deconfounded_step2_articulation.csv",
+    "deconfounded_step3_faithfulness.json",
+    "deconfounded_step3_faithfulness.csv",
+    "fig_deconfounded_step2_articulation.png",
+    "fig_deconfounded_step3_faithfulness.png"
+  ]
+}

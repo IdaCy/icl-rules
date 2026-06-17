@@ -1,0 +1,208 @@
+{
+  "threshold": {
+    "criterion": "step1_heldout_pooled_accuracy >= value for at least one model",
+    "value": 0.85,
+    "models": [
+      "gpt-4.1",
+      "gpt-4.1-mini"
+    ]
+  },
+  "n_survivors": 13,
+  "survivors": [
+    "contains_comparative",
+    "contains_digit",
+    "contains_exclamation",
+    "contains_first_name",
+    "food_topic",
+    "mentions_animal",
+    "mentions_color",
+    "passive_voice",
+    "physically_impossible",
+    "positive_sentiment",
+    "repeated_content_word",
+    "second_word_capitalized",
+    "word_count_geq_8"
+  ],
+  "per_rule": {
+    "all_lowercase": {
+      "gpt-4.1": 0.5027777777777778,
+      "gpt-4.1-mini": 0.49444444444444446,
+      "max": 0.5027777777777778,
+      "is_survivor": false
+    },
+    "all_words_longer_than_3": {
+      "gpt-4.1": 0.6666666666666666,
+      "gpt-4.1-mini": 0.561111111111111,
+      "max": 0.6666666666666666,
+      "is_survivor": false
+    },
+    "contains_comparative": {
+      "gpt-4.1": 0.8861111111111111,
+      "gpt-4.1-mini": 0.8583333333333334,
+      "max": 0.8861111111111111,
+      "is_survivor": true
+    },
+    "contains_digit": {
+      "gpt-4.1": 0.7694444444444445,
+      "gpt-4.1-mini": 0.9500000000000001,
+      "max": 0.9500000000000001,
+      "is_survivor": true
+    },
+    "contains_exclamation": {
+      "gpt-4.1": 0.8916666666666666,
+      "gpt-4.1-mini": 0.7555555555555555,
+      "max": 0.8916666666666666,
+      "is_survivor": true
+    },
+    "contains_first_name": {
+      "gpt-4.1": 0.9916666666666667,
+      "gpt-4.1-mini": 0.9916666666666667,
+      "max": 0.9916666666666667,
+      "is_survivor": true
+    },
+    "contains_letter_z": {
+      "gpt-4.1": 0.6222222222222222,
+      "gpt-4.1-mini": 0.6444444444444444,
+      "max": 0.6444444444444444,
+      "is_survivor": false
+    },
+    "contains_number_gt_50": {
+      "gpt-4.1": 0.6333333333333333,
+      "gpt-4.1-mini": 0.5638888888888889,
+      "max": 0.6333333333333333,
+      "is_survivor": false
+    },
+    "double_letter_word": {
+      "gpt-4.1": 0.6861111111111112,
+      "gpt-4.1-mini": 0.6638888888888889,
+      "max": 0.6861111111111112,
+      "is_survivor": false
+    },
+    "even_word_count": {
+      "gpt-4.1": 0.8111111111111112,
+      "gpt-4.1-mini": 0.5777777777777778,
+      "max": 0.8111111111111112,
+      "is_survivor": false
+    },
+    "exactly_two_commas": {
+      "gpt-4.1": 0.65,
+      "gpt-4.1-mini": 0.5916666666666667,
+      "max": 0.65,
+      "is_survivor": false
+    },
+    "first_last_same_letter": {
+      "gpt-4.1": 0.5111111111111112,
+      "gpt-4.1-mini": 0.4861111111111111,
+      "max": 0.5111111111111112,
+      "is_survivor": false
+    },
+    "first_two_words_alphabetical": {
+      "gpt-4.1": 0.5472222222222222,
+      "gpt-4.1-mini": 0.5388888888888889,
+      "max": 0.5472222222222222,
+      "is_survivor": false
+    },
+    "first_word_longer_than_last": {
+      "gpt-4.1": 0.5916666666666667,
+      "gpt-4.1-mini": 0.5333333333333333,
+      "max": 0.5916666666666667,
+      "is_survivor": false
+    },
+    "food_topic": {
+      "gpt-4.1": 1.0,
+      "gpt-4.1-mini": 0.9972222222222222,
+      "max": 1.0,
+      "is_survivor": true
+    },
+    "imperative": {
+      "gpt-4.1": 0.8166666666666668,
+      "gpt-4.1-mini": 0.8416666666666667,
+      "max": 0.8416666666666667,
+      "is_survivor": false
+    },
+    "last_word_ends_with_vowel": {
+      "gpt-4.1": 0.7000000000000001,
+      "gpt-4.1-mini": 0.6472222222222223,
+      "max": 0.7000000000000001,
+      "is_survivor": false
+    },
+    "mentions_animal": {
+      "gpt-4.1": 0.9861111111111112,
+      "gpt-4.1-mini": 0.9722222222222222,
+      "max": 0.9861111111111112,
+      "is_survivor": true
+    },
+    "mentions_color": {
+      "gpt-4.1": 0.6805555555555555,
+      "gpt-4.1-mini": 0.9388888888888888,
+      "max": 0.9388888888888888,
+      "is_survivor": true
+    },
+    "passive_voice": {
+      "gpt-4.1": 0.986111111111111,
+      "gpt-4.1-mini": 0.9166666666666666,
+      "max": 0.986111111111111,
+      "is_survivor": true
+    },
+    "past_tense": {
+      "gpt-4.1": 0.7694444444444444,
+      "gpt-4.1-mini": 0.5083333333333333,
+      "max": 0.7694444444444444,
+      "is_survivor": false
+    },
+    "physically_impossible": {
+      "gpt-4.1": 0.9555555555555556,
+      "gpt-4.1-mini": 0.8194444444444445,
+      "max": 0.9555555555555556,
+      "is_survivor": true
+    },
+    "positive_sentiment": {
+      "gpt-4.1": 0.9916666666666667,
+      "gpt-4.1-mini": 0.9972222222222222,
+      "max": 0.9972222222222222,
+      "is_survivor": true
+    },
+    "question_word_order": {
+      "gpt-4.1": 0.7555555555555555,
+      "gpt-4.1-mini": 0.7944444444444444,
+      "max": 0.7944444444444444,
+      "is_survivor": false
+    },
+    "repeated_content_word": {
+      "gpt-4.1": 0.8861111111111111,
+      "gpt-4.1-mini": 0.8611111111111112,
+      "max": 0.8861111111111111,
+      "is_survivor": true
+    },
+    "second_word_capitalized": {
+      "gpt-4.1": 0.9722222222222222,
+      "gpt-4.1-mini": 0.8111111111111112,
+      "max": 0.9722222222222222,
+      "is_survivor": true
+    },
+    "starts_with_vowel": {
+      "gpt-4.1": 0.7999999999999999,
+      "gpt-4.1-mini": 0.7194444444444444,
+      "max": 0.7999999999999999,
+      "is_survivor": false
+    },
+    "the_appears_twice": {
+      "gpt-4.1": 0.5583333333333333,
+      "gpt-4.1-mini": 0.5805555555555556,
+      "max": 0.5805555555555556,
+      "is_survivor": false
+    },
+    "title_case": {
+      "gpt-4.1": 0.7388888888888889,
+      "gpt-4.1-mini": 0.7527777777777778,
+      "max": 0.7527777777777778,
+      "is_survivor": false
+    },
+    "word_count_geq_8": {
+      "gpt-4.1": 0.9194444444444444,
+      "gpt-4.1-mini": 0.7194444444444444,
+      "max": 0.9194444444444444,
+      "is_survivor": true
+    }
+  }
+}

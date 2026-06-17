@@ -1,0 +1,37 @@
+{
+  "n_metric_rows": 252,
+  "n_shortcut_rows": 15,
+  "models": [
+    "Qwen2.5-7B-Instruct",
+    "claude-opus-4-8",
+    "deepseek-v4-flash",
+    "gpt-4.1",
+    "gpt-4.1-mini"
+  ],
+  "rules": [
+    "mentions_color",
+    "mentions_animal",
+    "food_topic",
+    "positive_sentiment",
+    "contains_first_name",
+    "starts_with_vowel",
+    "last_word_ends_with_vowel",
+    "word_count_geq_8",
+    "second_word_capitalized",
+    "even_word_count",
+    "passive_voice",
+    "the_appears_twice",
+    "first_word_longer_than_last",
+    "all_words_longer_than_3",
+    "first_two_words_alphabetical"
+  ],
+  "outputs": [
+    "deconfounded_metrics_table.json",
+    "deconfounded_metrics_table.csv",
+    "deconfounded_shortcut_delta.json",
+    "deconfounded_shortcut_delta.csv",
+    "fig_deconfounded_step1_original_vs_deconfounded.png",
+    "fig_deconfounded_shortcut_residuals.png",
+    "fig_deconfounded_family_delta_heatmap.png"
+  ]
+}

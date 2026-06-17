@@ -1,0 +1,142 @@
+{
+  "articulations": {
+    "all_words_longer_than_3_deconfounded": "The label is True if and only if the input contains a numeral (written as a word, e.g., \"three\", \"seven\", \"nine\", etc.) or a preposition (e.g., \"among\", \"within\", \"near\", \"beside\", \"above\", \"under\", \"over\", \"onto\", \"before\", \"into\", \"upon\", \"toward",
+    "contains_first_name_deconfounded": "The label is True if the input refers to a person by a given name, and False otherwise.",
+    "even_word_count_deconfounded": "The label is True if and only if the input contains at least one word from the set {downtown, yesterday, nearby, everywhere, below, always, rarely, probably, certainly, clearly, finally, carefully, quietly, slowly, often, usually, overhead, recently, luckily}, and the last noun in the input is not a place (such as house, lake, shop,",
+    "first_two_words_alphabetical_deconfounded": "The label is True if and only if the input contains a plural noun followed by a verb in past tense or past participle form, and the prepositional phrases (if any) do not include both a location and a relational phrase together (such as \"at the market around the corner\" or \"in the kitchen at home\").",
+    "first_word_longer_than_last_deconfounded": "Label True if the subject is a concrete, inanimate, and countable noun that can plausibly perform the verb in the sentence; otherwise, label False.",
+    "food_topic_deconfounded": "The label is True if and only if the main noun is \"rice,\" \"bread,\" or \"soup\"; otherwise, the label is False.",
+    "last_word_ends_with_vowel_deconfounded": "The label is True if and only if the noun in the prepositional phrase is a physical object or place, and False otherwise.",
+    "mentions_animal_deconfounded": "The label is True if and only if the main noun in the sentence refers to an animal; otherwise, the label is False.",
+    "mentions_color_deconfounded": "Sentences are labeled True if the noun modified by the color adjective is an object or thing that can plausibly have that color, and False if the noun modified by the adjective \"gentle\" or \"shallow\" is not something that can naturally have that property.",
+    "passive_voice_deconfounded": "The label is True if and only if the subject and verb do not typically go together (i.e., the subject is not commonly associated with performing the verb), and the prepositional phrase does not contain \"by night,\" \"at dawn,\" or \"near home\" unless the verb is in passive form (ending in -ed); otherwise, the label is False.",
+    "positive_sentiment_deconfounded": "Label True if the input describes something as \"pleasant\" or \"wonderful\"; otherwise, label False.",
+    "second_word_capitalized_deconfounded": "The label is True if and only if the subject is a proper noun (person, city, or group) and the time/location phrase does not contain \"by hand,\" \"on foot,\" \"by day,\" or \"at dusk.\"",
+    "starts_with_vowel_deconfounded": "The label is True if and only if the subject is \"Authors,\" \"Objects,\" \"Insects,\" \"Animals,\" \"Onions,\" or \"Always\"; otherwise, the label is False.",
+    "the_appears_twice_deconfounded": "Label True if the first noun in the sentence is an inanimate object that can plausibly perform the verb in the sentence; otherwise, label False.",
+    "word_count_geq_8_deconfounded": "The label is True if and only if the direct object of the verb is described by at least two adjectives; otherwise, the label is False."
+  },
+  "selection": {
+    "all_words_longer_than_3_deconfounded": {
+      "row_index": 209,
+      "context_index": 1,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the input contains a numeral (written as a word, e.g., \"three\", \"seven\", \"nine\", etc.) or a preposition (e.g., \"among\", \"within\", \"near\", \"beside\", \"above\", \"under\", \"over\", \"onto\", \"before\", \"into\", \"upon\", \"toward"
+    },
+    "contains_first_name_deconfounded": {
+      "row_index": 59,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 2,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if the input refers to a person by a given name, and False otherwise."
+    },
+    "even_word_count_deconfounded": {
+      "row_index": 149,
+      "context_index": 2,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the input contains at least one word from the set {downtown, yesterday, nearby, everywhere, below, always, rarely, probably, certainly, clearly, finally, carefully, quietly, slowly, often, usually, overhead, recently, luckily}, and the last noun in the input is not a place (such as house, lake, shop,"
+    },
+    "first_two_words_alphabetical_deconfounded": {
+      "row_index": 237,
+      "context_index": 2,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the input contains a plural noun followed by a verb in past tense or past participle form, and the prepositional phrases (if any) do not include both a location and a relational phrase together (such as \"at the market around the corner\" or \"in the kitchen at home\")."
+    },
+    "first_word_longer_than_last_deconfounded": {
+      "row_index": 191,
+      "context_index": 1,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label True if the subject is a concrete, inanimate, and countable noun that can plausibly perform the verb in the sentence; otherwise, label False."
+    },
+    "food_topic_deconfounded": {
+      "row_index": 33,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 2,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the main noun is \"rice,\" \"bread,\" or \"soup\"; otherwise, the label is False."
+    },
+    "last_word_ends_with_vowel_deconfounded": {
+      "row_index": 93,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the noun in the prepositional phrase is a physical object or place, and False otherwise."
+    },
+    "mentions_animal_deconfounded": {
+      "row_index": 13,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 2,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the main noun in the sentence refers to an animal; otherwise, the label is False."
+    },
+    "mentions_color_deconfounded": {
+      "row_index": 0,
+      "context_index": 1,
+      "phrasing": 1,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Sentences are labeled True if the noun modified by the color adjective is an object or thing that can plausibly have that color, and False if the noun modified by the adjective \"gentle\" or \"shallow\" is not something that can naturally have that property."
+    },
+    "passive_voice_deconfounded": {
+      "row_index": 160,
+      "context_index": 1,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the subject and verb do not typically go together (i.e., the subject is not commonly associated with performing the verb), and the prepositional phrase does not contain \"by night,\" \"at dawn,\" or \"near home\" unless the verb is in passive form (ending in -ed); otherwise, the label is False."
+    },
+    "positive_sentiment_deconfounded": {
+      "row_index": 49,
+      "context_index": 1,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label True if the input describes something as \"pleasant\" or \"wonderful\"; otherwise, label False."
+    },
+    "second_word_capitalized_deconfounded": {
+      "row_index": 123,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the subject is a proper noun (person, city, or group) and the time/location phrase does not contain \"by hand,\" \"on foot,\" \"by day,\" or \"at dusk.\""
+    },
+    "starts_with_vowel_deconfounded": {
+      "row_index": 76,
+      "context_index": 0,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the subject is \"Authors,\" \"Objects,\" \"Insects,\" \"Animals,\" \"Onions,\" or \"Always\"; otherwise, the label is False."
+    },
+    "the_appears_twice_deconfounded": {
+      "row_index": 175,
+      "context_index": 1,
+      "phrasing": 0,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "Label True if the first noun in the sentence is an inanimate object that can plausibly perform the verb in the sentence; otherwise, label False."
+    },
+    "word_count_geq_8_deconfounded": {
+      "row_index": 111,
+      "context_index": 1,
+      "phrasing": 1,
+      "modal_count": 1,
+      "n_direct_with_examples": 6,
+      "candidate": "The label is True if and only if the direct object of the verb is described by at least two adjectives; otherwise, the label is False."
+    }
+  },
+  "selection_policy": "modal normalized direct with-examples candidate; tie by context_index, phrasing, row order"
+}

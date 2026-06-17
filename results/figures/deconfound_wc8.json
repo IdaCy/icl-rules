@@ -1,0 +1,77 @@
+{
+  "_note": "Original vs deconfounded word_count_geq_8 (P2b). The v2 dataset matches trailing-adjunct rates across classes and has zero one-sided tokens; the char-length signal is inherent to a length rule and is reported, not removed.",
+  "original": {
+    "confound": {
+      "naive_bayes_bow_heldout": 0.8916666666666667,
+      "best_single_token": {
+        "token": "by",
+        "accuracy": 0.6779661016949152,
+        "true_count": 84,
+        "false_count": 0
+      },
+      "char_length_best_threshold": 0.7521186440677966,
+      "n_one_sided_high_freq_tokens": 10,
+      "one_sided_examples": [
+        [
+          "by",
+          84,
+          0
+        ],
+        [
+          "in",
+          31,
+          0
+        ],
+        [
+          "on",
+          31,
+          0
+        ],
+        [
+          "again",
+          25,
+          0
+        ],
+        [
+          "at",
+          24,
+          0
+        ]
+      ]
+    },
+    "step1": {
+      "gpt-4.1": {
+        "in_context_acc": 0.9194444444444444,
+        "rule_given_acc": 0.575
+      },
+      "gpt-4.1-mini": {
+        "in_context_acc": 0.7194444444444444,
+        "rule_given_acc": 0.5333333333333333
+      }
+    }
+  },
+  "deconfounded_v2": {
+    "confound": {
+      "naive_bayes_bow_heldout": 0.65,
+      "best_single_token": {
+        "token": "wooden",
+        "accuracy": 0.5375,
+        "true_count": 23,
+        "false_count": 5
+      },
+      "char_length_best_threshold": 0.9416666666666667,
+      "n_one_sided_high_freq_tokens": 0,
+      "one_sided_examples": []
+    },
+    "step1": {
+      "gpt-4.1": {
+        "in_context_acc": 0.7722222222222223,
+        "rule_given_acc": 0.6416666666666667
+      },
+      "gpt-4.1-mini": {
+        "in_context_acc": 0.7083333333333334,
+        "rule_given_acc": 0.55
+      }
+    }
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "task": "step1-classification",
+  "mode": "rule_given",
+  "model": "gpt-4.1",
+  "price_per_mtok": {
+    "prompt": 2.0,
+    "completion": 8.0
+  },
+  "rules": [
+    "all_lowercase",
+    "all_words_longer_than_3",
+    "contains_comparative",
+    "contains_digit",
+    "contains_exclamation",
+    "contains_first_name",
+    "contains_letter_z",
+    "contains_number_gt_50",
+    "double_letter_word",
+    "even_word_count",
+    "exactly_two_commas",
+    "first_last_same_letter",
+    "first_two_words_alphabetical",
+    "first_word_longer_than_last",
+    "food_topic",
+    "imperative",
+    "last_word_ends_with_vowel",
+    "mentions_animal",
+    "mentions_color",
+    "passive_voice",
+    "past_tense",
+    "physically_impossible",
+    "positive_sentiment",
+    "question_word_order",
+    "repeated_content_word",
+    "second_word_capitalized",
+    "starts_with_vowel",
+    "the_appears_twice",
+    "title_case",
+    "word_count_geq_8"
+  ],
+  "rules_file": "data/rule_texts.json",
+  "run_seed": 0,
+  "context_seeds": null,
+  "n_contexts": 1,
+  "k_few_shot": 0,
+  "query_split": "held_out",
+  "n_items_per_rule": 120,
+  "temperature": 0.0,
+  "max_tokens": 2,
+  "logprobs": true,
+  "top_logprobs": 5,
+  "api_seed": 0,
+  "concurrency": 16,
+  "template_hash": "8aef0e7d11177cae537b44b5f41d8de70063344aee125643f208cb61a88e1eab",
+  "expected_total_calls": 3600,
+  "data_dir": "data",
+  "contexts": {
+    "all_lowercase": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it contains no uppercase letters anywhere."
+      }
+    ],
+    "all_words_longer_than_3": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff every word in it has more than 3 letters (no word of 1, 2, or 3 letters appears)."
+      }
+    ],
+    "contains_comparative": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it contains a word in comparative form — an -er comparative like \"taller\" or an analytic comparative like \"more careful\" — whether that word is used as an adjective or as an adverb. (Form-based, so the comparative-adverb probe ruling below agrees with the canonical text.)"
+      }
+    ],
+    "contains_digit": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it contains at least one digit character (0-9)."
+      }
+    ],
+    "contains_exclamation": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it contains an exclamation mark (!)."
+      }
+    ],
+    "contains_first_name": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it contains a person's first name (like Anna or David), and False otherwise — including sentences that contain other capitalized proper nouns such as city, month, or brand names."
+      }
+    ],
+    "contains_letter_z": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it contains the letter z (uppercase or lowercase)."
+      }
+    ],
+    "contains_number_gt_50": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it contains a number, written in digits, whose value is greater than 50."
+      }
+    ],
+    "double_letter_word": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it contains at least one word with the same letter twice in a row (a double letter, as in \"coffee\" or \"wall\")."
+      }
+    ],
+    "even_word_count": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it contains an even number of words."
+      }
+    ],
+    "exactly_two_commas": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it contains exactly two commas."
+      }
+    ],
+    "first_last_same_letter": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff its first word and its last word begin with the same letter (ignoring case)."
+      }
+    ],
+    "first_two_words_alphabetical": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff its first word comes before its second word in alphabetical order (comparing the words letter by letter, ignoring case)."
+      }
+    ],
+    "first_word_longer_than_last": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff its first word has strictly more letters than its last word."
+      }
+    ],
+    "food_topic": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff its topic is food or cooking (meals, dishes, ingredients, cooking, eating, restaurants as places to eat), and False iff it is about an unrelated topic."
+      }
+    ],
+    "imperative": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it is an imperative (a command addressed to the listener, with no expressed subject), and False iff it is a declarative statement with a subject."
+      }
+    ],
+    "last_word_ends_with_vowel": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff the last letter of its last word is a vowel letter (a, e, i, o, or u); y does not count as a vowel."
+      }
+    ],
+    "mentions_animal": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it mentions an animal — a real, living, non-human animal kind (mammals, birds, fish, insects, etc.)."
+      }
+    ],
+    "mentions_color": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it mentions a specific color term (such as red, blue, green, beige)."
+      }
+    ],
+    "passive_voice": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff its main clause is in the passive voice — the subject undergoes the action rather than performing it, typically expressed with a form of \"be\" (was/were) plus a past participle — and False iff it is in the active voice. (Voice-defined: the be-form is the typical surface shape, not the definition, so get-passives count as passive — consistent with the probe ruling below.)"
+      }
+    ],
+    "past_tense": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff its main verb is in the past tense, and False iff it is in the present tense."
+      }
+    ],
+    "physically_impossible": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it describes something physically impossible in the real world, and False iff it describes something ordinary and plausible."
+      }
+    ],
+    "positive_sentiment": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it expresses a positive sentiment or opinion, and False iff it expresses a negative one."
+      }
+    ],
+    "question_word_order": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it has yes/no-question word order, with the auxiliary or copular verb before the subject (terminal punctuation is absent in all inputs), and False iff it has declarative word order."
+      }
+    ],
+    "repeated_content_word": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff some content word — a word not on the stopword list (articles, pronouns, prepositions, auxiliaries, and similar function words) — occurs at least twice, comparing words case-insensitively after stripping punctuation."
+      }
+    ],
+    "second_word_capitalized": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff its second word begins with a capital letter."
+      }
+    ],
+    "starts_with_vowel": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff the first letter of its first word is a vowel letter (a, e, i, o, or u), regardless of case and regardless of pronunciation."
+      }
+    ],
+    "the_appears_twice": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff the word \"the\" appears at least twice (case-insensitive, so a sentence-initial \"The\" counts)."
+      }
+    ],
+    "title_case": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff every word begins with an uppercase letter."
+      }
+    ],
+    "word_count_geq_8": [
+      {
+        "context_index": 0,
+        "rule_text": "The input is labeled True iff it contains at least 8 words."
+      }
+    ]
+  },
+  "run_id": "step1-rule_given-gpt-4.1-20260611T002539Z",
+  "started_utc": "20260611T002539Z",
+  "cost_estimate_usd": 0.6828619999999996,
+  "cost_actual_usd": 0.580166,
+  "finished_utc": "20260611T002807Z",
+  "client_stats": {
+    "api_calls": 3600,
+    "cache_hits": 0,
+    "n_429": 0,
+    "retryable_errors": 0,
+    "failures": 0,
+    "rate_429": 0.0,
+    "error_rate": 0.0
+  },
+  "cost": {
+    "prompt_tokens": {
+      "gpt-4.1": 275683
+    },
+    "completion_tokens": {
+      "gpt-4.1": 3600
+    },
+    "total_usd": 0.580166
+  }
+}

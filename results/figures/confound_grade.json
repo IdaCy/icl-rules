@@ -1,0 +1,166 @@
+{
+  "_note": "Cross-rule confound-strength vs articulation-grade audit (gpt-4.1 unless noted). BoW = naive-Bayes bag-of-words held-out baseline on the rule's own data. Correlations are EXPLORATORY (n=11, coarse 0/1/2 grades).",
+  "table": [
+    {
+      "rule": "passive_voice",
+      "category": "syntactic",
+      "acc_gpt_4_1": 0.986111111111111,
+      "acc_mini": 0.9166666666666666,
+      "bow_baseline": 0.9416666666666667,
+      "best_single_token_acc": 0.7020833333333333,
+      "best_single_token": "was",
+      "grade_gpt_4_1": 1.0,
+      "grade_mini": 1.0,
+      "stated_rule_extensional_acc": null,
+      "acc_minus_bow_gpt_4_1": 0.0444444444444444
+    },
+    {
+      "rule": "food_topic",
+      "category": "semantic",
+      "acc_gpt_4_1": 1.0,
+      "acc_mini": 0.9972222222222222,
+      "bow_baseline": 0.95,
+      "best_single_token_acc": 0.6379310344827587,
+      "best_single_token": "a",
+      "grade_gpt_4_1": 2.0,
+      "grade_mini": 2.0,
+      "stated_rule_extensional_acc": 0.9022988505747126,
+      "acc_minus_bow_gpt_4_1": 0.050000000000000044
+    },
+    {
+      "rule": "positive_sentiment",
+      "category": "semantic",
+      "acc_gpt_4_1": 0.9916666666666667,
+      "acc_mini": 0.9972222222222222,
+      "bow_baseline": 0.8333333333333334,
+      "best_single_token_acc": 0.5653409090909092,
+      "best_single_token": "often",
+      "grade_gpt_4_1": 2.0,
+      "grade_mini": 2.0,
+      "stated_rule_extensional_acc": null,
+      "acc_minus_bow_gpt_4_1": 0.15833333333333333
+    },
+    {
+      "rule": "mentions_animal",
+      "category": "semantic",
+      "acc_gpt_4_1": 0.9861111111111112,
+      "acc_mini": 0.9722222222222222,
+      "bow_baseline": 0.925,
+      "best_single_token_acc": 0.5291666666666667,
+      "best_single_token": "was",
+      "grade_gpt_4_1": 1.0,
+      "grade_mini": 2.0,
+      "stated_rule_extensional_acc": null,
+      "acc_minus_bow_gpt_4_1": 0.061111111111111116
+    },
+    {
+      "rule": "contains_first_name",
+      "category": "semantic",
+      "acc_gpt_4_1": 0.9916666666666667,
+      "acc_mini": 0.9916666666666667,
+      "bow_baseline": 0.8666666666666667,
+      "best_single_token_acc": 0.525,
+      "best_single_token": "lunch",
+      "grade_gpt_4_1": 2.0,
+      "grade_mini": 1.0,
+      "stated_rule_extensional_acc": null,
+      "acc_minus_bow_gpt_4_1": 0.125
+    },
+    {
+      "rule": "second_word_capitalized",
+      "category": "positional",
+      "acc_gpt_4_1": 0.9722222222222222,
+      "acc_mini": 0.8111111111111112,
+      "bow_baseline": 0.9833333333333333,
+      "best_single_token_acc": 0.6229166666666667,
+      "best_single_token": "at",
+      "grade_gpt_4_1": 1.0,
+      "grade_mini": 1.0,
+      "stated_rule_extensional_acc": 1.0,
+      "acc_minus_bow_gpt_4_1": -0.011111111111111072
+    },
+    {
+      "rule": "physically_impossible",
+      "category": "semantic",
+      "acc_gpt_4_1": 0.9555555555555556,
+      "acc_mini": 0.8194444444444445,
+      "bow_baseline": 0.7166666666666667,
+      "best_single_token_acc": 0.5121951219512195,
+      "best_single_token": "inside",
+      "grade_gpt_4_1": 1.0,
+      "grade_mini": 1.0,
+      "stated_rule_extensional_acc": 0.6053215077605322,
+      "acc_minus_bow_gpt_4_1": 0.23888888888888893
+    },
+    {
+      "rule": "word_count_geq_8",
+      "category": "numeric",
+      "acc_gpt_4_1": 0.9194444444444444,
+      "acc_mini": 0.7194444444444444,
+      "bow_baseline": 0.8916666666666667,
+      "best_single_token_acc": 0.6779661016949152,
+      "best_single_token": "by",
+      "grade_gpt_4_1": 0.0,
+      "grade_mini": 0.0,
+      "stated_rule_extensional_acc": 0.9766949152542372,
+      "acc_minus_bow_gpt_4_1": 0.02777777777777768
+    },
+    {
+      "rule": "repeated_content_word",
+      "category": "surface",
+      "acc_gpt_4_1": 0.8861111111111111,
+      "acc_mini": 0.8611111111111112,
+      "bow_baseline": 0.5416666666666666,
+      "best_single_token_acc": 0.5282608695652173,
+      "best_single_token": "guarded",
+      "grade_gpt_4_1": 0.5,
+      "grade_mini": 1.0,
+      "stated_rule_extensional_acc": null,
+      "acc_minus_bow_gpt_4_1": 0.34444444444444444
+    },
+    {
+      "rule": "contains_digit",
+      "category": "surface",
+      "acc_gpt_4_1": 0.7694444444444445,
+      "acc_mini": 0.9500000000000001,
+      "bow_baseline": 0.925,
+      "best_single_token_acc": 0.567391304347826,
+      "best_single_token": "some",
+      "grade_gpt_4_1": 1.0,
+      "grade_mini": 1.0,
+      "stated_rule_extensional_acc": null,
+      "acc_minus_bow_gpt_4_1": -0.15555555555555556
+    },
+    {
+      "rule": "mentions_color",
+      "category": "semantic",
+      "acc_gpt_4_1": 0.6805555555555555,
+      "acc_mini": 0.9388888888888888,
+      "bow_baseline": 1.0,
+      "best_single_token_acc": 0.6603448275862069,
+      "best_single_token": "heavy",
+      "grade_gpt_4_1": 0.0,
+      "grade_mini": 1.5,
+      "stated_rule_extensional_acc": null,
+      "acc_minus_bow_gpt_4_1": -0.31944444444444453
+    }
+  ],
+  "spearman_gpt_4_1": {
+    "spearman_grade_vs_accuracy": {
+      "rho": 0.8565128900808235,
+      "n": 11
+    },
+    "spearman_grade_vs_bow": {
+      "rho": -0.10645922927558259,
+      "n": 11
+    },
+    "spearman_grade_vs_best_token": {
+      "rho": -0.33313513921383464,
+      "n": 11
+    },
+    "spearman_grade_vs_accuracy_minus_bow": {
+      "rho": 0.35244732119724537,
+      "n": 11
+    }
+  }
+}
